@@ -8,3 +8,10 @@ alias gf="git fetch"
 alias gpom="git pull origin master"
 alias gpush="git push origin"
 alias gsub="git submodule foreach \"(git checkout master; git pull origin master)\""
+
+function gstashpull()
+{
+    git stash
+    git pull origin $1
+    git stash pop
+}

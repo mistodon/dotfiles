@@ -29,3 +29,10 @@ function ce()
         popd -n > /dev/null
     fi
 }
+
+# From http://onethingwell.org/post/586977440/mkcd-improved
+function mkcd()
+{
+    mkdir -p "$*"
+    cd "$*"
+}
