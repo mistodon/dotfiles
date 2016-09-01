@@ -1,33 +1,23 @@
 # close enough
 function ce()
 {
-    # Try cd to each argument
     pushd . > /dev/null
     for arg in "$@"
     do
-        cd *"$arg"* 2>/dev/null
-    done
-
-    if [ $? -ne 0 ]; then
-
-        # If it doesn't work, chop off first character of each
-        #   (Really hacky, brittle case-insensitivity)
-        popd > /dev/null
-        pushd . > /dev/null
-        for arg in "$@"
-        do
-            cd *"${arg:1}"* 2>/dev/null
-        done
+        local options=$(ls -d .*/ */ | grep -i "$arg")
+        if [ -n "$options" ]; then
+            cd $options 2>/dev/null
+        else
+            cd "$@" 2>/dev/null
+        fi
 
         if [ $? -ne 0 ]; then
-            echo "ce: '$@': No such file or directory (reached `pwd`)"
+            echo "ce: '$@': No such file or directory (reached `pwd`)" 1>&2
             popd > /dev/null
-        else
-            popd -n > /dev/null
+            return 1
         fi
-    else
-        popd -n > /dev/null
-    fi
+    done
+    popd -n > /dev/null
 }
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
