@@ -8,6 +8,7 @@ alias gf="git fetch"
 alias gpom="git pull origin master"
 alias gpush="git push origin"
 alias gsub="git submodule foreach \"(git checkout master; git pull origin master)\""
+alias gcurr="git rev-parse --abbrev-ref HEAD"
 
 function gstash()
 {
