@@ -1,4 +1,4 @@
-alias bell="tput bel"
+alias bell="tput bel; date"
 
 function makeshow()
 {
