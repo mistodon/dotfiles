@@ -4,9 +4,9 @@ function ce()
     pushd . > /dev/null
     for arg in "$@"
     do
-        local options=$(ls -d .*/ */ | grep -i "$arg")
+        local options=$(ls -d .*/ */ 2>/dev/null | grep -i "$arg" | head -n 1)
         if [ -n "$options" ]; then
-            cd $options 2>/dev/null
+            cd "$options" 2>/dev/null
         else
             cd "$@" 2>/dev/null
         fi
