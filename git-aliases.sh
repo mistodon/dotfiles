@@ -16,7 +16,7 @@ function gpull()
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git pull origin "$branch"
+    git pull --rebase origin "$branch"
 }
 
 function gpush()
