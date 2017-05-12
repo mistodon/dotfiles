@@ -35,3 +35,18 @@ function gstash()
     "$@"
     git stash pop
 }
+
+
+function gnuke()
+{
+    read -r -p "Are you sure you want to nuke this repo? [y/N] " response
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+    then
+        git submodule foreach "(git checkout .; git clean -dfx; git pull --rebase)"
+        git checkout .
+        git clean -dfx
+        git pull --rebase
+    else
+        echo "Cancelled."
+    fi
+}
