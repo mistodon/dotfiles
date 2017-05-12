@@ -31,16 +31,7 @@ function gpush()
 
 function gstash()
 {
-    if [ "$1" == "pull" ]; then
-        git stash
-        git pull origin $2
-        git stash pop
-    elif [ "$1" == "show" ]; then
-        git stash show stash^{/"$2"}
-    elif [ "$1" == "apply" ]; then
-        git stash apply stash^{/"$2"}
-    else
-        echo "gstash: '$1' is not a valid command. (pull|show|apply)" 1>&2
-        return 1
-    fi
+    git stash
+    "$@"
+    git stash pop
 }
