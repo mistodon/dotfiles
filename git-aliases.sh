@@ -7,7 +7,7 @@ alias gb="git branch"
 alias gf="git fetch"
 alias gpom="git pull origin master"
 alias gcurr="git rev-parse --abbrev-ref HEAD"
-alias gsub="git submodule foreach \"(git checkout master; git pull origin master)\""
+alias gsub="git submodule update --init --recursive"
 
 
 function gpull()
@@ -39,12 +39,20 @@ function gstash()
 
 function gnuke()
 {
+    local to_master="$1"
     read -r -p "Are you sure you want to nuke this repo? [y/N] " response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
     then
-        git submodule foreach "(git checkout .; git clean -dfx; git pull --rebase)"
+        if [ "$to_master" == "--master" ]; then
+            git submodule foreach --recursive "(git checkout .; git clean -dfx; git checkout master; git pull --rebase)"
+        else
+            git submodule foreach --recursive "(git checkout .; git clean -dfx; git pull --rebase)"
+        fi
         git checkout .
         git clean -dfx
+        if [ "$to_master" == "--master" ]; then
+            git checkout master
+        fi
         git pull --rebase
     else
         echo "Cancelled."
