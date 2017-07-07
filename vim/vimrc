@@ -25,6 +25,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
+au InsertEnter,InsertLeave * set cul!
 
 nnoremap <leader>\ :noh<cr>
 nnoremap <leader>s :update<cr>

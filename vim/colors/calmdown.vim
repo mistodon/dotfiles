@@ -7,7 +7,8 @@ let c_gnu = 1
 
 
 hi Normal	    ctermfg=240         ctermbg=15         cterm=None
-hi Cursor       ctermfg=Red         ctermbg=None       cterm=None
+hi Cursor       ctermfg=240         ctermbg=None       cterm=None
+hi CursorLine   ctermbg=255      cterm=None
 hi SpecialKey	ctermfg=87          ctermbg=None       cterm=Bold
 hi Directory	ctermfg=76          ctermbg=None       cterm=None
 hi ErrorMsg     ctermfg=124         ctermbg=White      cterm=None
@@ -30,8 +31,7 @@ hi StatusLineNC ctermfg=247         ctermbg=234        cterm=None
 hi StatusLine   ctermfg=247         ctermbg=253        cterm=None
 hi VertSplit    ctermfg=247         ctermbg=234        cterm=Bold
 
-hi LineNr	    ctermfg=238         ctermbg=244        cterm=Bold
-hi LineNr	    ctermfg=247         ctermbg=235        cterm=Bold
+
 hi NonText	    ctermfg=87          ctermbg=None       cterm=Bold
 
 
