@@ -26,3 +26,9 @@ function mkcd()
     mkdir -p "$*"
     cd "$*"
 }
+
+# Shortcut to exit shell quickly
+function qq()
+{
+    exit
+}
