@@ -31,3 +31,6 @@ au InsertEnter,InsertLeave * set cul!
 nnoremap <leader>\ :noh<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>b :sh<cr>
+nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
+nnoremap <leader>d :tabe .<cr>
+nnoremap <leader>q :q<cr>
