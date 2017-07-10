@@ -28,6 +28,8 @@ set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
 au InsertEnter,InsertLeave * set cul!
 
+let g:netrw_banner = 0
+
 nnoremap <leader>\ :noh<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>b :sh<cr>
