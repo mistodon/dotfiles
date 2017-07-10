@@ -25,6 +25,8 @@ hi Error	    ctermfg=233         ctermbg=124        cterm=Bold
 hi Special	    ctermfg=160         ctermbg=None       cterm=None
 hi Ignore       ctermfg=220         ctermbg=None       cterm=Bold
 hi Underline    ctermfg=244         ctermbg=None       cterm=None
+hi LineNr       ctermfg=248     ctermbg=15
+hi CursorLineNr ctermfg=252     ctermbg=15
 
 hi FoldColumn	ctermfg=247         ctermbg=None       cterm=Bold
 hi StatusLineNC ctermfg=247         ctermbg=234        cterm=None
