@@ -1,0 +1,3 @@
+Plugin 'rust-lang/rust.vim'
+Plugin 'timonv/vim-cargo'
+
