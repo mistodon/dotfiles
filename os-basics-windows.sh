@@ -1,6 +1,6 @@
 alias fm="explorer ."
 
-which make 2>/dev/null
+which make &>/dev/null
 if [ $? -ne 0 ]; then
     alias make="mingw32-make"
 else
