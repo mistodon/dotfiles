@@ -16,19 +16,19 @@ function qq { exit ; }
 function bell { tput bel ; }
 
 # Git shorthands
-function gs { git status ; }
+function gs { git status "$@" ; }
 
-function ga { git add ; }
+function ga { git add "$@" ; }
 
-function gr { git reset ; }
+function gr { git reset "$@" ; }
 
-function gd { git diff ; }
+function gd { git diff "$@" ; }
 
-function gc { git checkout ; }
+function gc { git checkout "$@" ; }
 
-function gb { git branch ; }
+function gb { git branch "$@" ; }
 
-function gf { git fetch ; }
+function gf { git fetch "$@" ; }
 
 function gpom { git pull origin master ; }
 
