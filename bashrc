@@ -1,3 +1,5 @@
+readonly DOTFILES_REPO_PATH=$(cd $(dirname $BASH_SOURCE) && pwd)
+
 export PS1="\[\033[36m\]\u\[\033[m\]@[\[\033[32m\]\D{%F %T}\[\033[m\]]:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -97,12 +99,12 @@ function lhost
 
 # Platform specific
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
-    source ~/bin/terminal-helpers/platform_windows.sh
+    source $DOTFILES_REPO_PATH/platform_windows.sh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-	source ~/bin/terminal-helpers/platform_macos.sh
+	source $DOTFILES_REPO_PATH/platform_macos.sh
 elif [[ "$OSTYPE" == "linux"* ]]; then
-	source ~/bin/terminal-helpers/platform_linux.sh
+	source $DOTFILES_REPO_PATH/platform_linux.sh
 else
-    echo "[terminal-helpers] Error: Could not load basic OS helpers for OS of type $OSTYPE"
+    echo "dotfiles: error: Could not load basic OS helpers for OS of type $OSTYPE"
 fi
 
