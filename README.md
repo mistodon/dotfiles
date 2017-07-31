@@ -15,7 +15,11 @@ Add the following line to your .tmux.conf:
 
 vim
 ---
-Add the following line to your .vimrc (depending on OS):
+Add the following line to your .vimrc:
+
+`set runtimepath+=/path/to/terminal-helpers/vim/runtime`
+
+Then add the following line to your .vimrc (depending on OS):
 
 `so /path/to/terminal-helpers/vim/vimrc_unix.vim`
 

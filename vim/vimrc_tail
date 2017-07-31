@@ -6,7 +6,7 @@ syntax on
 
 set autoindent
 set t_Co=256
-colorscheme calmdown
+colorscheme snowcone
 set autowrite
 set sw=4
 set notextmode
