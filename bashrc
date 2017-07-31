@@ -16,6 +16,7 @@ function :q { exit ; }
 function qq { exit ; }
 
 function bell { tput bel ; }
+function datestamp { date +'%Y_%m_%d_%H%M' ; }
 
 # Git shorthands
 function gs { git status "$@" ; }
