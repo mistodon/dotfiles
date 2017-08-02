@@ -1,3 +1,4 @@
 Plugin 'rust-lang/rust.vim'
 Plugin 'timonv/vim-cargo'
+Plugin 'tikhomirov/vim-glsl'
 
