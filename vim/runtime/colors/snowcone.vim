@@ -47,5 +47,15 @@ hi markdownH5   ctermfg=32         ctermbg=None     cterm=Bold
 hi markdownH6   ctermfg=32         ctermbg=None     cterm=Bold
 hi markdownHeadingDelimiter ctermfg=244  ctermbg=None    cterm=None
 hi markdownHeadingRule ctermfg=244  ctermbg=None    cterm=None
+hi markdownBold ctermbg=None cterm=Bold
+hi markdownItalic ctermbg=None cterm=Bold
+
+" HTML
+hi HTMLH1   ctermfg=32         ctermbg=None     cterm=Bold
+hi HTMLH2   ctermfg=32         ctermbg=None     cterm=Bold
+hi HTMLH3   ctermfg=32         ctermbg=None     cterm=Bold
+hi HTMLH4   ctermfg=32         ctermbg=None     cterm=Bold
+hi HTMLH5   ctermfg=32         ctermbg=None     cterm=Bold
+hi HTMLH6   ctermfg=32         ctermbg=None     cterm=Bold
 
 "vim: sw=4
