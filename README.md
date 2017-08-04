@@ -7,6 +7,12 @@ Add the following line to your .bashrc/.bash_profile/.profile:
 
 `source /path/to/terminal-helpers/bashrc`
 
+git
+---
+Execute the following command:
+
+`git config --global core.excludesfile /path/to/terminal-helpers/git/gitignore`
+
 tmux
 ---
 Add the following line to your .tmux.conf:
