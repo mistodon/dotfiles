@@ -19,6 +19,8 @@ Add the following line to your .tmux.conf:
 
 `source-file /path/to/terminal-helpers/tmux/tmux.conf`
 
+If you get errors sourcing this file, ensure that the line-endings are 'LF' and not 'CRLF'.
+
 vim
 ---
 Add the following line to your .vimrc:
