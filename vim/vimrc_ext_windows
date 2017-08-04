@@ -1,1 +1,1 @@
-nnoremap <leader>f :Unite file_rec<cr>
+nnoremap <leader>f :Unite file_rec<cr> :startinsert<cr>
