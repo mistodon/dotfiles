@@ -1,1 +1,6 @@
-nnoremap <leader>f :Unite file_rec<cr> :startinsert<cr>
+nnoremap <leader>f :CtrlP<cr>
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
