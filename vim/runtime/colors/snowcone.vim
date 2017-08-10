@@ -5,10 +5,13 @@ let g:colors_name="calmdown"
 let python_highlight_all = 1
 let c_gnu = 1
 
+" Use different cursor line color in insert mode
+hi CursorLine ctermbg=255 cterm=None
+au InsertLeave * hi CursorLine ctermbg=255 cterm=None
+au InsertEnter * hi CursorLine ctermbg=225 cterm=None
 
 hi Normal       ctermfg=240         ctermbg=15         cterm=None
 hi Cursor       ctermfg=240         ctermbg=None       cterm=None
-hi CursorLine   ctermbg=255      cterm=None
 hi SpecialKey   ctermfg=87          ctermbg=None       cterm=Bold
 hi Directory    ctermfg=76          ctermbg=None       cterm=None
 hi ErrorMsg     ctermfg=124         ctermbg=White      cterm=None
