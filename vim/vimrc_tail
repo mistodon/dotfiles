@@ -38,7 +38,7 @@ nnoremap <leader>q :q<cr>
 nnoremap g[ gT
 nnoremap g] gt
 
-nmap <leader>sp :call <SID>SynStack()<CR>
+nmap <leader>ch :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
