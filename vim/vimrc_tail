@@ -32,6 +32,9 @@ nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>d :tabe .<cr>
 nnoremap <leader>q :q<cr>
 
+nnoremap g[ gT
+nnoremap g] gt
+
 nmap <leader>sp :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
