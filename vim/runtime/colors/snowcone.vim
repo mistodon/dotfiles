@@ -39,7 +39,9 @@ hi Pmenu        ctermfg=White       ctermbg=DarkGray    cterm=None
 hi PmenuSel     ctermfg=None        ctermbg=Gray        cterm=Bold
 hi PmenuSbar    ctermfg=DarkGray    ctermbg=DarkGray    cterm=None
 hi PmenuThumb   ctermfg=Gray        ctermbg=Gray        cterm=None
-hi MatchParen   ctermbg=194 cterm=Underline
+hi MatchParen   ctermbg=195 cterm=Underline
+hi Include      ctermfg=32
+hi Macro        ctermfg=32
 
 " Markdown
 hi markdownH1   ctermfg=32         ctermbg=None     cterm=Bold
