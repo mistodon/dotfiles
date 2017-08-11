@@ -37,8 +37,9 @@ nnoremap <leader>q :q<cr>
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
-nnoremap <C-]> gt
-nnoremap <C-[> gT
+
+nnoremap g[ gT
+nnoremap g] gt
 
 nmap <leader>ch :call <SID>SynStack()<CR>
 function! <SID>SynStack()
