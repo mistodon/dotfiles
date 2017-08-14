@@ -28,7 +28,9 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
 nnoremap <leader>\ :noh<cr>
-noremap <leader>/ :norm 
+noremap <leader>n :norm 
+noremap <leader>/ :norm i// <cr>
+noremap <leader>? :norm ^3x<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
