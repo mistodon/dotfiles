@@ -36,6 +36,7 @@ nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>d :tabe .<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader>, :s/,/,\r/g<cr>
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
