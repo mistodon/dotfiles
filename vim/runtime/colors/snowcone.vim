@@ -10,6 +10,12 @@ hi CursorLine ctermbg=255 cterm=None
 au InsertLeave * hi CursorLine ctermbg=255 cterm=None
 au InsertEnter * hi CursorLine ctermbg=225 cterm=None
 
+" Style tab bar
+hi TabLine ctermfg=247 ctermbg=255 cterm=None
+hi TabLineSel ctermfg=75 cterm=Underline
+hi TabLineFill ctermfg=253
+
+" Normal stuff
 hi Normal       ctermfg=240         ctermbg=15         cterm=None
 hi Search       ctermfg=None        ctermbg=120        cterm=None
 hi Cursor       ctermfg=240         ctermbg=None       cterm=None
