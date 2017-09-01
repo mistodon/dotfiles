@@ -37,7 +37,7 @@ hi Underline    ctermfg=244         ctermbg=None       cterm=Underline
 hi LineNr       ctermfg=248     ctermbg=15
 hi CursorLineNr ctermfg=252     ctermbg=15
 hi FoldColumn   ctermfg=247         ctermbg=None       cterm=Bold
-hi StatusLineNC ctermfg=247         ctermbg=234        cterm=None
+hi StatusLineNC ctermfg=255         ctermbg=250        cterm=None
 hi StatusLine   ctermfg=247         ctermbg=253        cterm=None
 hi VertSplit    ctermfg=247         ctermbg=234        cterm=Bold
 hi NonText      ctermfg=87          ctermbg=None       cterm=Bold
@@ -68,5 +68,12 @@ hi HTMLH3   ctermfg=32         ctermbg=None     cterm=Bold
 hi HTMLH4   ctermfg=32         ctermbg=None     cterm=Bold
 hi HTMLH5   ctermfg=32         ctermbg=None     cterm=Bold
 hi HTMLH6   ctermfg=32         ctermbg=None     cterm=Bold
+
+" Diff
+hi DiffAdd ctermfg=None ctermbg=194
+hi DiffDelete ctermfg=224 ctermbg=224
+hi DiffChange ctermfg=None ctermbg=195
+hi DiffText ctermfg=None ctermbg=153
+hi Folded ctermfg=247 ctermbg=253 cterm=None
 
 "vim: sw=4
