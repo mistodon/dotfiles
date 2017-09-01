@@ -11,6 +11,16 @@ function mkcd
     cd "$*"
 }
 
+# File-picking shorthand
+function f
+{
+    if [ "$#" -eq "0" ]; then
+        fd -n | hs
+    else
+        "$@" $(fd -n | hs)
+    fi
+}
+
 # Shorthands for quitting terminal 
 function :q { exit ; }
 function qq { exit ; }
