@@ -49,6 +49,8 @@ hi MatchParen   ctermbg=195 cterm=Underline
 hi Include      ctermfg=32
 hi Macro        ctermfg=32
 
+hi Visual ctermfg=None ctermbg=195 cterm=None
+
 " Markdown
 hi markdownH1   ctermfg=32         ctermbg=None     cterm=Bold
 hi markdownH2   ctermfg=32         ctermbg=None     cterm=Bold
