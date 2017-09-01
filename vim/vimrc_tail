@@ -9,7 +9,6 @@ set t_Co=256
 colorscheme snowcone
 set autowrite
 set sw=4
-set notextmode
 set hlsearch
 set incsearch
 set shell=bash\ --login
@@ -21,13 +20,20 @@ set laststatus=2
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
 
+if !has('nvim')
+    set notextmode
+endif
+
+if has('nvim')
+    au VimLeave * set guicursor=a:ver25-blinkon500
+endif
 
 let g:netrw_banner = 0
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
-:command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
+command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
 nnoremap <leader>\ :noh<cr>
 noremap <leader>n :norm 
