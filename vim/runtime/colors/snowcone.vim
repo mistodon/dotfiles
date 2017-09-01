@@ -30,7 +30,7 @@ hi Identifier   ctermfg=32          ctermbg=None       cterm=None
 hi DiffText     ctermfg=88          ctermbg=250        cterm=None
 hi Constant     ctermfg=71          ctermbg=None       cterm=None
 hi Todo         ctermfg=233         ctermbg=118        cterm=Bold
-hi Error        ctermfg=233         ctermbg=124        cterm=Bold
+hi Error        ctermfg=1          ctermbg=None       cterm=Underline
 hi Special      ctermfg=160         ctermbg=None       cterm=None
 hi Ignore       ctermfg=220         ctermbg=None       cterm=Bold
 hi Underline    ctermfg=244         ctermbg=None       cterm=Underline
