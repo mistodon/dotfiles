@@ -33,6 +33,13 @@ function gb { git branch "$@" ; }
 
 function gf { git fetch "$@" ; }
 
+function glogday
+{
+    local date=$1
+    shift 1
+    git log --after "$date 00:00" --before "$date 23:59" "$@"
+}
+
 function gpom { git pull origin master ; }
 
 function gcurr { git rev-parse --abbrev-ref HEAD ; }
