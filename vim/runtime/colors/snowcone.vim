@@ -1,6 +1,6 @@
-set background=dark
+set background=light
 set t_Co=256
-let g:colors_name="calmdown"
+let g:colors_name="snowcone"
 
 let python_highlight_all = 1
 let c_gnu = 1
@@ -78,4 +78,8 @@ hi DiffChange ctermfg=None ctermbg=195
 hi DiffText ctermfg=None ctermbg=153
 hi Folded ctermfg=247 ctermbg=253 cterm=None
 
-"vim: sw=4
+if &diff
+    hi StatusLine ctermfg=15 ctermbg=63 cterm=None
+    hi StatusLineNC ctermfg=15 ctermbg=147 cterm=None
+endif
+
