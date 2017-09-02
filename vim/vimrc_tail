@@ -3,10 +3,10 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
+colorscheme snowcone
 
 set autoindent
 set t_Co=256
-colorscheme snowcone
 set autowrite
 set sw=4
 set hlsearch
@@ -16,8 +16,10 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set nu
 set cul
 set laststatus=2
-
+set nofoldenable
+set diffopt+=context:99999
 set noeb vb t_vb=
+
 au GUIEnter * set vb t_vb=
 
 if !has('nvim')
@@ -28,6 +30,7 @@ if has('nvim')
     au VimLeave * set guicursor=a:ver25-blinkon500
 endif
 
+let g:vim_markdown_folding_disabled=1
 let g:netrw_banner = 0
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
