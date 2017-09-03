@@ -1,6 +1,12 @@
 Dotfiles
 ===
 
+Requirements
+---
+1.  Heatseeker (hs): https://github.com/rschmitt/heatseeker (for the `f` command).
+2.  Selecta (selecta): https://github.com/garybernhardt/selecta (for \f command in vim).
+    -   Note that heatseeker has some weird behaviour in vim - hence using selecta.
+
 bashrc
 ---
 Add the following line to your .bashrc/.bash_profile/.profile:
