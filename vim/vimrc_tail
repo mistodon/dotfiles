@@ -54,8 +54,8 @@ nnoremap <leader>, :s/,/,\r/g<cr>
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
-nnoremap g[ gT
-nnoremap g] gt
+nnoremap <C-h> gT
+nnoremap <C-l> gt
 
 nnoremap <cr> o<esc>
 
