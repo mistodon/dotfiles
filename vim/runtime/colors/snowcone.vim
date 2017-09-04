@@ -32,6 +32,8 @@ hi Cursor       ctermfg=240         ctermbg=None       cterm=None
 hi SpecialKey   ctermfg=87          ctermbg=None       cterm=Bold
 hi Directory    ctermfg=76          ctermbg=None       cterm=None
 hi ErrorMsg     ctermfg=124         ctermbg=White      cterm=None
+hi NonText      ctermfg=242
+hi EndOfBuffer  ctermfg=242
 hi PreProc      ctermfg=242         ctermbg=None       cterm=None
 hi Type         ctermfg=127         ctermbg=None       cterm=None
 hi Statement    ctermfg=75          ctermbg=None       cterm=None
