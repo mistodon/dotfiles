@@ -1,4 +1,4 @@
-nnoremap <leader>p :CtrlP<cr>
+nnoremap <leader>f :CtrlP<cr>
 
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
@@ -7,25 +7,3 @@ let g:ctrlp_prompt_mappings = {
 
 let g:ctrlp_max_files = 0
 
-
-function! HeatseekerCommand(choice_command, hs_args, first_command, rest_command)
-    try
-        let selections = system(a:choice_command . " | hs " . a:hs_args)
-    catch /Vim:Interrupt/
-        redraw!
-        return
-    endtry
-    redraw!
-    let first = 1
-    for selection in split(selections, "\n")
-        if first
-            exec a:first_command . " " . selection
-            let first = 0
-        else
-            exec a:rest_command . " " . selection
-        endif
-    endfor
-endfunction
-
-nnoremap <leader>f :call HeatseekerCommand("fd -n <bar> unixify_paths", "", ':tabe', ':tabe')<cr>
-nnoremap <leader>F :call HeatseekerCommand("fd -n ", "", ':e', ':tabe')<cr>

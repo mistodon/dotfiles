@@ -27,7 +27,6 @@ function qq { exit ; }
 
 function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
-function unixify_paths { sed 's;\\;/;g' ; }
 
 # Git shorthands
 function gs { git status "$@" ; }
