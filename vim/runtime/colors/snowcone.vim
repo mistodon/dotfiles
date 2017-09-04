@@ -16,7 +16,17 @@ hi TabLineSel ctermfg=75 cterm=Underline
 hi TabLineFill ctermfg=253
 
 " Normal stuff
-hi Normal       ctermfg=240         ctermbg=15         cterm=None
+if has("win32unix")
+    " Hack to fix ConEmu's weird underlining of white??
+    hi Normal       ctermfg=240         ctermbg=7          cterm=None
+    hi LineNr       ctermfg=248     ctermbg=7
+    hi CursorLineNr ctermfg=252     ctermbg=7
+else
+    hi Normal       ctermfg=240         ctermbg=15         cterm=None
+    hi LineNr       ctermfg=248     ctermbg=15
+    hi CursorLineNr ctermfg=252     ctermbg=15
+endif
+
 hi Search       ctermfg=None        ctermbg=120        cterm=None
 hi Cursor       ctermfg=240         ctermbg=None       cterm=None
 hi SpecialKey   ctermfg=87          ctermbg=None       cterm=Bold
@@ -34,8 +44,6 @@ hi Error        ctermfg=1          ctermbg=None       cterm=Underline
 hi Special      ctermfg=160         ctermbg=None       cterm=None
 hi Ignore       ctermfg=220         ctermbg=None       cterm=Bold
 hi Underline    ctermfg=244         ctermbg=None       cterm=Underline
-hi LineNr       ctermfg=248     ctermbg=15
-hi CursorLineNr ctermfg=252     ctermbg=15
 hi FoldColumn   ctermfg=247         ctermbg=None       cterm=Bold
 hi StatusLineNC ctermfg=255         ctermbg=250        cterm=None
 hi StatusLine   ctermfg=247         ctermbg=253        cterm=None
