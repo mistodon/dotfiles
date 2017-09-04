@@ -1,5 +1,14 @@
 function fm { explorer . ; }
 
+function conemu_load_settings
+{
+    cp "${DOTFILES_REPO_PATH}/ConEmu.xml" ~/AppData/Roaming/ConEmu.xml
+}
+
+function conemu_save_settings
+{
+    cp ~/AppData/Roaming/ConEmu.xml "${DOTFILES_REPO_PATH}/ConEmu.xml"
+}
 
 which make &>/dev/null
 if [ $? -ne 0 ]; then
