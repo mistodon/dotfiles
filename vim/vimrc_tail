@@ -39,8 +39,10 @@ let g:cpp_class_decl_highlight = 1
 command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
 nnoremap / :set nohls<cr>/
-nnoremap ? :set hls<bar>:noh<cr>/
+nnoremap ? :set hls<cr>/
 nnoremap <leader>\ :noh<cr>
+nnoremap * :set hls<cr>*
+nnoremap # :set hls<cr>#
 noremap <leader>n :norm 
 noremap <leader>/ :norm 0i// <cr>
 noremap <leader>? :norm 03x<cr>
