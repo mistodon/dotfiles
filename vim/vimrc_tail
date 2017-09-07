@@ -44,8 +44,7 @@ nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
 noremap <leader>n :norm 
-noremap <leader>/ :norm 0i// <cr>
-noremap <leader>? :norm 03x<cr>
+noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
@@ -71,6 +70,52 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
+let s:comment_map = { 
+    \   "bash": '#',
+    \   "bash_profile": '#',
+    \   "bashrc": '#',
+    \   "bat": 'REM',
+    \   "c": '\/\/',
+    \   "cpp": '\/\/',
+    \   "go": '\/\/',
+    \   "java": '\/\/',
+    \   "javascript": '\/\/',
+    \   "lua": '--',
+    \   "python": '#',
+    \   "ruby": '#',
+    \   "rust": '\/\/',
+    \   "scala": '\/\/',
+    \   "sh": '#',
+    \   "tex": '%',
+    \   "vim": '"',
+    \ }
+
+function! ToggleComment()
+    if has_key(s:comment_map, &filetype)
+        let comment_leader = s:comment_map[&filetype]
+        if getline('.') =~ "^\\s*" . comment_leader . " " 
+            " Uncomment the line
+            execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
+        else 
+            if getline('.') =~ "^\\s*" . comment_leader
+                " Uncomment the line
+                execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
+            else
+                " Comment the line
+                " execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
+                execute "silent s/^/" . comment_leader . " /"
+            end
+        end
+    else
+        echo "No comment leader found for filetype"
+    end
+endfunction
+
+nnoremap <leader>/ :call ToggleComment()<cr>
+vnoremap <leader>/ :call ToggleComment()<cr>
+
 
 set exrc
 set secure
