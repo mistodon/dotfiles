@@ -20,7 +20,7 @@ function msvcup
 function msbuild
 {
     echo "WARNING: This function is pure janky and has a hardcoded path in it"
-    echo "  If you installed this repo anywhere but ~/bin/terminal-helpers it ain't gonna work"
-    cmd "/C %HOME%/bin/terminal-helpers/windows_bats/msbuild.bat $@"
+    echo "  If you installed this repo anywhere but ~/bin/dotfiles it ain't gonna work"
+    cmd "/C %HOME%/bin/dotfiles/windows_bats/msbuild.bat $@"
 }
 
