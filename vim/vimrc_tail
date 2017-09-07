@@ -54,6 +54,8 @@ nnoremap <leader>d :tabe .<cr>
 nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>, :s/,/,\r/g<cr>
 nnoremap <leader>w :%s/^ *$//g<cr>:noh<cr><C-o>
+nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
+nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
