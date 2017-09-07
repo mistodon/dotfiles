@@ -1,40 +1,52 @@
 Dotfiles
 ===
 
+
 Requirements
 ---
 1.  Heatseeker (hs): https://github.com/rschmitt/heatseeker (for the `f` command).
 2.  Selecta (selecta): https://github.com/garybernhardt/selecta (for \f command in vim).
     -   Note that heatseeker has some weird behaviour in vim - hence using selecta.
+    -   Also note that neither work on Cygwin properly...
 
-bashrc
+
+Setup
 ---
-Add the following line to your .bashrc/.bash_profile/.profile:
 
-`source /path/to/terminal-helpers/bashrc`
+The following examples assume that you cloned this repo into `~/bin/dotfiles`, but this is not required.
 
-git
----
+
+### bashrc
+
+Add the following line to your .bashrc|.bash_profile|.profile|whatever:
+
+`source ~/bin/dotfiles/bashrc`
+
+
+### git
+
 Execute the following command:
 
-`git config --global core.excludesfile /path/to/terminal-helpers/git/gitignore`
+`git config --global core.excludesfile ~/bin/dotfiles/git/gitignore`
 
-tmux
----
+
+### tmux
+
 Add the following line to your .tmux.conf:
 
-`source-file /path/to/terminal-helpers/tmux/tmux.conf`
+`source-file ~/bin/dotfiles/tmux/tmux.conf`
 
 If you get errors sourcing this file, ensure that the line-endings are 'LF' and not 'CRLF'.
 
-vim
----
+
+### vim
+
 Add the following line to your .vimrc:
 
-`set runtimepath+=/path/to/terminal-helpers/vim/runtime`
+`set runtimepath+=~/bin/dotfiles/vim/runtime`
 
 Then add the following line to your .vimrc (depending on OS):
 
-`so /path/to/terminal-helpers/vim/vimrc_unix.vim`
+`so ~/bin/dotfiles/vim/vimrc_unix.vim`
 
-`so /path/to/terminal-helpers/vim/vimrc_windows.vim`
+`so ~/bin/dotfiles/vim/vimrc_windows.vim`
