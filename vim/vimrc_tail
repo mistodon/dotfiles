@@ -22,6 +22,9 @@ set noeb vb t_vb=
 
 au GUIEnter * set vb t_vb=
 
+" File associations
+au BufNewFile,BufRead *.geojson set syntax=javascript
+
 if !has('nvim')
     set notextmode
 endif
