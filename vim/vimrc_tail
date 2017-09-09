@@ -19,6 +19,8 @@ set laststatus=2
 set nofoldenable
 set diffopt+=context:99999
 set noeb vb t_vb=
+set clipboard=unnamed
+set backspace=indent,eol,start
 
 au GUIEnter * set vb t_vb=
 
