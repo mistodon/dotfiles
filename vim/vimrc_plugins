@@ -2,4 +2,5 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'timonv/vim-cargo'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'gerw/vim-HiLinkTrace'
 
