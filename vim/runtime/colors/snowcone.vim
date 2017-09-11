@@ -17,6 +17,7 @@ hi TabLineFill   ctermfg=253   guifg=#dadada
 
 " Normal stuff
 hi Normal        ctermfg=240   ctermbg=15    cterm=None    guifg=#585858 guibg=#ffffff gui=NONE      
+hi Operator      ctermfg=240   ctermbg=15    cterm=None    guifg=#585858 guibg=#ffffff gui=NONE      
 hi Search        ctermfg=None  ctermbg=120   cterm=None    guifg=NONE    guibg=#87ff87 gui=NONE      
 hi Cursor        ctermfg=240   ctermbg=None  cterm=None    guifg=#585858 guibg=NONE    gui=NONE      
 hi SpecialKey    ctermfg=87    ctermbg=None  cterm=Bold    guifg=#5fffff guibg=NONE    gui=Bold      
