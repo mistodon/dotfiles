@@ -26,6 +26,7 @@ hi ErrorMsg      ctermfg=124   ctermbg=White cterm=None    guifg=#af0000 guibg=W
 hi PreProc       ctermfg=242   ctermbg=None  cterm=None    guifg=#6c6c6c guibg=NONE    gui=NONE      
 hi Type          ctermfg=127   ctermbg=None  cterm=None    guifg=#af00af guibg=NONE    gui=NONE      
 hi Statement     ctermfg=75    ctermbg=None  cterm=None    guifg=#5fafff guibg=NONE    gui=NONE      
+hi Keyword       ctermfg=75    ctermbg=None  cterm=None    guifg=#8800dd guibg=NONE    gui=NONE      
 hi Comment       ctermfg=244   ctermbg=None  cterm=None    guifg=#808080 guibg=NONE    gui=NONE      
 hi Identifier    ctermfg=32    ctermbg=None  cterm=None    guifg=#0087d7 guibg=NONE    gui=NONE      
 hi DiffText      ctermfg=88    ctermbg=250   cterm=None    guifg=#870000 guibg=#bcbcbc gui=NONE      
