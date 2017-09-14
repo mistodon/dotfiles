@@ -84,6 +84,7 @@ let s:comment_map = {
     \   "bat": 'REM',
     \   "c": '\/\/',
     \   "cpp": '\/\/',
+    \   "cs": '\/\/',
     \   "go": '\/\/',
     \   "java": '\/\/',
     \   "javascript": '\/\/',
