@@ -3,7 +3,7 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
-colorscheme snowcone
+colorscheme tori
 
 set autoindent
 set t_Co=256
@@ -126,3 +126,4 @@ vnoremap <leader>/ :call ToggleComment()<cr>
 set exrc
 set secure
 
+au BufNewFile,BufRead * colorscheme tori
