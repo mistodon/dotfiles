@@ -59,5 +59,13 @@ if &diff
 endif
 
 
+hi markdownH1   guifg=#bb4da3                   gui=Bold        cterm=Bold
+hi markdownH2   guifg=#bb4da3                   gui=Bold        cterm=Bold
+hi markdownH3   guifg=#bb4da3                   gui=Bold        cterm=Bold
+hi markdownH4   guifg=#bb4da3                   gui=Bold        cterm=Bold
+hi markdownH5   guifg=#bb4da3                   gui=Bold        cterm=Bold
+hi markdownH6   guifg=#bb4da3                   gui=Bold        cterm=Bold
+
+
 syntax match toriParens "[()\[\]]"
 hi toriParens   guifg=#24c2c7
