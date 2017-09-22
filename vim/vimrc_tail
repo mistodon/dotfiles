@@ -68,13 +68,7 @@ nnoremap <C-l> gt
 
 nnoremap <cr> o<esc>
 
-nmap <leader>ch :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+nmap <leader>ch :HLT<cr>
 
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
 let s:comment_map = { 
