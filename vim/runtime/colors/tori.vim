@@ -1,9 +1,10 @@
 set background=light
 set t_Co=256
-let g:colors_name="tori"
 
+let g:colors_name="tori"
 let python_highlight_all = 1
 let c_gnu = 1
+
 
 hi Normal       guifg=#585858   guibg=#ffffff   gui=NONE    cterm=None
 hi Comment      guifg=#808080
@@ -34,6 +35,10 @@ au InsertEnter * hi CursorLine      guibg=#ffdfff   gui=NONE    cterm=None
 hi CursorLineNr guifg=#585858   guibg=#ffffff 
 hi LineNr       guifg=#a8a8a8   guibg=#ffffff 
 hi MatchParen                   guibg=#dfffff   gui=Underline   cterm=Underline
+hi Pmenu        guifg=#585858   guibg=#eeeeee   gui=NONE    cterm=None
+hi PmenuSel     guifg=#0087d7   guibg=#dfffff   gui=NONE    cterm=None
+hi PmenuSbar                    guibg=#a8a8a8   gui=NONE    cterm=None
+hi PmenuThumb                   guibg=#0087d7   gui=NONE    cterm=None
 hi Search       guifg=#585858   guibg=#a7ffa7   gui=NONE    cterm=None      
 hi StatusLine   guifg=#a8a8a8   guibg=#eeeeee   gui=NONE    cterm=None
 hi StatusLineNC guifg=#eeeeee   guibg=#a8a8a8   gui=NONE    cterm=None
