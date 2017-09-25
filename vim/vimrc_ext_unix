@@ -12,4 +12,11 @@ endfunction
 nnoremap <leader>f :call SelectaCommand("fd -n", "", ":tabe")<cr>
 nnoremap <leader>F :call SelectaCommand("fd -n", "", ":e")<cr>
 
+map  <C-A> <Home>
+imap <C-A> <Home>
+vmap <C-A> <Home>
+map  <C-E> <End>
+imap <C-E> <End>
+vmap <C-E> <End>
+
 imap § <C-o>
