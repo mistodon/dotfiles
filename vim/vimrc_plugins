@@ -4,4 +4,6 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'chemzqm/vim-jsx-improve'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
