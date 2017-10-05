@@ -3,6 +3,7 @@ readonly DOTFILES_REPO_PATH=$(cd $(dirname $BASH_SOURCE) && pwd)
 export PS1="\[\033[36m\]\u\[\033[m\]@[\[\033[32m\]\D{%F %T}\[\033[m\]]:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export WWW_HOME="https://duckduckgo.com"
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
 function mkcd
