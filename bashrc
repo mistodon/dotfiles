@@ -66,6 +66,7 @@ function f
 # Shorthands for quitting terminal 
 function :q { exit ; }
 function qq { exit ; }
+function qall { tmux kill-server; }
 
 function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
