@@ -32,7 +32,7 @@ endfunction
 if has('win32')
     nnoremap <leader>f :call HeatseekerCommand("dir /a-d /s /b", "", ':e', ':tabe')<CR>
 else
-    nnoremap <leader>f :call HeatseekerCommand("find . ! -path '*/.git/*' -type f -follow", "", ':e', ':tabe')<cr>
+    nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ':e', ':tabe')<cr>
 endif
 
 
