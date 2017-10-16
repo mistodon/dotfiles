@@ -75,6 +75,7 @@ function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function gs { git status "$@" ; }
 
 function ga { git add "$@" ; }
+function gau { git add $(git ls-files -o --exclude-standard) ; }
 
 function gr { git reset "$@" ; }
 
