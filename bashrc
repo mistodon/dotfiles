@@ -70,6 +70,7 @@ function qall { tmux kill-server; }
 
 function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
+function today { date +"%A %Y-%m-%d" ; }
 
 function rgi
 {
