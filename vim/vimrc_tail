@@ -23,6 +23,7 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 
 au GUIEnter * set vb t_vb=
+au CursorHold,CursorHoldI * checktime
 
 " File associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
