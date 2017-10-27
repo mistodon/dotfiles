@@ -66,6 +66,9 @@ hi markdownH4   guifg=#bb4da3                   gui=Bold        cterm=Bold
 hi markdownH5   guifg=#bb4da3                   gui=Bold        cterm=Bold
 hi markdownH6   guifg=#bb4da3                   gui=Bold        cterm=Bold
 
+hi htmlBold     guifg=#000000                   gui=Bold        cterm=Bold
+hi htmlItalic   guifg=#0087d7                   gui=Bold        cterm=Bold
+
 hi Title        guifg=#bb4da3                   gui=Bold        cterm=Bold
 
 syntax match toriParens "[()\[\]]"
