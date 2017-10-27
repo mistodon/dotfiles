@@ -60,7 +60,7 @@ nnoremap <leader>D :e .<cr>
 nnoremap <leader>u :tabe %:h<cr>
 nnoremap <leader>U :e %:h<cr>
 nnoremap <leader>q :only <bar> :q<cr>
-nnoremap <leader>, :s/,/,\r/g<cr>
+nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/^ *$//g<cr>:noh<cr><C-o>
 nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
 nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
