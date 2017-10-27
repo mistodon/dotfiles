@@ -71,6 +71,13 @@ function qall { tmux kill-server; }
 function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 
+function rgi
+{
+    local query=$1
+    local replacement=$2
+    rg $query -l | xargs sed -i "" "s/$1/$2/g"
+}
+
 # Git shorthands
 function gs { git status "$@" ; }
 
