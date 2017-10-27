@@ -75,7 +75,7 @@ function rgi
 {
     local query=$1
     local replacement=$2
-    rg $query -l | xargs sed -i "" "s/$1/$2/g"
+    rg $query -l | xargs sed -i "" "s;$1;$2;g"
 }
 
 # Git shorthands
