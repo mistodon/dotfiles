@@ -76,7 +76,13 @@ function rgi
 {
     local query=$1
     local replacement=$2
-    rg $query -l | xargs sed -i "" "s;$1;$2;g"
+
+    if [ "$OSTYPE" == "msys" ]
+    then
+        rg $query -l | sed 's;\\;/;g' | xargs sed -i "" "s;$1;$2;g"
+    else
+        rg $query -l | xargs sed -i "" "s;$1;$2;g"
+    fi
 }
 
 # Git shorthands
