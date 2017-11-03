@@ -7,6 +7,7 @@ Requirements
 1.  Heatseeker (hs): https://github.com/rschmitt/heatseeker (for the `f` command).
 2.  Selecta (selecta): https://github.com/garybernhardt/selecta (for \f command in vim).
     -   Note that heatseeker has some weird behaviour in vim - hence using selecta.
+    -   Scratch that ... just using heatseeker now? Should probably remove selecta.
     -   Also note that neither work on Cygwin properly...
 
 
@@ -25,9 +26,9 @@ Add the following line to your .bashrc|.bash_profile|.profile|whatever:
 
 ### git
 
-Execute the following command:
+Make sure you are running Git 2.8 or higher.
 
-`git config --global core.excludesfile ~/bin/dotfiles/git/gitignore`
+Run `./git/configure_git.sh` in this repo (or look at it and run the commands within at your leisure).
 
 
 ### tmux
