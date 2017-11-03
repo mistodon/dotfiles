@@ -21,6 +21,9 @@ set diffopt+=context:99999
 set noeb vb t_vb=
 set clipboard=unnamed
 set backspace=indent,eol,start
+set re=1
+set ttyfast
+set lazyredraw
 
 au GUIEnter * set vb t_vb=
 au CursorHold,CursorHoldI * checktime
