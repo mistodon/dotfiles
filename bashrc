@@ -161,6 +161,11 @@ function gnuke
     fi
 }
 
+function gidentity
+{
+    git config user.name "$1"
+    git config user.email "$2"
+}
 
 # Local server
 function lhost
