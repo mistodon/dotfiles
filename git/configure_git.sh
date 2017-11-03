@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-readonly git_dir=`dirname $BASH_SOURCE`
+readonly git_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
 git config --global core.excludesfile ${git_dir}/gitignore
 git config --global core.editor vim
