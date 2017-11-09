@@ -30,6 +30,9 @@ au CursorHold,CursorHoldI * checktime
 
 " File associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
+au BufNewFile,BufRead *.vs set syntax=glsl
+au BufNewFile,BufRead *.fs set syntax=glsl
+
 
 if !has('nvim')
     set notextmode
@@ -47,7 +50,7 @@ let g:cpp_class_decl_highlight = 1
 
 command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
-nnoremap / :set nohls<cr>/
+nnoremap / :set nohls<cr>/\c
 nnoremap ? :set hls<cr>/
 nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
