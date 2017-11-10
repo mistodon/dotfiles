@@ -53,6 +53,15 @@ function mkcd
     cd "$*"
 }
 
+# `cd` to directory of the given file
+function cdf
+{
+    local path=$(dirname $(fd "$@" | head -1))
+    if [ -n "$path" ]; then
+        cd $path
+    fi
+}
+
 # File-picking shorthand
 function f
 {
