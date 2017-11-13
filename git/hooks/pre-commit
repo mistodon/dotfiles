@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rg -q -i "heyjude"
+
+if [ "$?" -eq "0" ]; then
+    echo "\033[1;31mHIGHLY FATAL ERROR: Commit contains HEYJUDEs:" >&2
+    rg -i "heyjude"
+    exit 1
+fi
+
