@@ -131,3 +131,9 @@ set exrc
 set secure
 
 au BufNewFile,BufRead * colorscheme tori
+
+set clipboard=unnamed
+set termguicolors
+
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum

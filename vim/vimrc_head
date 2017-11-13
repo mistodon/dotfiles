@@ -1,3 +1,4 @@
+set runtimepath+=~/.dotfiles/vim/runtime
 set nocompatible
 filetype off
 

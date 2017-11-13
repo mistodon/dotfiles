@@ -14,6 +14,13 @@ Requirements
 Setup
 ---
 
+1.  Run `setup.sh` in the root of this repo.
+2.  Add `source ~/.dotfiles/.bashrc` to your .bashrc|.bash_profile|.profile
+
+
+Old setup
+---
+
 The following examples assume that you cloned this repo into `~/bin/dotfiles`, but this is not required.
 
 
