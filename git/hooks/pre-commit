@@ -1,31 +1,34 @@
 #!/bin/bash
 
 readonly changed_files=$(git diff --cached --name-only)
+exit_code=0
+
+function check_absence
+{
+    local pattern=$1
+    local hysteric=$2
+    local message=$3
+
+    rg -iq $pattern ${changed_files} >&2
+    local code=$?
+
+    if [ "$code" -eq "0" ]; then
+        echo -e "\033[0;31m${hysteric}\033[1;37m: ${message}:\033[0m" >&2
+        rg -i $pattern ${changed_files} >&2
+        echo
+    fi
+
+    ((exit_code |= $code))
+}
 
 
-# Check for 'heyjude's:
-rg -i "heyjude" ${changed_files} >&2
+check_absence "heyjude" "DISASTER" "Commit contains HEYJUDEs"
+check_absence "\t" "OH THE HUMANITY" "Commit contains tabs"
+check_absence "\s$" "HEAVENS TO BETSY" "Commit contains trailing whitespace"
+check_absence "$APIKEY" "ANYTHING BUT THIS" "Commit contains your API key"
+check_absence "$DEVTOKEN" "SAY IT ISN'T SO" "Commit contains your dev token"
 
-if [ "$?" -eq "0" ]; then
-    echo -e "\033[1;31mDISASTER:\033[0m Commit contains HEYJUDEs ^" >&2
-    exit 1
-fi
-
-
-# Check for tabs:
-rg "\t" ${changed_files} >&2
-
-if [ "$?" -eq "0" ]; then
-    echo -e "\033[1;31mOH THE HUMANITY:\033[0m Commit contains tabs ^" >&2
-    exit 1
-fi
-
-
-# Check for trailing whitespace:
-rg "\s$" ${changed_files} >&2
-
-if [ "$?" -eq "0" ]; then
-    echo -e "\033[1;31mHEAVENS TO BETSY:\033[0m Commit contains trailing whitespace ^" >&2
+if [ "$exit_code" -ne "1" ]; then
     exit 1
 fi
 
