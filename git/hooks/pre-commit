@@ -1,10 +1,31 @@
-#!/bin/sh
+#!/bin/bash
 
-rg -q -i "heyjude"
+readonly changed_files=$(git diff --cached --name-only)
+
+
+# Check for 'heyjude's:
+rg -i "heyjude" ${changed_files} >&2
 
 if [ "$?" -eq "0" ]; then
-    echo "\033[1;31mHIGHLY FATAL ERROR: Commit contains HEYJUDEs:" >&2
-    rg -i "heyjude"
+    echo -e "\033[1;31mDISASTER:\033[0m Commit contains HEYJUDEs ^" >&2
+    exit 1
+fi
+
+
+# Check for tabs:
+rg "\t" ${changed_files} >&2
+
+if [ "$?" -eq "0" ]; then
+    echo -e "\033[1;31mOH THE HUMANITY:\033[0m Commit contains tabs ^" >&2
+    exit 1
+fi
+
+
+# Check for trailing whitespace:
+rg "\s$" ${changed_files} >&2
+
+if [ "$?" -eq "0" ]; then
+    echo -e "\033[1;31mHEAVENS TO BETSY:\033[0m Commit contains trailing whitespace ^" >&2
     exit 1
 fi
 
