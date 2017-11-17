@@ -74,8 +74,8 @@ function f
 }
 
 # Shorthands for quitting terminal 
-function :q { exit ; }
-function qq { exit ; }
+alias :q='exit'
+alias qq='exit'
 function qall { tmux kill-server; }
 
 function bell { tput bel ; }
