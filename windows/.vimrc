@@ -1,6 +1,6 @@
-exec "so " . expand('<sfile>:p:h') . "/vimrc_head"
-exec "so " . expand('<sfile>:p:h') . "/vimrc_plugins"
-exec "so " . expand('<sfile>:p:h') . "/vimrc_plugins_windows"
-exec "so " . expand('<sfile>:p:h') . "/vimrc_tail"
-exec "so " . expand('<sfile>:p:h') . "/vimrc_ext_windows"
+exec "so ~/.dotfiles/vim/vimrc_head"
+exec "so ~/.dotfiles/vim/vimrc_plugins"
+exec "so ~/.dotfiles/vim/vimrc_plugins_windows"
+exec "so ~/.dotfiles/vim/vimrc_tail"
+exec "so ~/.dotfiles/vim/vimrc_ext_windows"
 
