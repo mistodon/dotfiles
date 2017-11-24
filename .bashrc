@@ -79,6 +79,8 @@ function f
     fi
 }
 
+alias lx='exa'
+
 # Shorthands for quitting terminal 
 alias :q='exit'
 alias qq='exit'
