@@ -58,6 +58,11 @@ nnoremap # :set hls<cr>#
 noremap <leader>n :norm 
 noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
+nnoremap <leader>r :!rg 
+
+" TODO: Only works on macOS at the moment - need a cross platform copy/paste
+nnoremap <leader>R yiw:!rg $(pbpaste)<cr>
+
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>c :Diff<cr>
