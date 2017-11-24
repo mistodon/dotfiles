@@ -50,6 +50,8 @@ let g:cpp_class_decl_highlight = 1
 
 command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
+command! FromTheTop so $MYVIMRC
+
 nnoremap / :set nohls<cr>/\c
 nnoremap ? :set hls<cr>/
 nnoremap <leader>\ :noh<cr>
@@ -75,6 +77,7 @@ nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
 nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
 nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
+nnoremap Y 0y$
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
