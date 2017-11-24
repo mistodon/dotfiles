@@ -7,6 +7,7 @@ export WWW_HOME="https://duckduckgo.com"
 function from-the-top
 {
     source ~/.bashrc
+    tmux source-file ~/.tmux.conf
 }
 
 # Git in prompt from https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
