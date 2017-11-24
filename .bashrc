@@ -126,12 +126,6 @@ function glogday
     git log --after "$date 00:00" --before "$date 23:59" "$@"
 }
 
-function gpom { git pull origin master ; }
-
-function gcurr { git rev-parse --abbrev-ref HEAD ; }
-
-function gsub { git submodule update --init --recursive --remote ; }
-
 function gpull
 {
     local branch="$(git rev-parse --abbrev-ref HEAD)"
@@ -148,13 +142,6 @@ function gpush
         return 1
     fi
     git push origin "$branch"
-}
-
-function withstash
-{
-    git stash
-    "$@"
-    git stash pop
 }
 
 function gnuke
