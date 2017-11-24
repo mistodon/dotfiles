@@ -4,6 +4,11 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export WWW_HOME="https://duckduckgo.com"
 
+function from-the-top
+{
+    source ~/.bashrc
+}
+
 # Git in prompt from https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
