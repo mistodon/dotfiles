@@ -253,3 +253,11 @@ function truecolor_test
         printf "\n";
     }'
 }
+
+
+function vrun
+{
+    local script_file=~/.vrun
+    vim $script_file
+    sh $script_file
+}
