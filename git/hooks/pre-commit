@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly changed_files=$(git diff --cached --name-only)
+readonly changed_files=$(git diff --cached --name-only --ignore-submodules)
 exit_code=1
 
 function check_absence
