@@ -133,6 +133,16 @@ function gpull
         return 1
     fi
     git pull --rebase origin "$branch"
+    if [ $? -ne 0 ]; then
+        echo -e "\033[1;38mSuggestion:\033[0m maybe try gspull?"
+    fi
+}
+
+function gspull
+{
+    git stash
+    gpull
+    git stash pop
 }
 
 function gpush
