@@ -75,6 +75,8 @@ nnoremap <leader>U :e %:h<cr>
 nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
+nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
+nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
 
 nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
 nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
