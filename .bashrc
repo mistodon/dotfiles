@@ -3,6 +3,7 @@ export PATH="$PATH:~/.dotfiles/bin"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export WWW_HOME="https://duckduckgo.com"
+export EDITOR="vim"
 
 function from-the-top
 {
@@ -101,6 +102,11 @@ function rgi
     else
         rg $query -l | xargs sed -i "" "s;$1;$2;g"
     fi
+}
+
+function rgedit
+{
+    $EDITOR -p $(rg "$1" -l)
 }
 
 # Git shorthands
