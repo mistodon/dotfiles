@@ -1,6 +1,12 @@
 #!/bin/bash
 
 readonly changed_files=$(git diff --cached --name-only --ignore-submodules)
+
+if [ -z "$changed_files" ]; then
+    echo -e "\033[1;38mNo changed files\033[0m"
+    exit 0
+fi
+
 exit_code=1
 
 function check_absence
@@ -14,7 +20,7 @@ function check_absence
 
     if [ "$code" -eq "0" ]; then
         echo -e "\033[0;31m${hysteric}\033[1;37m: ${message}:\033[0m" >&2
-        rg -i $pattern ${changed_files} >&2
+        rg -il $pattern ${changed_files} >&2
         echo
     fi
 
