@@ -188,6 +188,11 @@ function gidentity
     git config user.email "$2"
 }
 
+function gsub
+{
+    git submodule foreach --recursive $@
+}
+
 # Local server
 function lhost
 {
