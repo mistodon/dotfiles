@@ -85,7 +85,16 @@ alias lx='exa'
 # Shorthands for quitting terminal 
 alias :q='exit'
 alias qq='exit'
-function qall { tmux kill-server; }
+
+function qall
+{
+    ps -cax | rg -q "vim"
+    if [ "$?" -eq "0" ]; then
+        echo -e "\033[1;33mvim is running - might wanna deal with that first\033[0m"
+    else
+        tmux kill-server
+    fi
+}
 
 function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
