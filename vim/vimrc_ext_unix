@@ -50,4 +50,4 @@ map  <C-E> <End>
 imap <C-E> <End>
 vmap <C-E> <End>
 
-imap § <C-o>
+imap § _
