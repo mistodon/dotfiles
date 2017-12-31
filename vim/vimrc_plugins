@@ -1,4 +1,5 @@
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 Plugin 'timonv/vim-cargo'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'octol/vim-cpp-enhanced-highlight'

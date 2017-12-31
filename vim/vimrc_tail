@@ -57,10 +57,10 @@ nnoremap ? :set hls<cr>/
 nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
-noremap <leader>n :norm 
+noremap <leader>n :norm
 noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
-nnoremap <leader>r :!rg 
+nnoremap <leader>r :!rg
 
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
 nnoremap <leader>R yiw:!rg $(pbpaste)<cr>
@@ -94,45 +94,33 @@ nnoremap <cr> o<esc>
 nmap <leader>ch :HLT<cr>
 
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
-let s:comment_map = { 
+let s:comment_map = {
     \   "bash": '#',
     \   "bash_profile": '#',
     \   "bashrc": '#',
     \   "bat": 'REM',
-    \   "c": '\/\/',
-    \   "cpp": '\/\/',
-    \   "cs": '\/\/',
-    \   "go": '\/\/',
-    \   "java": '\/\/',
-    \   "javascript": '\/\/',
     \   "lua": '--',
     \   "python": '#',
     \   "ruby": '#',
-    \   "rust": '\/\/',
-    \   "scala": '\/\/',
     \   "sh": '#',
     \   "tex": '%',
     \   "vim": '"',
     \ }
 
 function! ToggleComment()
-    if has_key(s:comment_map, &filetype)
-        let comment_leader = s:comment_map[&filetype]
-        if getline('.') =~ "^\\s*" . comment_leader . " " 
-            " Uncomment the line
-            execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
-        else 
-            if getline('.') =~ "^\\s*" . comment_leader
-                " Uncomment the line
-                execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
-            else
-                " Comment the line
-                " execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
-                execute "silent s/^/" . comment_leader . " /"
-            end
-        end
+    let comment_leader = has_key(s:comment_map, &filetype) ? s:comment_map[&filetype] : '\/\/'
+    if getline('.') =~ "^\\s*" . comment_leader . " "
+        " Uncomment the line
+        execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
     else
-        echo "No comment leader found for filetype"
+        if getline('.') =~ "^\\s*" . comment_leader
+            " Uncomment the line
+            execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
+        else
+            " Comment the line
+            " execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
+            execute "silent s/^/" . comment_leader . " /"
+        end
     end
 endfunction
 
