@@ -61,6 +61,11 @@ function mkcd
     cd "$*"
 }
 
+function shh
+{
+    chmod +x $@
+}
+
 # `cd` to directory of the given file
 function cdf
 {
