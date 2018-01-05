@@ -25,6 +25,10 @@ set re=1
 set ttyfast
 set lazyredraw
 
+" [For gvim
+set guifont=Consolas:h9:cANSI:qDRAFT
+" ]
+
 au GUIEnter * set vb t_vb=
 au CursorHold,CursorHoldI * checktime
 
