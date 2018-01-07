@@ -1,3 +1,20 @@
+set runtimepath+=~/.dotfiles/vim/runtime
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'timonv/vim-cargo'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'gerw/vim-HiLinkTrace'
+Plugin 'chemzqm/vim-jsx-improve'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+" Plugin 'ctrlpvim/ctrlp.vim' ENABLE ON WINDOWS!!
 
 call vundle#end()
 filetype plugin indent on
@@ -142,3 +159,7 @@ set termguicolors
 
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
+
+
+exec "so ~/.dotfiles/vim/vimrc_ext_unix"
+" exec \"so ~/.dotfiles/vim/vimrc_ext_windows\"  ENABLE ON WINDOWS
