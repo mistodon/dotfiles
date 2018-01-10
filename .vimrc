@@ -78,7 +78,10 @@ nnoremap ? :set hls<cr>/
 nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
-noremap <leader>n :norm
+
+" Need the <tab> because git hooks won't allow trailing spaces
+noremap <leader>n :norm<tab>
+
 noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>R :!rg
