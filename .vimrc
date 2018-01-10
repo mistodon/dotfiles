@@ -81,18 +81,18 @@ nnoremap # :set hls<cr>#
 noremap <leader>n :norm
 noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
-nnoremap <leader>r :!rg
+nnoremap <leader>R :!rg
 
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
-nnoremap <leader>R yiw:!rg $(pbpaste)<cr>
+nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
 
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>c :Diff<cr>
-nnoremap <leader>d :tabe .<cr>
-nnoremap <leader>D :e .<cr>
-nnoremap <leader>u :tabe %:h<cr>
-nnoremap <leader>U :e %:h<cr>
+nnoremap <leader>D :tabe .<cr>
+nnoremap <leader>d :e .<cr>
+nnoremap <leader>U :tabe %:h<cr>
+nnoremap <leader>u :e %:h<cr>
 nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>

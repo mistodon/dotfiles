@@ -39,8 +39,8 @@ endif
 " nnoremap <leader>f :call SelectaCommand("fd -n", "", ":tabe")<cr>
 " nnoremap <leader>F :call SelectaCommand("fd -n", "", ":e")<cr>
 
-nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ":tabe", ":tabe")<cr>
-nnoremap <leader>F :call HeatseekerCommand("fd -n", "", ":e", ":tabe")<cr>
+nnoremap <leader>F :call HeatseekerCommand("fd -n", "", ":tabe", ":tabe")<cr>
+nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ":e", ":tabe")<cr>
 
 
 map  <C-A> <Home>
