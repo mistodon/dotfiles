@@ -106,7 +106,6 @@ nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
 nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap Y 0y$
 
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>l
