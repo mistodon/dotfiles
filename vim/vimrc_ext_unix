@@ -1,15 +1,3 @@
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
-
-
 function! HeatseekerCommand(choice_command, hs_args, first_command, rest_command)
     try
         let selections = system(a:choice_command . " | hs " . a:hs_args)
@@ -36,9 +24,6 @@ else
 endif
 
 
-" nnoremap <leader>f :call SelectaCommand("fd -n", "", ":tabe")<cr>
-" nnoremap <leader>F :call SelectaCommand("fd -n", "", ":e")<cr>
-
 nnoremap <leader>F :call HeatseekerCommand("fd -n", "", ":tabe", ":tabe")<cr>
 nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ":e", ":tabe")<cr>
 
@@ -50,4 +35,3 @@ map  <C-E> <End>
 imap <C-E> <End>
 vmap <C-E> <End>
 
-imap § _
