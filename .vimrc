@@ -219,12 +219,6 @@ endif
 
 if has("win32unix")
     nnoremap <leader>f :CtrlP<cr>
-
-    let g:ctrlp_prompt_mappings = {
-                \ 'AcceptSelection("e")': ['<c-t>'],
-                \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-                \ }
-
     let g:ctrlp_max_files = 0
 endif
 
