@@ -14,7 +14,7 @@ Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" Plugin 'ctrlpvim/ctrlp.vim' ENABLE ON WINDOWS!!
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -163,5 +163,11 @@ set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
 
-exec "so ~/.dotfiles/vim/vimrc_ext_unix"
-" exec \"so ~/.dotfiles/vim/vimrc_ext_windows\"  ENABLE ON WINDOWS
+if has("win32")
+    exec "so ~/.dotfiles/vim/vimrc_ext_unix"
+endif
+
+if !has("win32")
+    exec "so ~/.dotfiles/vim/vimrc_ext_windows"
+endif
+
