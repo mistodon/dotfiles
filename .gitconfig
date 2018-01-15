@@ -1,8 +1,10 @@
 [diff]
 	tool = vimdiff
 [user]
-	useConfigOnly = true
+	useconfigonly = true
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore
-	hooksPath = ~/.dotfiles/git/hooks
-	editor = vim
+	hookspath = ~/.dotfiles/git/hooks
+    editor = vim
+[branch]
+    autosetupmerge = always
