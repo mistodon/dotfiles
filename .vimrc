@@ -87,7 +87,7 @@ noremap <leader>n :norm<tab>
 
 noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
-nnoremap <leader>R :!rg
+nnoremap <leader>R :!rg<tab>
 
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
 nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
@@ -99,6 +99,7 @@ nnoremap <leader>D :tabe .<cr>
 nnoremap <leader>d :e .<cr>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>u :e %:h<cr>
+nnoremap <leader>g :buffers<cr>:b<tab>
 nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
