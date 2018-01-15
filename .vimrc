@@ -44,6 +44,7 @@ set backspace=indent,eol,start
 set re=1
 set ttyfast
 set lazyredraw
+set ruler
 
 " [For gvim
 set guifont=Consolas:h9:cANSI:qDRAFT
