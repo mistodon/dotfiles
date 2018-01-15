@@ -179,10 +179,52 @@ set t_8b=[48;2;%lu;%lu;%lum
 
 
 if !has("win32unix")
-    exec "so ~/.dotfiles/vim/vimrc_ext_unix"
+    function! HeatseekerCommand(choice_command, hs_args, first_command, rest_command)
+        try
+            let selections = system(a:choice_command . " | hs " . a:hs_args)
+        catch /Vim:Interrupt/
+            redraw!
+            return
+        endtry
+        redraw!
+        let first = 1
+        for selection in split(selections, "\n")
+            if first
+                exec a:first_command . " " . selection
+                let first = 0
+            else
+                exec a:rest_command . " " . selection
+            endif
+        endfor
+    endfunction
+
+    if has('win32')
+        nnoremap <leader>f :call HeatseekerCommand("dir /a-d /s /b", "", ':e', ':tabe')<CR>
+    else
+        nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ':e', ':tabe')<cr>
+    endif
+
+
+    nnoremap <leader>F :call HeatseekerCommand("fd -n", "", ":tabe", ":tabe")<cr>
+    nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ":e", ":tabe")<cr>
+
+
+    map  <C-A> <Home>
+    imap <C-A> <Home>
+    vmap <C-A> <Home>
+    map  <C-E> <End>
+    imap <C-E> <End>
+    vmap <C-E> <End>
 endif
 
 if has("win32unix")
-    exec "so ~/.dotfiles/vim/vimrc_ext_windows"
+    nnoremap <leader>f :CtrlP<cr>
+
+    let g:ctrlp_prompt_mappings = {
+                \ 'AcceptSelection("e")': ['<c-t>'],
+                \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+                \ }
+
+    let g:ctrlp_max_files = 0
 endif
 
