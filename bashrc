@@ -85,7 +85,14 @@ function f
     fi
 }
 
-alias lx='exa'
+function lx
+{
+    if [ $# -eq 0 ]; then
+        exa -a -1
+    else
+        exa "$@"
+    fi
+}
 
 # Shorthands for quitting terminal 
 alias :q='exit'
