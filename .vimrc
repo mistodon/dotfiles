@@ -95,6 +95,9 @@ nnoremap <leader>R :!rg<tab>
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
 nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
 
+" Split comma separated things onto multiple lines
+nnoremap <leader>, :set nohls<cr>%i<cr><esc>%a<cr><esc>:s/,/,\r/g<cr>j0=%
+
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>c :Diff<cr>
@@ -104,7 +107,6 @@ nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>u :e %:h<cr>
 nnoremap <leader>g :buffers<cr>:b<tab>
 nnoremap <leader>q :only <bar> :q<cr>
-nnoremap <leader>, :set nohls<cr>:s/,/,\r/g<cr>={
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
