@@ -128,6 +128,18 @@ nnoremap <C-k> <C-w>l
 nnoremap <C-h> gT
 nnoremap <C-l> gt
 
+" Move in display-lines rather than logical lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
 nnoremap <cr> o<esc>
 
 nmap <leader>ch :HLT<cr>
