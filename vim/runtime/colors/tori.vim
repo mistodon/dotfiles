@@ -1,5 +1,4 @@
 set background=light
-set t_Co=256
 
 let g:colors_name="tori"
 let python_highlight_all = 1

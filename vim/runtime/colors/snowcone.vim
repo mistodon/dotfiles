@@ -1,7 +1,6 @@
 set background=light
-set t_Co=256
-let g:colors_name="snowcone"
 
+let g:colors_name="snowcone"
 let python_highlight_all = 1
 let c_gnu = 1
 
