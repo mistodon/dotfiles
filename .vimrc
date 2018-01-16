@@ -77,8 +77,11 @@ command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':
 
 command! FromTheTop so $MYVIMRC
 
+" Searching -- /=find, ?=highlight, //+??=reverse
 nnoremap / :set nohls<cr>/\c
+nnoremap // :set nohls<cr>?\c
 nnoremap ? :set hls<cr>/
+noremap ?? :set hls<cr>?<cr>
 nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
@@ -86,7 +89,6 @@ nnoremap # :set hls<cr>#
 " Need the <tab> because git hooks won't allow trailing spaces
 noremap <leader>n :norm<tab>
 
-noremap <leader>? :set hls<cr>?<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>R :!rg<tab>
 
