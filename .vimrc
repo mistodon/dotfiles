@@ -132,8 +132,8 @@ nnoremap <C-k> <C-w>l
 nnoremap <C-h> gT
 nnoremap <C-l> gt
 
-nnoremap gg mggg
-nnoremap G mgG
+nnoremap gg gg<C-o>mg<C-i>
+nnoremap G G<C-o>mg<C-i>
 
 " Move in display-lines rather than logical lines
 nnoremap j gj
