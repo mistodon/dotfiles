@@ -45,6 +45,7 @@ set re=1
 set ttyfast
 set lazyredraw
 set ruler
+set hidden
 
 " [For gvim
 set guifont=Consolas:h9:cANSI:qDRAFT
@@ -86,11 +87,9 @@ nnoremap <leader>\ :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
 
-" Need the <tab> because git hooks won't allow trailing spaces
-noremap <leader>n :norm<tab>
-
+noremap <leader>n :norm<space>
 nnoremap <leader>s :update<cr>
-nnoremap <leader>R :!rg<tab>
+nnoremap <leader>R :!rg<space>
 
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
 nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
@@ -105,7 +104,7 @@ nnoremap <leader>D :tabe .<cr>
 nnoremap <leader>d :e .<cr>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>u :e %:h<cr>
-nnoremap <leader>g :buffers<cr>:b<tab>
+nnoremap <leader>g :buffers<cr>:b<space>
 nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
