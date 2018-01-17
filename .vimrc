@@ -35,7 +35,6 @@ set shell=bash\ --login
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set nu
 set cul
-set laststatus=2
 set nofoldenable
 set diffopt+=context:99999
 set noeb vb t_vb=
@@ -46,6 +45,17 @@ set ttyfast
 set lazyredraw
 set ruler
 set hidden
+
+" Status Line
+set laststatus=2                             " always show statusbar  
+set statusline=  
+set statusline+=\[%2n\ ]\                      " buffer number  
+set statusline+=%f\                          " filename   
+set statusline+=%h%m%r%w                     " status flags  
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type  
+set statusline+=%=                           " right align remainder  
+set statusline+=%-14(%l,%c%V%)               " line, character  
+set statusline+=%<%P                         " file position  
 
 " [For gvim
 set guifont=Consolas:h9:cANSI:qDRAFT
