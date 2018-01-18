@@ -161,8 +161,27 @@ nnoremap <cr> o<esc>
 
 nmap <leader>ch :HLT<cr>
 
+" Run some default program for a file
+let s:executable_map = {
+    \   "rust": 'cargo run',
+    \   "abc": 'abc2midi % -o %:r.mid && timidity %:r.mid',
+    \ }
+
+function! RunFile()
+    if has_key(s:executable_map, &filetype)
+        let program = s:executable_map[&filetype]
+        exec "!" . program
+    else
+        echo "Not sure how to run current file"
+    end
+endfunction
+
+nnoremap <leader>p :call RunFile()<cr>
+vnoremap <leader>p :call RunFile()<cr>
+
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
 let s:comment_map = {
+    \   "abc": '%',
     \   "bash": '#',
     \   "bash_profile": '#',
     \   "bashrc": '#',
