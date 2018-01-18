@@ -14,6 +14,7 @@ Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'skywind3000/asyncrun.vim'
 
 if has("win32unix")
     Plugin 'ctrlpvim/ctrlp.vim'
@@ -31,7 +32,6 @@ set autowrite
 set sw=4
 set hlsearch
 set incsearch
-set shell=bash\ --login
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set nu
 set cul
@@ -163,14 +163,16 @@ nmap <leader>ch :HLT<cr>
 
 " Run some default program for a file
 let s:executable_map = {
-    \   "rust": 'cargo run',
-    \   "abc": 'abc2midi % -o %:r.mid && timidity %:r.mid',
+    \   "rust": 'AsyncRun cargo run',
+    \   "abc": 'AsyncRun abc2midi % -o %:r.mid && timidity %:r.mid',
     \ }
 
 function! RunFile()
     if has_key(s:executable_map, &filetype)
         let program = s:executable_map[&filetype]
-        exec "!" . program
+        exec program
+        copen
+        wincmd w
     else
         echo "Not sure how to run current file"
     end
@@ -178,6 +180,8 @@ endfunction
 
 nnoremap <leader>p :call RunFile()<cr>
 vnoremap <leader>p :call RunFile()<cr>
+nnoremap <leader>P :exec "AsyncStop"<cr>
+vnoremap <leader>P :exec "AsyncStop"<cr>
 
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
 let s:comment_map = {
