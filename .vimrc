@@ -164,7 +164,7 @@ nmap <leader>ch :HLT<cr>
 " Run some default program for a file
 let s:executable_map = {
     \   "rust": 'AsyncRun cargo run',
-    \   "abc": 'AsyncRun abc2midi % -o %:r.mid && timidity %:r.mid',
+    \   "abc": 'AsyncRun midscript % -o %.midscript && abc2midi %.midscript -o %:r.mid && timidity %:r.mid',
     \ }
 
 function! RunFile()
