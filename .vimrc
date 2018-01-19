@@ -169,6 +169,7 @@ let s:executable_map = {
 
 function! RunFile()
     if has_key(s:executable_map, &filetype)
+        update
         let program = s:executable_map[&filetype]
         exec program
         copen
