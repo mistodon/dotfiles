@@ -144,6 +144,8 @@ function gc { git checkout "$@" ; }
 
 function gb { git branch "$@" ; }
 
+function gcb { git checkout $(git branch | hs) ; }
+
 function gf { git fetch "$@" ; }
 
 function glogday
