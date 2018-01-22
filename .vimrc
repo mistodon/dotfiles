@@ -33,6 +33,8 @@ set sw=4
 set hlsearch
 set incsearch
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set textwidth=0
+set wrapmargin=0
 set nu
 set cul
 set nofoldenable
