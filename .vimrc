@@ -119,6 +119,7 @@ nnoremap <leader>q :only <bar> :q<cr>
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
+nmap <leader>ch :HLT<cr>
 
 nnoremap <leader>1 :b1<cr>
 nnoremap <leader>2 :b2<cr>
@@ -159,7 +160,12 @@ inoremap <Up> <C-o>gk
 
 nnoremap <cr> o<esc>
 
-nmap <leader>ch :HLT<cr>
+inoremap <C-u> <C-o>u
+inoremap <C-r> <C-o>r
+inoremap <C-w> <C-o>w
+inoremap <C-b> <C-o>b
+inoremap <C-W> <C-o>W
+inoremap <C-B> <C-o>B
 
 " Run some default program for a file
 let s:executable_map = {
