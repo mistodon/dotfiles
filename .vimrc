@@ -66,10 +66,13 @@ set guifont=Consolas:h9:cANSI:qDRAFT
 au GUIEnter * set vb t_vb=
 au CursorHold,CursorHoldI * checktime
 
-" File associations
+" Syntax associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
 au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
+
+" Filetype associations
+au BufNewFile,BufRead *.midscript set filetype=midscript
 
 
 if !has('nvim')
@@ -172,7 +175,8 @@ inoremap <C-B> <C-o>B
 " Run some default program for a file
 let s:executable_map = {
     \   "rust": 'AsyncRun cargo run',
-    \   "abc": 'AsyncRun midscript % -o %.midscript && abc2midi %.midscript -o %:r.mid && timidity %:r.mid',
+    \   "abc": 'AsyncRun abc2midi % -o %:r.mid && timidity %:r.mid',
+    \   "midscript": 'AsyncRun midscript play %',
     \ }
 
 function! RunFile()
