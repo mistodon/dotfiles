@@ -174,7 +174,7 @@ inoremap <C-B> <C-o>B
 
 " Run some default program for a file
 let s:executable_map = {
-    \   "rust": 'AsyncRun cargo run',
+    \   "rust": 'AsyncRun cargo check && cargo run',
     \   "abc": 'AsyncRun abc2midi % -o %:r.mid && timidity %:r.mid',
     \   "midscript": 'AsyncRun midscript play %',
     \ }
@@ -191,10 +191,10 @@ function! RunFile()
     end
 endfunction
 
-nnoremap <leader>p :call RunFile()<cr>
-vnoremap <leader>p :call RunFile()<cr>
-nnoremap <leader>P :exec "AsyncStop"<cr>
-vnoremap <leader>P :exec "AsyncStop"<cr>
+nnoremap <leader>x :call RunFile()<cr>
+vnoremap <leader>x :call RunFile()<cr>
+nnoremap <leader>z :exec "AsyncStop"<cr>
+vnoremap <leader>z :exec "AsyncStop"<cr>
 
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
 let s:comment_map = {
