@@ -72,7 +72,7 @@ au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
 
 " Filetype associations
-au BufNewFile,BufRead *.midscript set filetype=midscript
+au BufNewFile,BufRead *.melo set filetype=melo
 
 
 if !has('nvim')
@@ -176,18 +176,22 @@ inoremap <C-B> <C-o>B
 let s:executable_map = {
     \   "rust": 'AsyncRun cargo check && cargo run',
     \   "abc": 'AsyncRun abc2midi % -o %:r.mid && timidity %:r.mid',
-    \   "midscript": 'AsyncRun midscript play %',
+    \   "melo": 'AsyncRun melo play %',
     \ }
 
 function! RunFile()
-    if has_key(s:executable_map, &filetype)
-        update
-        let program = s:executable_map[&filetype]
-        exec program
-        copen
-        wincmd w
+    if g:asyncrun_status == "running"
+        exec "AsyncStop"
     else
-        echo "Not sure how to run current file"
+        if has_key(s:executable_map, &filetype)
+            update
+            let program = s:executable_map[&filetype]
+            exec program
+            copen
+            wincmd w
+        else
+            echo "Not sure how to run current file"
+        end
     end
 endfunction
 
