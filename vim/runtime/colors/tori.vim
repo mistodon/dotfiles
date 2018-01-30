@@ -7,7 +7,7 @@ let c_gnu = 1
 
 hi Normal          guifg=#585858 guibg=#ffffff gui=NONE      ctermfg=59    ctermbg=231   cterm=None
 hi Comment         guifg=#808080                             ctermfg=102
-hi Constant        guifg=#bb4da3                             ctermfg=133
+hi Constant        guifg=#78cc6b                             ctermfg=133
     hi Number          guifg=#78cc6b                             ctermfg=113
     hi String          guifg=#78cc6b                             ctermfg=113
 hi Delimiter       guifg=#bb4da3                             ctermfg=133

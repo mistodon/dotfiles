@@ -71,9 +71,6 @@ au BufNewFile,BufRead *.geojson set syntax=javascript
 au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
 
-" Filetype associations
-au BufNewFile,BufRead *.melo set filetype=melo
-
 
 if !has('nvim')
     set notextmode
