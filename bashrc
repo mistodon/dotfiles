@@ -180,7 +180,7 @@ function gpush
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git push origin "$branch"
+    git push -u origin "$branch"
 }
 
 function gnuke
