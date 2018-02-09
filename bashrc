@@ -304,3 +304,14 @@ function vrun
     vim $script_file
     sh $script_file
 }
+
+
+function farcopy
+{
+    echo "$@" > ~/Sync/Work/.farcopy
+}
+
+function farpaste
+{
+    cat ~/Sync/Work/.farcopy
+}
