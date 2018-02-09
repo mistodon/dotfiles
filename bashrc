@@ -14,9 +14,11 @@ function from-the-top
 # Git in prompt from https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
+COLOR_LYELLOW="\033[1;33m"
 COLOR_GREY="\033[0;30;1m"
 COLOR_GREEN="\033[0;32m"
 COLOR_BLUE="\033[0;36m"
+COLOR_LBLUE="\033[1;36m"
 COLOR_DBLUE="\033[0;34m"
 
 function git_color {
@@ -51,7 +53,15 @@ function git_branch {
   fi
 }
 
-export PS1="\[\033[32m\]\D{%T}\[\033[m\]|\[\033[33;1m\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
+function path_color {
+    if [ -z ${VIM+x} ]; then
+        echo -e $COLOR_LYELLOW
+    else
+        echo -e $COLOR_LBLUE
+    fi
+}
+
+export PS1="\[\033[32m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
 
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
