@@ -315,3 +315,9 @@ function farpaste
 {
     cat ~/Sync/Work/.farcopy
 }
+
+function far
+{
+    # Only works on macOS at the moment
+    echo -n `farpaste` | pbcopy
+}
