@@ -110,7 +110,7 @@ alias qq='exit'
 
 function qall
 {
-    ps -cax | rg -q "vim"
+    ps -a | rg -q "vim" -
     if [ "$?" -eq "0" ]; then
         echo -e "\033[1;33mvim is running - might wanna deal with that first\033[0m"
     else
