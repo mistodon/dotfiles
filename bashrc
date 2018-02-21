@@ -89,9 +89,9 @@ function cdf
 function f
 {
     if [ "$#" -eq "0" ]; then
-        fd -n | hs
+        fd -c never | hs
     else
-        "$@" $(fd -n | hs)
+        "$@" $(fd -c never | hs)
     fi
 }
 

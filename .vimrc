@@ -266,15 +266,8 @@ if !has("win32unix")
         endfor
     endfunction
 
-    if has('win32')
-        nnoremap <leader>f :call HeatseekerCommand("dir /a-d /s /b", "", ':e', ':tabe')<CR>
-    else
-        nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ':e', ':tabe')<cr>
-    endif
-
-
-    nnoremap <leader>F :call HeatseekerCommand("fd -n", "", ":tabe", ":tabe")<cr>
-    nnoremap <leader>f :call HeatseekerCommand("fd -n", "", ":e", ":tabe")<cr>
+    nnoremap <leader>F :call HeatseekerCommand("fd -c never", "", ":tabe", ":tabe")<cr>
+    nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
 
 
     map  <C-A> <Home>
