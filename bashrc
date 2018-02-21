@@ -26,7 +26,7 @@ function git_color {
 
   if [[ $git_status =~ "Changes to be committed" ]]; then
     echo -e $COLOR_GREEN
-  elif [[ ! $git_status =~ "working tree clean" ]]; then
+  elif [[ ! $git_status =~ "working tree clean" && ! $git_status =~ "working directory clean" ]]; then
     echo -e $COLOR_RED
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
