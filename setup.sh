@@ -7,6 +7,8 @@ readonly dotfiles_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
     readonly OSDIR=windows
+elif [ "$OSTYPE" == "darwin16" ]; then
+    readonly OSDIR=macos
 else
     readonly OSDIR=unix
 fi
