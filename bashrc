@@ -149,6 +149,7 @@ function gau { git add $(git ls-files -o --exclude-standard) ; }
 function gr { git reset "$@" ; }
 
 function gd { git diff "$@" ; }
+function gdd { git diff --cached "$@" ; }
 
 function gc { git checkout "$@" ; }
 
