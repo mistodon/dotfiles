@@ -74,6 +74,10 @@ set guifont=Consolas:h9:cANSI:qDRAFT
 
 au GUIEnter * set vb t_vb=
 au CursorHold,CursorHoldI * checktime
+au BufReadPost *
+    \ if line("'\'") && line("'\'") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
 " Syntax associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
@@ -144,8 +148,6 @@ nnoremap <leader>8 :b8<cr>
 nnoremap <leader>9 :b9<cr>
 nnoremap <leader>0 :b10<cr>
 
-nnoremap ( :set nohls<cr>?[{}];*\s*$<cr>
-nnoremap ) :set nohls<cr>/[{}];*\s*$<cr>
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap Y y$
