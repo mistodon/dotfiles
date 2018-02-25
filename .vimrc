@@ -40,13 +40,17 @@ set cul
 set nofoldenable
 set diffopt+=context:99999
 set noeb vb t_vb=
-set clipboard=unnamed
 set backspace=indent,eol,start
 set re=1
 set ttyfast
 set lazyredraw
 set ruler
 set hidden
+
+set clipboard=unnamed
+if has("x11")
+    set clipboard=unnamedplus
+endif
 
 " Gary Bernhardt's:
 set winwidth=84
@@ -250,7 +254,6 @@ set secure
 
 au BufNewFile,BufRead * colorscheme tori
 
-set clipboard=unnamed
 set termguicolors
 
 set t_8f=[38;2;%lu;%lu;%lum
