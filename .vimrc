@@ -141,8 +141,9 @@ nnoremap <leader>R :!rg<space>
 " TODO: Only works on macOS at the moment - need a cross platform copy/paste
 nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
 
-" Split comma separated things onto multiple lines
-nnoremap <leader>, :set nohls<cr>%i<cr><esc>%a<cr><esc>:s/,/,\r/g<cr>j0=%
+" Split comma separated things onto multiple lines (this now conflicts with ,,
+" to clear selection. Also it was really buggy anyway.)
+" nnoremap <leader>, :set nohls<cr>%i<cr><esc>%a<cr><esc>:s/,/,\r/g<cr>j0=%
 
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
