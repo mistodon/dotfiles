@@ -109,12 +109,28 @@ command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':
 
 command! FromTheTop so $MYVIMRC
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY (Gary Bernhardt's)
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Searching -- /=find, ?=highlight, //+??=reverse
 nnoremap / :set nohls<cr>/\c
 nnoremap // :set nohls<cr>?\c
 nnoremap ? :set hls<cr>/
 noremap ?? :set hls<cr>?<cr>
-nnoremap <leader>\ :noh<cr>
+nnoremap <leader><leader> :noh<cr>
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
 
