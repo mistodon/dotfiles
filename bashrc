@@ -4,6 +4,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export WWW_HOME="https://duckduckgo.com"
 export EDITOR="vim"
+export BASH_ENV=~/.bashrc
 
 function from-the-top
 {
@@ -108,13 +109,14 @@ function lx
 alias :q='exit'
 alias qq='exit'
 
-function qall
+function isolate_tmux
 {
-    ps -a | rg -q "vim" -
+    ps -a | rg -q "\d+:\d+\.\d+ vim" -
     if [ "$?" -eq "0" ]; then
         echo -e "\033[1;33mvim is running - might wanna deal with that first\033[0m"
     else
-        tmux kill-server
+        tmux kill-session -a
+        tmux kill-window -a
     fi
 }
 
@@ -158,6 +160,17 @@ function gb { git branch "$@" ; }
 function gcb { git checkout $(git branch | hs) ; }
 
 function gf { git fetch "$@" ; }
+
+function glog
+{
+    local log_hash="%C(11)%h%Creset"
+    local log_relative_time="%C(10)(%ar)%Creset"
+    local log_author="%C(bold 12)<%an>%Creset"
+    local log_refs="%C(bold 9)%d%Creset"
+    local log_subject="%s"
+    local log_format="$log_hash^$log_relative_time^$log_author^$log_refs $log_subject"
+    git log --graph --color=always --pretty="tformat:${log_format}" $* | column -s '^' -t | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
+}
 
 function glogday
 {
@@ -321,4 +334,35 @@ function far
 {
     # Only works on macOS at the moment
     echo -n `farpaste` | pbcopy
+}
+
+function pipeloop
+{
+    if [[ "$#" -ne "1" ]]; then
+        echo "error: Requires a single argument: pipename"
+        return 1
+    fi
+    local name=$1
+    local pipefile=~/temp/$name
+    if [[ ! -p $pipefile ]]; then
+        mkfifo $pipefile
+    fi
+    (while true; do cat $pipefile; done) | bash --login
+}
+
+function tellpipe
+{
+    if [[ "$#" -eq "0" ]]; then
+        echo "error: Requires at least one argument: pipename commands..."
+        return 1
+    fi
+    local name=$1
+    local pipefile=~/temp/$name
+    shift
+    local command=$@
+    if [[ ! -p $pipefile ]]; then
+        echo "error: No pipe exists at $pipefile"
+    else
+        echo "$command" > $pipefile
+    fi
 }

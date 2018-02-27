@@ -25,6 +25,7 @@ filetype plugin indent on
 
 syntax on
 colorscheme tori
+let mapleader=","
 
 set autoindent
 set t_Co=256
