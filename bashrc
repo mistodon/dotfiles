@@ -117,6 +117,7 @@ function isolate_tmux
     else
         tmux kill-session -a
         tmux kill-window -a
+        tmux kill-pane -a
     fi
 }
 
