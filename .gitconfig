@@ -12,3 +12,7 @@
     default = current
 [pull]
     rebase = true
+[alias]
+    ci = commit --verbose
+    amend = commit --amend
+    aa = add --all
