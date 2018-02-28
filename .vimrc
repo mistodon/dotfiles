@@ -47,8 +47,14 @@ set ttyfast
 set lazyredraw
 set ruler
 set hidden
-
+set exrc
+set secure
+set termguicolors
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
 set clipboard=unnamed
+set scrolloff=3
+
 if has("x11")
     set clipboard=unnamedplus
 endif
@@ -89,6 +95,7 @@ au BufNewFile,BufRead *.geojson set syntax=javascript
 au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
 au FileType lua :setlocal sw=2 ts=2 sts=2
+au BufNewFile,BufRead * colorscheme tori
 
 
 if !has('nvim')
@@ -125,60 +132,27 @@ inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Searching -- /=find, ?=highlight, //+??=reverse
+" TODO: Only works on macOS - must be a better way than this
+nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
+
+" Searching with and without highlighting
 nnoremap / :set nohls<cr>/\c
-nnoremap // :set nohls<cr>?\c
-nnoremap ? :set hls<cr>/
-noremap ?? :set hls<cr>?<cr>
-nnoremap <leader><leader> :noh<cr>
+nnoremap ? :set nohls<cr>?\c
+nnoremap // :set hls<cr>/
+nnoremap ?? :set hls<cr>?
 nnoremap * :set hls<cr>*
 nnoremap # :set hls<cr>#
 
-noremap <leader>n :norm<space>
-nnoremap <leader>s :update<cr>
-nnoremap <leader>R :!rg<space>
-
-" TODO: Only works on macOS at the moment - need a cross platform copy/paste
-nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
-
-" Split comma separated things onto multiple lines (this now conflicts with ,,
-" to clear selection. Also it was really buggy anyway.)
-" nnoremap <leader>, :set nohls<cr>%i<cr><esc>%a<cr><esc>:s/,/,\r/g<cr>j0=%
-
-nnoremap <leader>b :sh<cr>
-nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
-nnoremap <leader>c :Diff<cr>
-nnoremap <leader>D :tabe .<cr>
-nnoremap <leader>d :e .<cr>
-nnoremap <leader>U :tabe %:h<cr>
-nnoremap <leader>u :e %:h<cr>
-nnoremap <leader>g :buffers<cr>:b<space>
-nnoremap <leader>q :only <bar> :q<cr>
-nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
-nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
-nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
-nmap <leader>ch :HLT<cr>
-
-nnoremap <leader>1 :b1<cr>
-nnoremap <leader>2 :b2<cr>
-nnoremap <leader>3 :b3<cr>
-nnoremap <leader>4 :b4<cr>
-nnoremap <leader>5 :b5<cr>
-nnoremap <leader>6 :b6<cr>
-nnoremap <leader>7 :b7<cr>
-nnoremap <leader>8 :b8<cr>
-nnoremap <leader>9 :b9<cr>
-nnoremap <leader>0 :b10<cr>
-
-nnoremap n nzz
-nnoremap N Nzz
+" Make Y consistent with D, C, in terms of newlines
 nnoremap Y y$
 
-nnoremap <C-j> <C-w>h
-nnoremap <C-k> <C-w>l
-nnoremap <C-h> gT
-nnoremap <C-l> gt
+" Use CTRL+{HJKL} to move between splits
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
+" Set the g marker when moving to top/bottom of file so we can go back later
 nnoremap gg gg<C-o>mg<C-i>
 nnoremap G G<C-o>mg<C-i>
 
@@ -194,14 +168,50 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
-nnoremap <cr> o<esc>
-
+" Make some normal mode commands available in insert mode
 inoremap <C-u> <C-o>u
-inoremap <C-r> <C-o>r
+inoremap <C-r> <C-o><C-r>
 inoremap <C-w> <C-o>w
 inoremap <C-b> <C-o>b
 inoremap <C-W> <C-o>W
 inoremap <C-B> <C-o>B
+
+" Make some insert mode commands available in normal mode
+nnoremap <cr> o<esc>
+nnoremap <bs> O<esc>
+
+
+" Leader commands
+nmap <leader>ch :HLT<cr>
+
+noremap <leader>n :norm<space>
+
+nnoremap <leader>0 :b10<cr>
+nnoremap <leader>1 :b1<cr>
+nnoremap <leader>2 :b2<cr>
+nnoremap <leader>3 :b3<cr>
+nnoremap <leader>4 :b4<cr>
+nnoremap <leader>5 :b5<cr>
+nnoremap <leader>6 :b6<cr>
+nnoremap <leader>7 :b7<cr>
+nnoremap <leader>8 :b8<cr>
+nnoremap <leader>9 :b9<cr>
+nnoremap <leader><leader> :noh<cr>
+nnoremap <leader>D :tabe .<cr>
+nnoremap <leader>R :!rg<space>
+nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
+nnoremap <leader>U :tabe %:h<cr>
+nnoremap <leader>b :sh<cr>
+nnoremap <leader>c :Diff<cr>
+nnoremap <leader>d :e .<cr>
+nnoremap <leader>g :buffers<cr>:b<space>
+nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
+nnoremap <leader>q :only <bar> :q<cr>
+nnoremap <leader>s :update<cr>
+nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
+nnoremap <leader>u :e %:h<cr>
+nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
+
 
 " Run some default program for a file
 let s:executable_map = {
@@ -267,15 +277,6 @@ nnoremap <leader>/ :call ToggleComment()<cr>
 vnoremap <leader>/ :call ToggleComment()<cr>
 
 
-set exrc
-set secure
-
-au BufNewFile,BufRead * colorscheme tori
-
-set termguicolors
-
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
 
 
 if !has("win32unix")
@@ -298,8 +299,8 @@ if !has("win32unix")
         endfor
     endfunction
 
-    nnoremap <leader>F :call HeatseekerCommand("fd -c never", "", ":tabe", ":tabe")<cr>
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
+    nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
 
 
     map  <C-A> <Home>
