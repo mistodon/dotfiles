@@ -80,9 +80,18 @@ function shh
 # `cd` to directory of the given file
 function cdf
 {
+    local into=false
+    if [[ "$1" == "-i" ]]; then
+        into=true
+        shift
+    fi
+
     local path=$(dirname $(fd "$@" | head -1))
     if [ -n "$path" ]; then
         cd $path
+    fi
+    if [ $into = true ]; then
+        ce $@
     fi
 }
 
