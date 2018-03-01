@@ -95,6 +95,8 @@ au BufNewFile,BufRead *.geojson set syntax=javascript
 au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
 au FileType lua :setlocal sw=2 ts=2 sts=2
+au FileType javascript :setlocal sw=2 ts=2 sts=2
+au FileType scss :setlocal sw=2 ts=2 sts=2
 au BufNewFile,BufRead * colorscheme tori
 
 
