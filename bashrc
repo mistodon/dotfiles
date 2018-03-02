@@ -247,7 +247,7 @@ function gidentity
 
 function gidhome
 {
-    git config "***Realname*** ***Lastname***" "***redacted.email@redacted.nope***"
+    gidentity "***Realname*** ***Lastname***" "***redacted.email@redacted.nope***"
 }
 
 function gsub
