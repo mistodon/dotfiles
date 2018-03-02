@@ -245,6 +245,11 @@ function gidentity
     git config user.email "$2"
 }
 
+function gidhome
+{
+    git config "***Realname*** ***Lastname***" "***redacted.email@redacted.nope***"
+}
+
 function gsub
 {
     git submodule foreach --recursive $@
