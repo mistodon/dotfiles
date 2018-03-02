@@ -182,6 +182,10 @@ inoremap <C-B> <C-o>B
 nnoremap <cr> o<esc>
 nnoremap <bs> O<esc>
 
+" Unmap/remap footgun commands
+cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
+nnoremap Q <nop>
+nnoremap QQ :qall<cr>
 
 " Leader commands
 nmap <leader>ch :HLT<cr>
