@@ -38,7 +38,7 @@ hi Pmenu           guifg=#585858 guibg=#eeeeee gui=NONE      ctermfg=59    cterm
 hi PmenuSel        guifg=#0087d7 guibg=#dfffff gui=NONE      ctermfg=32    ctermbg=195   cterm=None
 hi PmenuSbar       guibg=#a8a8a8 gui=NONE                    ctermbg=145   cterm=None
 hi PmenuThumb      guibg=#0087d7 gui=NONE                    ctermbg=32    cterm=None
-hi Search          guifg=#585858 guibg=#a7ffa7 gui=NONE      ctermfg=59    ctermbg=157   cterm=None
+hi Search          guifg=#585858 guibg=#a7ffa7 gui=Underline      ctermfg=59    ctermbg=157   cterm=Underline
 hi StatusLine      guifg=#a8a8a8 guibg=#eeeeee gui=NONE      ctermfg=145   ctermbg=231   cterm=None
 hi StatusLineNC    guifg=#eeeeee guibg=#a8a8a8 gui=NONE      ctermfg=231   ctermbg=145   cterm=None
 hi TabLine         guifg=#a8a8a8 guibg=#eeeeee gui=NONE      ctermfg=145   ctermbg=231   cterm=None
