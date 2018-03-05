@@ -217,6 +217,12 @@ nnoremap <leader>s :update<cr>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
 nnoremap <leader>u :e %:h<cr>
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
+nnoremap <leader>' f'xf'x
+nnoremap <leader>" f"xf"x
+nnoremap <leader>i' F'xf'x
+nnoremap <leader>i" F"xf"x
+nnoremap <leader>[ %%%x<C-o>x
+nnoremap <leader>i[ %%x<C-o>x
 
 
 " Run some default program for a file
