@@ -8,12 +8,17 @@ readonly should_force=$1
 
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
     readonly OSDIR=windows
-elif [ "$OSTYPE" == "darwin16" ]; then
+elif [[ "$OSTYPE" == "darwin"* ]]; then
     readonly OSDIR=macos
 else
     readonly OSDIR=unix
 fi
 
+readonly green="\033[0;32m"
+readonly white="\033[1;37m"
+readonly reset="\033[0m"
+
+echo -e "${green}Running dotfiles setup for platform ${white}$OSDIR${green}:${reset}"
 
 function create_link
 {
