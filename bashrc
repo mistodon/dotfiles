@@ -396,3 +396,9 @@ export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+
+# Check if this repo is up to date
+if [[ "$(pwd)" == "$HOME" ]]; then
+    (cd ~/.dotfiles && git fetch && git status -s)
+fi
