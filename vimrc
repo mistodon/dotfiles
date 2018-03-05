@@ -31,7 +31,6 @@ set autoindent
 set t_Co=256
 set autowrite
 set sw=4
-set hlsearch
 set incsearch
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set textwidth=0
