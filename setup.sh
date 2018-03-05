@@ -4,6 +4,7 @@ set -e
 
 
 readonly dotfiles_dir=$(cd $(dirname $BASH_SOURCE); pwd)
+readonly should_force=$1
 
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
     readonly OSDIR=windows
@@ -19,23 +20,27 @@ function create_link
     local source=$1
     local destination=$2
 
+    if [[ "$should_force" == "--force" ]]; then
+        rm -f $destination
+    fi
+
     if [ -e $destination ]; then
-        echo "$destination already exists..." >&2
+        echo "$destination already exists. (Use --force to overwrite.)" >&2
     else
         echo "Linking $destination"
 
         if [ "$OSDIR" == "windows" ]; then
-	    local winsrc=$(echo $source | sed 's;^/c/;C:/;g' | sed 's;/;\\;g')
-	    local windest=$(echo $destination | sed 's;^/c/;C:/;g' | sed 's;/;\\;g')
-	    # TODO: hacky
-	    if [ "$source" == "$dotfiles_dir" ]; then
+            local winsrc=$(echo $source | sed 's;^/c/;C:/;g' | sed 's;/;\\;g')
+            local windest=$(echo $destination | sed 's;^/c/;C:/;g' | sed 's;/;\\;g')
+            # TODO: hacky
+            if [ "$source" == "$dotfiles_dir" ]; then
                 cmd //c "mklink /D $windest $winsrc"
-	    else
+            else
                 cmd //c "mklink $windest $winsrc"
-	    fi
-	else
+            fi
+        else
             ln -s $source $destination
-	fi
+        fi
     fi
 }
 
