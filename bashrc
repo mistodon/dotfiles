@@ -414,6 +414,10 @@ function _hot_tab
         echo
         COMPREPLY=($(fd | hs))
         echo -n $line
+    elif [[ "$word" == "d?" ]]; then
+        echo
+        COMPREPLY=($(fd -t d | hs))
+        echo -n $line
     elif [[ "$word" == "b?" ]]; then
         echo
         COMPREPLY=($(git branch | hs))
