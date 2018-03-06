@@ -409,10 +409,15 @@ fi
 function _hot_tab
 {
     local word=${COMP_WORDS[COMP_CWORD]}
+    local line=${COMP_LINE}
     if [[ "$word" == "?" ]]; then
+        echo
         COMPREPLY=($(fd | hs))
+        echo -n $line
     elif [[ "$word" == "b?" ]]; then
+        echo
         COMPREPLY=($(git branch | hs))
+        echo -n $line
     else
         COMPREPLY=()
     fi
