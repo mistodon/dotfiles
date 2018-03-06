@@ -312,7 +312,7 @@ fi
 function truecolor_test
 {
     awk 'BEGIN{
-        s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+        s=".........."; s=s s s s s s s s;
         for (colnum = 0; colnum<77; colnum++) {
             r = 255-(colnum*255/76);
             g = (colnum*510/76);
@@ -401,4 +401,5 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Check if this repo is up to date
 if [[ "$(pwd)" == "$HOME" ]]; then
     (cd ~/.dotfiles && git fetch && git status -s)
+    truecolor_test
 fi
