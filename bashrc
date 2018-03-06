@@ -403,3 +403,19 @@ if [[ "$(pwd)" == "$HOME" ]]; then
     (cd ~/.dotfiles && git fetch && git status -s)
     truecolor_test
 fi
+
+
+# Heatseeker-based tab completion - not enabled by default
+function _hot_tab
+{
+    local word=${COMP_WORDS[COMP_CWORD]}
+    if [[ "$word" == "?" ]]; then
+        COMPREPLY=($(fd | hs))
+    elif [[ "$word" == "b?" ]]; then
+        COMPREPLY=($(git branch | hs))
+    else
+        COMPREPLY=()
+    fi
+}
+# Add the following line to your .bashrc to enable it
+# complete -D -F _hot_tab -o bashdefault -o default
