@@ -312,14 +312,6 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
-
-
-    map  <C-A> <Home>
-    imap <C-A> <Home>
-    vmap <C-A> <Home>
-    map  <C-E> <End>
-    imap <C-E> <End>
-    vmap <C-E> <End>
 endif
 
 if has("win32unix")
