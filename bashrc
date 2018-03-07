@@ -13,7 +13,7 @@ function from-the-top
 }
 
 # Git in prompt from https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
-COLOR_RED="\033[0;31m"
+COLOR_NOTCLEAN="\033[0;35m"
 COLOR_YELLOW="\033[0;33m"
 COLOR_LYELLOW="\033[1;33m"
 COLOR_GREY="\033[0;30;1m"
@@ -28,7 +28,7 @@ function git_color {
   if [[ $git_status =~ "Changes to be committed" ]]; then
     echo -e $COLOR_GREEN
   elif [[ ! $git_status =~ "working tree clean" && ! $git_status =~ "working directory clean" ]]; then
-    echo -e $COLOR_RED
+    echo -e $COLOR_NOTCLEAN
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
   elif [[ $git_status =~ "Your branch is behind" ]]; then
@@ -62,7 +62,7 @@ function path_color {
     fi
 }
 
-export PS1="\[\033[32m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
+export PS1="\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
 
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
