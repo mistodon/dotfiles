@@ -313,10 +313,10 @@ function truecolor_test
 {
     awk 'BEGIN{
         s="//////////"; s=s s s s s s s s;
-        for (colnum = 0; colnum<77; colnum++) {
-            r = 255-(colnum*255/76);
-            g = (colnum*510/76);
-            b = (colnum*255/76);
+        for (colnum = 0; colnum<80; colnum++) {
+            r = 255-(colnum*255/79);
+            g = (colnum*510/79);
+            b = (colnum*255/79);
             if (g>255) g = 510-g;
             printf "\033[0;0;48;2;%d;%d;%dm", r,g,b;
             printf "\033[0;0;38;2;%d;%d;%dm", 255-r,255-g,255-b;
