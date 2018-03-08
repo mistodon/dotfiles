@@ -174,8 +174,6 @@ inoremap <C-u> <C-o>u
 inoremap <C-r> <C-o><C-r>
 inoremap <C-w> <C-o>w
 inoremap <C-b> <C-o>b
-inoremap <C-W> <C-o>W
-inoremap <C-B> <C-o>B
 
 " Make some insert mode commands available in normal mode
 nnoremap <cr> o<esc>
