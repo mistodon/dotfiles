@@ -31,8 +31,6 @@ function check_absence
 check_absence "heyjude" "DISASTER" "Commit contains HEYJUDEs"
 check_absence "\t" "OH THE HUMANITY" "Commit contains tabs"
 check_absence "\s$" "HEAVENS TO BETSY" "Commit contains trailing whitespace"
-check_absence "$APIKEY" "ANYTHING BUT THIS" "Commit contains your API key"
-check_absence "$DEVTOKEN" "SAY IT ISN'T SO" "Commit contains your dev token"
 
 if [ "$exit_code" -ne "1" ]; then
     exit 1
