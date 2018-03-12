@@ -67,6 +67,7 @@ hi markdownH6      guifg=#bb4da3               gui=Bold      ctermfg=133        
 
 hi htmlBold        guifg=#000000               gui=Bold      ctermfg=16                  cterm=Bold
 hi htmlItalic      guifg=#0087d7               gui=Bold      ctermfg=32                  cterm=Bold
+hi htmlLink        guifg=#0087d7               gui=Underline                             cterm=Underline
 
 hi Title           guifg=#bb4da3               gui=Bold      ctermfg=133                 cterm=Bold
 
