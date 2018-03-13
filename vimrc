@@ -355,10 +355,10 @@ endfunction
 " Moving back and forth between lines of same or different indentation.
 " {_, +} : Move to {next, prev} line with same indentation.
 " ,{_, +} : Move to {next, prev} line with different indentation.
-nnoremap <silent> <leader>_ :call NextIndent(0, 0, 0, 1)<CR>
-nnoremap <silent> <leader>+ :call NextIndent(0, 1, 0, 1)<CR>
-nnoremap <silent> _ :call NextIndent(0, 0, 1, 1)<CR>
-nnoremap <silent> + :call NextIndent(0, 1, 1, 1)<CR>
+nnoremap <silent> <leader>_ :call NextIndent(0, 0, 0, 1)<CR>^
+nnoremap <silent> <leader>+ :call NextIndent(0, 1, 0, 1)<CR>^
+nnoremap <silent> _ :call NextIndent(0, 0, 1, 1)<CR>^
+nnoremap <silent> + :call NextIndent(0, 1, 1, 1)<CR>^
 vnoremap <silent> <leader>_ <Esc>:call NextIndent(0, 0, 0, 1)<CR>m'gv''
 vnoremap <silent> <leader>+ <Esc>:call NextIndent(0, 1, 0, 1)<CR>m'gv''
 vnoremap <silent> _ <Esc>:call NextIndent(0, 0, 1, 1)<CR>m'gv''
