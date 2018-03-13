@@ -310,6 +310,7 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
+    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg -l ".@*, "", ":e", ":tabe")<cr>
 endif
 
 if has("win32unix")
