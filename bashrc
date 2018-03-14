@@ -1,3 +1,5 @@
+export SOURCEDFILES="$SOURCEDFILES $BASH_SOURCE"
+
 export PATH="$PATH:~/.dotfiles/bin"
 
 export CLICOLOR=1
@@ -408,6 +410,11 @@ fi
 # Heatseeker-based tab completion - not enabled by default
 function _hot_tab
 {
+    if [ $COMP_CWORD -lt 0 ]; then
+        COMPREPLY=()
+        return
+    fi
+
     local word=${COMP_WORDS[COMP_CWORD]}
     local line=${COMP_LINE}
     if [[ "$word" == "?" ]]; then
