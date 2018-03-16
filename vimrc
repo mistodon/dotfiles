@@ -147,6 +147,9 @@ nnoremap # :set hls<cr>#
 " Make Y consistent with D, C, in terms of newlines
 nnoremap Y y$
 
+" Shortcut for typing backquotes which are also my tmux prefix
+inoremap ±± ```
+
 " Use CTRL+{HJKL} to move between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
