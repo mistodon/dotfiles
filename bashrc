@@ -400,9 +400,18 @@ export HISTFILE=~/.bash_eternal_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 
-# Check if this repo is up to date
 if [[ "$(pwd)" == "$HOME" ]]; then
+    # Check if this repo needs pushed
     (cd ~/.dotfiles && git fetch && git status -s)
+
+    # Print todo list
+    if [[ -f ~/temp/todo ]]; then
+        echo -ne "\033[36m"
+        cat ~/temp/todo
+        echo -ne "\033[0m"
+    fi
+
+    # Display a truecolor strip to make sure colors haven't regressed
     truecolor_test
 fi
 
