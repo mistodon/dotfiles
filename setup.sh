@@ -54,5 +54,4 @@ create_link "$dotfiles_dir" ~/.dotfiles
 create_link "$dotfiles_dir/gitconfig" ~/.gitconfig
 create_link "$dotfiles_dir/$OSDIR/tmux.conf" ~/.tmux.conf
 create_link "$dotfiles_dir/vimrc" ~/.vimrc
-create_link "$dotfiles_dir/rustfmt.toml" ~/.rustfmt.toml
 create_link "$dotfiles_dir/cargo/config" ~/.cargo/config
