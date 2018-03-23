@@ -97,7 +97,7 @@ au FileType lua :setlocal sw=2 ts=2 sts=2
 au FileType javascript :setlocal sw=2 ts=2 sts=2
 au FileType scss :setlocal sw=2 ts=2 sts=2
 au BufNewFile,BufRead * colorscheme tori
-
+au CursorHoldI * stopinsert
 
 if !has('nvim')
     set notextmode
