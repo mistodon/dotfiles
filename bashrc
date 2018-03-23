@@ -82,18 +82,13 @@ function shh
 # `cd` to directory of the given file
 function cdf
 {
-    local into=false
-    if [[ "$1" == "-i" ]]; then
-        into=true
-        shift
-    fi
-
-    local path=$(dirname $(fd "$@" | head -1))
-    if [ -n "$path" ]; then
+    local path=$(fd "$@" | head -1)
+    if [[ -f "$path" ]]; then
+        cd $(dirname $path)
+    elif [[ -d "$path" ]]; then
         cd $path
-    fi
-    if [ $into = true ]; then
-        ce $@
+    else
+        echo "error: No file or directory found."
     fi
 }
 
