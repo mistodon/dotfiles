@@ -185,8 +185,8 @@ nnoremap <bs> O<esc>
 
 " Unmap/remap footgun commands
 cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
-nnoremap Q <nop>
-nnoremap QQ :qall<cr>
+nnoremap Q :q<cr>
+nnoremap Z :x<cr>
 
 " Leader commands
 nmap <leader>ch :HLT<cr>
@@ -213,7 +213,7 @@ nnoremap <leader>c :Diff<cr>
 nnoremap <leader>d :e .<cr>
 nnoremap <leader>g :buffers<cr>:b<space>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
-nnoremap <leader>q :only <bar> :q<cr>
+nnoremap <leader>q :bd<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
 nnoremap <leader>u :e %:h<cr>
