@@ -53,6 +53,7 @@ set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 set clipboard=unnamed
 set scrolloff=3
+set updatetime=2000
 
 if has("x11")
     set clipboard=unnamedplus
