@@ -13,7 +13,7 @@ hi Constant        guifg=#78cc6b                             ctermfg=133
 hi Delimiter       guifg=#bb4da3                             ctermfg=133
     hi Special         guifg=#bb4da3                             ctermfg=133
 hi Directory       guifg=#0087d7                             ctermfg=32
-hi Error           guifg=#aa0000               gui=Underline ctermfg=124                 cterm=Underline
+hi Error           guifg=#aa0000 guibg=NONE    gui=Underline ctermfg=124                 cterm=Underline
 hi Identifier      guifg=#0087d7                             ctermfg=32
 hi Include         guifg=#bb4da3                             ctermfg=133
 hi Keyword         guifg=#8800dd                             ctermfg=92
