@@ -192,16 +192,15 @@ nmap <leader>ch :HLT<cr>
 
 noremap <leader>n :norm<space>
 
-nnoremap <leader>0 :b10<cr>
-nnoremap <leader>1 :b1<cr>
-nnoremap <leader>2 :b2<cr>
-nnoremap <leader>3 :b3<cr>
-nnoremap <leader>4 :b4<cr>
-nnoremap <leader>5 :b5<cr>
-nnoremap <leader>6 :b6<cr>
-nnoremap <leader>7 :b7<cr>
-nnoremap <leader>8 :b8<cr>
-nnoremap <leader>9 :b9<cr>
+nnoremap <leader>m1 :map <leader>1 :update \| :call system("
+nnoremap <leader>m2 :map <leader>2 :update \| :call system("
+nnoremap <leader>m3 :map <leader>3 :update \| :call system("
+nnoremap <leader>m4 :map <leader>4 :update \| :call system("
+nnoremap <leader>m5 :map <leader>5 :update \| :call system("
+nnoremap <leader>m6 :map <leader>6 :update \| :call system("
+nnoremap <leader>m7 :map <leader>7 :update \| :call system("
+nnoremap <leader>m8 :map <leader>8 :update \| :call system("
+nnoremap <leader>m9 :map <leader>9 :update \| :call system("
 nnoremap <leader><leader> :noh<cr>
 nnoremap <leader>D :tabe .<cr>
 nnoremap <leader>R :!rg<space>
