@@ -1,11 +1,12 @@
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [user]
-	useconfigonly = true
+    useconfigonly = true
 [core]
-	excludesfile = ~/.dotfiles/git/.gitignore
-	hookspath = ~/.dotfiles/git/hooks
+    excludesfile = ~/.dotfiles/git/.gitignore
+    hookspath = ~/.dotfiles/git/hooks
     editor = vim
+    ignorecase = false
 [branch]
     autosetupmerge = always
 [push]
