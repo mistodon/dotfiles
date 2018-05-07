@@ -150,6 +150,9 @@ nnoremap Y y$
 " Shortcut for typing backquotes which are also my tmux prefix
 inoremap ±± ```
 
+" Double-escape makes the selected line color change faster - no idea why
+inoremap <esc> <esc><esc>
+
 " Use CTRL+{HJKL} to move between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
