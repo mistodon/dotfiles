@@ -224,7 +224,7 @@ nnoremap <leader>R :!rg<space>
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>b :sh<cr>
-nnoremap <leader>c :Diff<cr>
+nnoremap <leader>c "zd
 nnoremap <leader>d :e .<cr>
 nnoremap <leader>g :buffers<cr>:b<space>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
@@ -232,6 +232,7 @@ nnoremap <leader>q :bd<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>t :%s/\t/    /g<cr>:noh<cr><C-o>
 nnoremap <leader>u :e %:h<cr>
+nnoremap <leader>vd :Diff<cr>
 nnoremap <leader>w :%s/\s*$//g<cr>:noh<cr><C-o>
 nnoremap <leader>' f'xf'x
 nnoremap <leader>" f"xf"x
