@@ -240,6 +240,7 @@ nnoremap <leader>i' F'xf'x
 nnoremap <leader>i" F"xf"x
 nnoremap <leader>[ %%%x<C-o>x
 nnoremap <leader>i[ %%x<C-o>x
+nnoremap <leader>; f,a<cr><esc>
 
 
 " Run some default program for a file
