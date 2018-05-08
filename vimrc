@@ -89,6 +89,14 @@ au BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
+" Make exiting insert mode instant
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
+
+
 " Syntax associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
 au BufNewFile,BufRead *.vs set syntax=glsl
