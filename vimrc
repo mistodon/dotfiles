@@ -241,6 +241,7 @@ nnoremap <leader>i' F'xf'x
 nnoremap <leader>i" F"xf"x
 nnoremap <leader>[ %%%x<C-o>x
 nnoremap <leader>i[ %%x<C-o>x
+nnoremap <leader>{ dt(%%r[<C-o>r]<C-i>
 nnoremap <leader>; f,a<cr><esc>
 
 
