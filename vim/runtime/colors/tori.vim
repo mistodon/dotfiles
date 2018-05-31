@@ -5,7 +5,7 @@ let python_highlight_all = 1
 let c_gnu = 1
 
 
-hi Normal          guifg=#585858 guibg=#ffffff gui=NONE      ctermfg=59    ctermbg=231   cterm=None
+hi Normal          guifg=#585858 guibg=#f8f8f8 gui=NONE      ctermfg=59    ctermbg=231   cterm=None
 hi Comment         guifg=#808080                             ctermfg=102
 hi Constant        guifg=#78cc6b                             ctermfg=133
     hi Number          guifg=#78cc6b                             ctermfg=113
@@ -31,8 +31,8 @@ au InsertLeave * hi CursorLine      guibg=#eeeeee gui=NONE                    ct
 au InsertEnter * hi CursorLine      guibg=#ffdfff gui=NONE                    ctermbg=225   cterm=None
 
 
-hi CursorLineNr    guifg=#585858 guibg=#ffffff               ctermfg=59    ctermbg=231
-hi LineNr          guifg=#a8a8a8 guibg=#ffffff               ctermfg=145   ctermbg=231
+hi CursorLineNr    guifg=#585858 guibg=#f8f8f8               ctermfg=59    ctermbg=231
+hi LineNr          guifg=#a8a8a8 guibg=#f8f8f8               ctermfg=145   ctermbg=231
 hi MatchParen      guibg=#dfffff gui=Underline               ctermbg=195   cterm=Underline
 hi Pmenu           guifg=#585858 guibg=#eeeeee gui=NONE      ctermfg=59    ctermbg=231   cterm=None
 hi PmenuSel        guifg=#0087d7 guibg=#dfffff gui=NONE      ctermfg=32    ctermbg=195   cterm=None
@@ -42,7 +42,7 @@ hi Search          guifg=#585858 guibg=#a7ffa7 gui=Underline      ctermfg=59    
 hi StatusLine      guifg=#a8a8a8 guibg=#eeeeee gui=NONE      ctermfg=145   ctermbg=231   cterm=None
 hi StatusLineNC    guifg=#eeeeee guibg=#a8a8a8 gui=NONE      ctermfg=231   ctermbg=145   cterm=None
 hi TabLine         guifg=#a8a8a8 guibg=#eeeeee gui=NONE      ctermfg=145   ctermbg=231   cterm=None
-hi TabLineSel      guifg=#5fafff guibg=#ffffff gui=Underline ctermfg=75    ctermbg=231   cterm=Underline
+hi TabLineSel      guifg=#5fafff guibg=#f8f8f8 gui=Underline ctermfg=75    ctermbg=231   cterm=Underline
 hi TabLineFill     guifg=#a8a8a8                             ctermfg=145
 hi Visual          guibg=#dfffff                             ctermbg=195
 
@@ -53,8 +53,8 @@ hi DiffChange      guifg=NONE    guibg=#dfffff               ctermfg=None  cterm
 hi DiffText        guifg=NONE    guibg=#afd7ff               ctermfg=None  ctermbg=153
 hi Folded          guifg=#9e9e9e guibg=#dadada gui=NONE      ctermfg=145   ctermbg=188   cterm=None
 if &diff
-    hi StatusLine      guifg=#ffffff guibg=#5f5fff gui=NONE      ctermfg=231   ctermbg=63    cterm=None
-    hi StatusLineNC    guifg=#ffffff guibg=#afafff gui=NONE      ctermfg=231   ctermbg=147   cterm=None
+    hi StatusLine      guifg=#f8f8f8 guibg=#5f5fff gui=NONE      ctermfg=231   ctermbg=63    cterm=None
+    hi StatusLineNC    guifg=#f8f8f8 guibg=#afafff gui=NONE      ctermfg=231   ctermbg=147   cterm=None
 endif
 
 
