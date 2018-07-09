@@ -431,7 +431,7 @@ function _hot_tab
         echo -n $line
     elif [[ "$word" == "b?" ]]; then
         echo
-        COMPREPLY=($(git branch | hs))
+        COMPREPLY=($(git branch | sed 's/^[* ] //' | hs))
         echo -n $line
     else
         COMPREPLY=()
