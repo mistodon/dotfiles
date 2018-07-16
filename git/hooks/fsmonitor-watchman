@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eu
+
+project_hook_name="$(basename "$0")"
+project_hook_script=".git/hooks/$project_hook_name"
+if [ -e "$project_hook_script" ]; then
+    "$project_hook_script"
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+fi
+
+exit 0
