@@ -15,6 +15,7 @@ Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'airblade/vim-gitgutter'
 
 if has("win32unix")
     Plugin 'ctrlpvim/ctrlp.vim'
