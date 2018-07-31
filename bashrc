@@ -192,7 +192,7 @@ function gpull
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git pull --rebase origin "$branch"
+    git pull --rebase origin "$branch" $@
     if [ $? -ne 0 ]; then
         echo -e "\033[1;38mSuggestion:\033[0m maybe try gspull?"
     fi
@@ -201,7 +201,7 @@ function gpull
 function gspull
 {
     git stash
-    gpull
+    gpull $@
     git stash pop
 }
 
@@ -211,7 +211,7 @@ function gpush
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git push -u origin "$branch"
+    git push -u origin "$branch" $@
 }
 
 function gnuke
