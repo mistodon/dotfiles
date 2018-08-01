@@ -221,13 +221,11 @@ nnoremap <leader>M7 :map <leader>7 :update \\| :!
 nnoremap <leader>M8 :map <leader>8 :update \\| :!
 nnoremap <leader>M9 :map <leader>9 :update \\| :!
 nnoremap <leader><leader> :noh<cr>
-nnoremap <leader>D :tabe .<cr>
 nnoremap <leader>R :!rg<space>
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>c "zd
-nnoremap <leader>d :e .<cr>
 nnoremap <leader>g :buffers<cr>:b<space>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>q :bd<cr>
@@ -335,6 +333,8 @@ if !has("win32unix")
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg -l ".@*, "", ":e", ":tabe")<cr>
+    nnoremap <leader>d :call HeatseekerCommand("git diff --name-only", "", ":e", ":tabe")<cr>
+    nnoremap <leader>D :call HeatseekerCommand("git diff --name-only --diff-filter=U", "", ":e", ":tabe")<cr>
 endif
 
 if has("win32unix")
