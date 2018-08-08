@@ -279,11 +279,13 @@ let s:comment_map = {
     \   "bash_profile": '#',
     \   "bashrc": '#',
     \   "bat": 'REM',
+    \   "dockerfile": '#',
     \   "lua": '--',
     \   "python": '#',
     \   "ruby": '#',
     \   "sh": '#',
     \   "tex": '%',
+    \   "toml": '#',
     \   "vim": '"',
     \ }
 
