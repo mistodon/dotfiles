@@ -138,9 +138,9 @@ function rgi
 
     if [ "$OSTYPE" == "msys" ]
     then
-        rg $query -l | sed 's;\\;/;g' | xargs sed -i "" "s;$1;$2;g"
+        rg "$query" -l | sed 's;\\;/;g' | xargs sed -i "" "s;$1;$2;g"
     else
-        rg $query -l | xargs sed -i "" "s;$1;$2;g"
+        rg "$query" -l | xargs sed -i "" "s;$1;$2;g"
     fi
 }
 
