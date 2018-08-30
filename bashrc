@@ -131,17 +131,12 @@ function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function today { date +"%A %Y-%m-%d" ; }
 
-function rgi
+function legacy_rgi
 {
     local query=$1
     local replacement=$2
 
-    if [ "$OSTYPE" == "msys" ]
-    then
-        rg "$query" -l | sed 's;\\;/;g' | xargs sed -i "" "s;$1;$2;g"
-    else
-        rg "$query" -l | xargs sed -i "" "s;$1;$2;g"
-    fi
+    rg "$query" -l | xargs sed "s;$1;$2;g"
 }
 
 function rgedit
