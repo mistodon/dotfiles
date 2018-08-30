@@ -16,9 +16,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'skywind3000/asyncrun.vim'
 
-" This makes startup so slow :(
-Plugin 'vim-syntastic/syntastic'
-
 if has("win32unix")
     Plugin 'ctrlpvim/ctrlp.vim'
 endif
@@ -125,16 +122,6 @@ let g:netrw_banner = 0
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_checkers = []
-let g:syntastic_yaml_checkers = ['yamllint']
-"""
 
 command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
