@@ -417,15 +417,17 @@ function _hot_tab
     local word=${COMP_WORDS[COMP_CWORD]}
     local line=${COMP_LINE}
 
-    echo
-
     if [[ "$word" == "?" ]]; then
+        echo
         COMPREPLY=($(fd | hs))
     elif [[ "$word" == "d?" ]]; then
+        echo
         COMPREPLY=($(fd -t d | hs))
     elif [[ "$word" == "b?" ]]; then
+        echo
         COMPREPLY=($(git branch | sed 's/^[* ] //' | hs))
     elif [[ "$word" == "g?" ]]; then
+        echo
         COMPREPLY=($(git diff --name-only | hs))
     else
         COMPREPLY=()
