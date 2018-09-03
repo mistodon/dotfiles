@@ -416,20 +416,23 @@ function _hot_tab
 
     local word=${COMP_WORDS[COMP_CWORD]}
     local line=${COMP_LINE}
+
+    echo
+
     if [[ "$word" == "?" ]]; then
-        echo
         COMPREPLY=($(fd | hs))
-        echo -n $line
     elif [[ "$word" == "d?" ]]; then
-        echo
         COMPREPLY=($(fd -t d | hs))
-        echo -n $line
     elif [[ "$word" == "b?" ]]; then
-        echo
         COMPREPLY=($(git branch | sed 's/^[* ] //' | hs))
-        echo -n $line
+    elif [[ "$word" == "g?" ]]; then
+        COMPREPLY=($(git diff --name-only | hs))
     else
         COMPREPLY=()
+    fi
+
+    if [ -n "$COMPREPLY" ]; then
+        echo -n $line
     fi
 }
 # Add the following line to your .bashrc to enable it
