@@ -395,9 +395,9 @@ if [[ "$(pwd)" == "$HOME" ]]; then
     (cd ~/.dotfiles && git fetch && git status -s)
 
     # Print todo list
-    if [[ -f ~/temp/todo ]]; then
+    if [[ -f ~/todo.md ]]; then
         echo -ne "\033[36m"
-        cat ~/temp/todo
+        cat ~/todo.md
         echo -ne "\033[0m"
     fi
 
