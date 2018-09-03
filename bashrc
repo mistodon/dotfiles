@@ -1,4 +1,5 @@
-export SOURCEDFILES="$SOURCEDFILES $BASH_SOURCE"
+#!/bin/bash
+export SOURCEDFILES="$SOURCEDFILES ${BASH_SOURCE[0]}"
 
 export PATH="$PATH:~/.dotfiles/bin"
 
@@ -15,35 +16,38 @@ function from-the-top
 }
 
 # Git in prompt from https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
-COLOR_NOTCLEAN="\033[0;35m"
-COLOR_YELLOW="\033[0;33m"
-COLOR_LYELLOW="\033[1;33m"
-COLOR_GREY="\033[0;30;1m"
-COLOR_GREEN="\033[0;32m"
-COLOR_BLUE="\033[0;36m"
-COLOR_LBLUE="\033[1;36m"
-COLOR_DBLUE="\033[0;34m"
+COLOR_NOTCLEAN="\\033[0;35m"
+COLOR_YELLOW="\\033[0;33m"
+COLOR_LYELLOW="\\033[1;33m"
+COLOR_GREY="\\033[0;30;1m"
+COLOR_GREEN="\\033[0;32m"
+COLOR_BLUE="\\033[0;36m"
+COLOR_LBLUE="\\033[1;36m"
+COLOR_DBLUE="\\033[0;34m"
 
 function git_color {
-  local git_status="$(git status 2> /dev/null)"
+  local git_status;
+  git_status="$(git status 2> /dev/null)"
 
   if [[ $git_status =~ "Changes to be committed" ]]; then
-    echo -e $COLOR_GREEN
+    echo -e "$COLOR_GREEN"
   elif [[ ! $git_status =~ "working tree clean" && ! $git_status =~ "working directory clean" ]]; then
-    echo -e $COLOR_NOTCLEAN
+    echo -e "$COLOR_NOTCLEAN"
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-    echo -e $COLOR_YELLOW
+    echo -e "$COLOR_YELLOW"
   elif [[ $git_status =~ "Your branch is behind" ]]; then
-    echo -e $COLOR_GREY
+    echo -e "$COLOR_GREY"
   elif [[ $git_status =~ "nothing to commit" ]]; then
-    echo -e $COLOR_BLUE
+    echo -e "$COLOR_BLUE"
   else
-    echo -e $COLOR_DBLUE
+    echo -e "$COLOR_DBLUE"
   fi
 }
 
 function git_branch {
-  local git_status="$(git status 2> /dev/null)"
+  local git_status;
+  git_status="$(git status 2> /dev/null)"
+
   local on_branch="On branch ([^${IFS}]*)"
   local on_commit="HEAD detached at ([^${IFS}]*)"
 
@@ -58,9 +62,9 @@ function git_branch {
 
 function path_color {
     if [ -z ${VIM+x} ]; then
-        echo -e $COLOR_LYELLOW
+        echo -e "$COLOR_LYELLOW"
     else
-        echo -e $COLOR_LBLUE
+        echo -e "$COLOR_LBLUE"
     fi
 }
 
@@ -71,34 +75,26 @@ export PS1="\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_
 function mkcd
 {
     mkdir -p "$*"
-    cd "$*"
+    cd "$*" || return
 }
 
 function shh
 {
-    chmod +x $@
+    chmod +x "$@"
 }
 
 # `cd` to directory of the given file
 function cdf
 {
-    local path=$(fd "$@" | head -1)
+    local path;
+    path=$(fd "$@" | head -1)
+
     if [[ -f "$path" ]]; then
-        cd $(dirname $path)
+        cd "$(dirname $path)" || return
     elif [[ -d "$path" ]]; then
-        cd $path
+        cd "$path" || return
     else
         echo "error: No file or directory found."
-    fi
-}
-
-# File-picking shorthand
-function f
-{
-    if [ "$#" -eq "0" ]; then
-        fd -c never | hs
-    else
-        "$@" $(fd -c never | hs)
     fi
 }
 
@@ -141,14 +137,14 @@ function rgi
 
 function rgedit
 {
-    $EDITOR -p $(rg "$1" -l)
+    $EDITOR -p "$(rg "$1" -l)"
 }
 
 # Git shorthands
 function gs { git status "$@" ; }
 
 function ga { git add "$@" ; }
-function gau { git add $(git ls-files -o --exclude-standard) ; }
+function gau { git add "$(git ls-files -o --exclude-standard)" ; }
 
 function gr { git reset "$@" ; }
 
@@ -158,8 +154,6 @@ function gdd { git diff --cached "$@" ; }
 function gc { git checkout "$@" ; }
 
 function gb { git branch "$@" ; }
-
-function gcb { git checkout $(git branch | hs) ; }
 
 function gf { git fetch "$@" ; }
 
@@ -183,11 +177,13 @@ function glogday
 
 function gpull
 {
-    local branch="$(git rev-parse --abbrev-ref HEAD)"
+    local branch;
+    branch="$(git rev-parse --abbrev-ref HEAD)"
+
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git pull --rebase origin "$branch" $@
+    git pull --rebase origin "$branch" "$@"
     if [ $? -ne 0 ]; then
         echo -e "\033[1;38mSuggestion:\033[0m maybe try gspull?"
     fi
@@ -196,17 +192,19 @@ function gpull
 function gspull
 {
     git stash
-    gpull $@
+    gpull "$@"
     git stash pop
 }
 
 function gpush
 {
-    local branch="$(git rev-parse --abbrev-ref HEAD)"
+    local branch;
+    branch="$(git rev-parse --abbrev-ref HEAD)"
+
     if [ $? -ne 0 ]; then
         return 1
     fi
-    git push -u origin "$branch" $@
+    git push -u origin "$branch" "$@"
 }
 
 function gnuke
@@ -244,7 +242,7 @@ function gidhome
 
 function gsub
 {
-    git submodule foreach --recursive $@
+    git submodule foreach --recursive "$@"
 }
 
 # Local server
@@ -262,30 +260,6 @@ function lhost
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
 
     function fm { explorer . ; }
-
-
-    which make &>/dev/null
-    if [ $? -ne 0 ]; then
-        alias make="mingw32-make"
-    else
-        alias make="make"
-    fi
-
-
-    function msvcup
-    {
-        export PATH="C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin:C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Bin:C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE:$PATH"
-        export INCLUDE="C:\Program Files\Microsoft SDKs\Windows\v7.1\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\ucrt\;$INCLUDE"
-        export LIB="C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\ucrt\x86;$LIB"
-    }
-
-
-    function msbuild
-    {
-        echo "WARNING: This function is pure janky and has a hardcoded path in it"
-        echo "  If you installed this repo anywhere but ~/bin/dotfiles it ain't gonna work"
-        cmd "/C %HOME%/bin/dotfiles/windows_bats/msbuild.bat $@"
-    }
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
