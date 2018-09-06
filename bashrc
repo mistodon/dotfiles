@@ -9,8 +9,7 @@ export WWW_HOME="https://duckduckgo.com"
 export EDITOR="vim"
 export BASH_ENV=~/.bashrc
 
-function from-the-top
-{
+function from-the-top {
     source ~/.bashrc
     tmux source-file ~/.tmux.conf
 }
@@ -72,20 +71,17 @@ export PS1="\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_
 
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
-function mkcd
-{
+function mkcd {
     mkdir -p "$*"
     cd "$*" || return
 }
 
-function shh
-{
+function shh {
     chmod +x "$@"
 }
 
 # `cd` to directory of the given file
-function cdf
-{
+function cdf {
     local path;
     path=$(fd "$@" | head -1)
 
@@ -98,8 +94,7 @@ function cdf
     fi
 }
 
-function lx
-{
+function lx {
     if [ $# -eq 0 ]; then
         exa -a -1
     else
@@ -111,8 +106,7 @@ function lx
 alias :q='exit'
 alias qq='exit'
 
-function isolate_tmux
-{
+function isolate_tmux {
     ps -a | rg -q "\d+:\d+\.\d+ vim" -
     if [ "$?" -eq "0" ]; then
         echo -e "\033[1;33mvim is running - might wanna deal with that first\033[0m"
@@ -127,16 +121,14 @@ function bell { tput bel ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function today { date +"%A %Y-%m-%d" ; }
 
-function rgi
-{
+function rgi {
     local query=$1
     local replacement=$2
 
     rg "$query" -l | xargs perl -i -pe "s@${query}@${replacement}@g"
 }
 
-function rgedit
-{
+function rgedit {
     $EDITOR -p "$(rg "$1" -l)"
 }
 
@@ -157,8 +149,7 @@ function gb { git branch "$@" ; }
 
 function gf { git fetch "$@" ; }
 
-function glog
-{
+function glog {
     local log_hash="%C(11)%h%Creset"
     local log_relative_time="%C(10)(%ar)%Creset"
     local log_author="%C(bold 12)<%an>%Creset"
@@ -168,15 +159,13 @@ function glog
     git log --graph --color=always --pretty="tformat:${log_format}" $* | column -s '^' -t | less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
 }
 
-function glogday
-{
+function glogday {
     local date=$1
     shift 1
     git log --after "$date 00:00" --before "$date 23:59" "$@"
 }
 
-function gpull
-{
+function gpull {
     local branch;
     branch="$(git rev-parse --abbrev-ref HEAD)"
 
@@ -189,15 +178,13 @@ function gpull
     fi
 }
 
-function gspull
-{
+function gspull {
     git stash
     gpull "$@"
     git stash pop
 }
 
-function gpush
-{
+function gpush {
     local branch;
     branch="$(git rev-parse --abbrev-ref HEAD)"
 
@@ -207,8 +194,7 @@ function gpush
     git push -u origin "$branch" "$@"
 }
 
-function gnuke
-{
+function gnuke {
     local to_master="$1"
     read -r -p "Are you sure you want to nuke this repo? [y/N] " response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
@@ -229,25 +215,21 @@ function gnuke
     fi
 }
 
-function gidentity
-{
+function gidentity {
     git config user.name "$1"
     git config user.email "$2"
 }
 
-function gidhome
-{
+function gidhome {
     gidentity "***Realname*** ***Lastname***" "***redacted.email@redacted.nope***"
 }
 
-function gsub
-{
+function gsub {
     git submodule foreach --recursive "$@"
 }
 
 # Local server
-function lhost
-{
+function lhost {
     if [ `python --version 2>&1 | cut -c 8` == "2" ]; then
         python -m SimpleHTTPServer 8000
     else
@@ -275,8 +257,7 @@ fi
 
 
 # True-color test (from https://gist.github.com/XVilka/8346728)
-function truecolor_test
-{
+function truecolor_test {
     awk 'BEGIN{
         s="//////////"; s=s s s s s s s s;
         for (colnum = 0; colnum<80; colnum++) {
@@ -293,32 +274,27 @@ function truecolor_test
 }
 
 
-function vrun
-{
+function vrun {
     local script_file=~/.vrun
     vim $script_file
     sh $script_file
 }
 
 
-function farcopy
-{
+function farcopy {
     echo "$@" > ~/Sync/Work/.farcopy
 }
 
-function farpaste
-{
+function farpaste {
     cat ~/Sync/Work/.farcopy
 }
 
-function far
-{
+function far {
     # Only works on macOS at the moment
     echo -n `farpaste` | pbcopy
 }
 
-function pipeloop
-{
+function pipeloop {
     if [[ "$#" -ne "1" ]]; then
         echo "error: Requires a single argument: pipename"
         return 1
@@ -331,8 +307,7 @@ function pipeloop
     (while true; do cat $pipefile; done) | bash --login
 }
 
-function tellpipe
-{
+function tellpipe {
     if [[ "$#" -eq "0" ]]; then
         echo "error: Requires at least one argument: pipename commands..."
         return 1
@@ -365,9 +340,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 
 if [[ "$(pwd)" == "$HOME" ]]; then
-    # Check if this repo needs pushed
-    (cd ~/.dotfiles && git fetch && git status -s)
-
     # Print todo list
     if [[ -f ~/todo.md ]]; then
         echo -ne "\033[36m"
@@ -381,8 +353,7 @@ fi
 
 
 # Heatseeker-based tab completion - not enabled by default
-function _hot_tab
-{
+function _hot_tab {
     if [ $COMP_CWORD -lt 0 ]; then
         COMPREPLY=()
         return
