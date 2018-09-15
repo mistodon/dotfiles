@@ -17,3 +17,4 @@
     ci = commit --verbose
     amend = commit --amend
     aa = add --all
+    last = log -1 --oneline
