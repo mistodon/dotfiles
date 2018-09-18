@@ -272,6 +272,13 @@ vnoremap <leader>x :call RunFile()<cr>
 nnoremap <leader>z :exec "AsyncStop"<cr>
 vnoremap <leader>z :exec "AsyncStop"<cr>
 
+" Common run shortcuts
+function! GradleShortcuts()
+    map ,1 :update \| :call system("tellpipe a gradle compileTestJava")<cr>
+    map ,2 :update \| :call system("tellpipe a gradle test")<cr>
+    map ,3 :update \| :call system("tellpipe a gradle check")<cr>
+endfunction
+
 " Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
 let s:comment_map = {
     \   "abc": '%',
