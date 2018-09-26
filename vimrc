@@ -5,17 +5,24 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" syntax
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'timonv/vim-cargo'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'chemzqm/vim-jsx-improve'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+
+" editing
+Plugin 'godlygeek/tabular'
+Plugin 'bkad/CamelCaseMotion'
+
+" fancy things
+Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'skywind3000/asyncrun.vim'
 
+" desperation
 if has("win32unix")
     Plugin 'ctrlpvim/ctrlp.vim'
 endif
@@ -400,3 +407,5 @@ onoremap <silent> <leader>_ :call NextIndent(0, 0, 0, 1)<CR>
 onoremap <silent> <leader>+ :call NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> _ :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> + :call NextIndent(1, 1, 1, 1)<CR>
+
+call camelcasemotion#CreateMotionMappings('-')
