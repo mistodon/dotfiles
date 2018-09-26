@@ -14,7 +14,15 @@
 [pull]
     rebase = true
 [alias]
-    ci = commit --verbose
-    amend = commit --amend
+    a = add
     aa = add --all
+    amend = commit --amend
+    b = branch
+    d = diff
+    dd = diff --cached
+    c = checkout
+    ci = commit --verbose
+    f = fetch
     last = log -1 --oneline
+    r = git reset
+    s = status

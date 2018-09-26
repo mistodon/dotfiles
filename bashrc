@@ -133,21 +133,7 @@ function rgedit {
 }
 
 # Git shorthands
-function gs { git status "$@" ; }
-
-function ga { git add "$@" ; }
 function gau { git add "$(git ls-files -o --exclude-standard)" ; }
-
-function gr { git reset "$@" ; }
-
-function gd { git diff "$@" ; }
-function gdd { git diff --cached "$@" ; }
-
-function gc { git checkout "$@" ; }
-
-function gb { git branch "$@" ; }
-
-function gf { git fetch "$@" ; }
 
 function glog {
     local log_hash="%C(11)%h%Creset"
