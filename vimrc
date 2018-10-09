@@ -21,6 +21,7 @@ Plugin 'bkad/CamelCaseMotion'
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'bogado/file-line'
 
 " desperation
 if has("win32unix")
@@ -348,7 +349,7 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
-    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg -l ".@*, "", ":e", ":tabe")<cr>
+    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --no-heading --column -o --replace \"\" ".@*, "", ":e", ":tabe")<cr>
     nnoremap <leader>d :call HeatseekerCommand("git diff --name-only", "", ":e", ":tabe")<cr>
     nnoremap <leader>D :call HeatseekerCommand("git diff --name-only --diff-filter=U", "", ":e", ":tabe")<cr>
 endif
