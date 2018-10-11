@@ -19,6 +19,7 @@ COLOR_NOTCLEAN="\\033[0;35m"
 COLOR_YELLOW="\\033[0;33m"
 COLOR_LYELLOW="\\033[1;33m"
 COLOR_GREY="\\033[0;30;1m"
+COLOR_RED="\\033[0;31m"
 COLOR_GREEN="\\033[0;32m"
 COLOR_BLUE="\\033[0;36m"
 COLOR_LBLUE="\\033[1;36m"
@@ -59,15 +60,25 @@ function git_branch {
   fi
 }
 
-function path_color {
-    if [ -z ${VIM+x} ]; then
-        echo -e "$COLOR_LYELLOW"
-    else
-        echo -e "$COLOR_LBLUE"
+function disclaimer {
+    if [ -n "$VIM" ]; then
+        echo -n "(vim) "
+    elif [ -z "$TMUX" ]; then
+        echo -n "(no tmux) "
     fi
 }
 
-export PS1="\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
+function path_color {
+    if [ -n "$VIM" ]; then
+        echo -e "$COLOR_LBLUE"
+    elif [ -z "$TMUX" ]; then
+        echo -e "$COLOR_RED"
+    else
+        echo -e "$COLOR_LYELLOW"
+    fi
+}
+
+export PS1="$(disclaimer)\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
 
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
