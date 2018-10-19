@@ -26,3 +26,5 @@
     last = log -1 --oneline
     r = git reset
     s = status
+[credential]
+	helper = osxkeychain
