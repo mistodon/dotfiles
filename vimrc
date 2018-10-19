@@ -248,9 +248,15 @@ nnoremap <leader>i' F'xf'x
 nnoremap <leader>i" F"xf"x
 nnoremap <leader>[ %%%x<C-o>x
 nnoremap <leader>i[ %%x<C-o>x
+xnoremap <leader>a[ xi[]<Esc>P
+xnoremap <leader>a( xi()<Esc>P
+xnoremap <leader>a{ xi{}<Esc>P
+xnoremap <leader>a< xi<lt>><Esc>P
+xnoremap <leader>a' xi''<Esc>P
+xnoremap <leader>a" xi""<Esc>P
+xnoremap <leader>a\| xi\|\|<Esc>P
 nnoremap <leader>{ dt(%%r[<C-o>r]<C-i>
 nnoremap <leader>; f,a<cr><esc>
-
 
 " Run some default program for a file
 let s:executable_map = {
