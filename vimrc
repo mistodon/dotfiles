@@ -327,8 +327,11 @@ function! ToggleComment()
     end
 endfunction
 
-nnoremap <leader>/ :call ToggleComment()<cr>
-vnoremap <leader>/ :call ToggleComment()<cr>
+nnoremap <leader>// :call ToggleComment()<cr>
+nnoremap <leader>/i{ vi{:call ToggleComment()<cr>
+nnoremap <leader>/i[ vi{:call ToggleComment()<cr>
+nnoremap <leader>/i( vi{:call ToggleComment()<cr>
+vnoremap <leader>// :call ToggleComment()<cr>
 
 
 
