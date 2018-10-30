@@ -57,8 +57,11 @@ set hidden
 set exrc
 set secure
 set termguicolors
+
+" This seems only to be needed after installing vim from brew
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
+
 set clipboard=unnamed
 set scrolloff=3
 
@@ -165,9 +168,6 @@ nnoremap # :set hls<cr>#
 " Make Y consistent with D, C, in terms of newlines
 nnoremap Y y$
 
-" Shortcut for typing backquotes which are also my tmux prefix
-inoremap ±± ```
-
 " Use CTRL+{HJKL} to move between splits
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -228,6 +228,7 @@ nnoremap <leader>M6 :map <leader>6 :update \\| :!
 nnoremap <leader>M7 :map <leader>7 :update \\| :!
 nnoremap <leader>M8 :map <leader>8 :update \\| :!
 nnoremap <leader>M9 :map <leader>9 :update \\| :!
+
 nnoremap <leader><leader> :noh<cr>
 nnoremap <leader>R :!rg<space>
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
