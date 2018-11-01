@@ -13,6 +13,7 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'leafgarland/typescript-vim'
 
 " editing
 Plugin 'godlygeek/tabular'
