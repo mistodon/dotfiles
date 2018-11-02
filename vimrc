@@ -310,6 +310,7 @@ let s:comment_map = {
     \   "tex": '%',
     \   "toml": '#',
     \   "vim": '"',
+    \   "yaml": '#',
     \ }
 
 function! ToggleComment()
