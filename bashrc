@@ -328,6 +328,14 @@ function tellpipe {
     fi
 }
 
+function tm {
+    tmux attach 2> /dev/null
+    if [[ "$?" != "0" ]]; then
+        tmux
+    else
+        echo "Attaching..."
+    fi
+}
 
 # Eternal bash history.
 # ---------------------

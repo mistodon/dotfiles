@@ -18,6 +18,7 @@ Plugin 'leafgarland/typescript-vim'
 " editing
 Plugin 'godlygeek/tabular'
 Plugin 'bkad/CamelCaseMotion'
+Plugin '907th/vim-auto-save'
 
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
@@ -134,6 +135,9 @@ let g:netrw_banner = 0
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+" Can alternatively toggle with :AutoSaveToggle
+let g:auto_save = 1
 
 command! -nargs=0 Diff execute ':silent !git difftool -y HEAD -- %' | execute ':redraw!'
 
