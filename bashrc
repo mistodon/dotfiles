@@ -87,6 +87,10 @@ function mkcd {
     cd "$*" || return
 }
 
+function mksh {
+    touch $1 && chmod +x $1
+}
+
 function shh {
     chmod +x "$@"
 }
