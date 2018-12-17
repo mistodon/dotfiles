@@ -120,7 +120,8 @@ au FileType scss :setlocal sw=2 ts=2 sts=2
 au FileType yaml :setlocal sw=2 ts=2 sts=2
 au FileType go :setlocal noexpandtab
 au BufNewFile,BufRead * colorscheme tori
-au CursorHoldI * stopinsert
+" Disabling auto-exit insert mode
+" au CursorHoldI * stopinsert
 
 if !has('nvim')
     set notextmode
