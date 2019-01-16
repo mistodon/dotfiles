@@ -246,6 +246,9 @@ function lhost {
     fi
 }
 
+function bcargo {
+    RUST_BACKTRACE=1 cargo "$@"
+}
 
 # Platform specific
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
