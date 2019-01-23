@@ -95,6 +95,24 @@ function shh {
     chmod +x "$@"
 }
 
+function see {
+    local filename=$1
+    if [[ -d "$1" ]]; then
+        ls $1
+    else
+        bat $1
+    fi
+}
+
+function ef {
+    local filename=$1
+    if [[ -d "$1" ]]; then
+        cd $1
+    else
+        vim $1
+    fi
+}
+
 # `cd` to directory of the given file
 function cdf {
     local path;

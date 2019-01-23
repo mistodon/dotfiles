@@ -264,6 +264,7 @@ xnoremap <leader>a" xi""<Esc>P
 xnoremap <leader>a\| xi\|\|<Esc>P
 nnoremap <leader>{ dt(%%r[<C-o>r]<C-i>
 nnoremap <leader>; f,a<cr><esc>
+nnoremap <leader>I :!idea %<cr>
 
 " Run some default program for a file
 let s:executable_map = {
