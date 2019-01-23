@@ -97,21 +97,28 @@ function shh {
 
 function see {
     local filename=$1
-    if [[ -z "$1" ]]; then
+    if [[ -z "$filename" ]]; then
         ls
-    elif [[ -d "$1" ]]; then
-        ls $1
+    elif [[ -d "$filename" ]]; then
+        ls $filename
     else
-        bat $1
+        bat $filename
     fi
+}
+
+function with {
+    local dirname=$1
+    shift
+
+    (cd $dirname && $@)
 }
 
 function ef {
     local filename=$1
-    if [[ -d "$1" ]]; then
-        cd $1
+    if [[ -d "$filename" ]]; then
+        cd $filename
     else
-        vim $1
+        vim $filename
     fi
 }
 
@@ -272,21 +279,23 @@ function bcargo {
 
 # Platform specific
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
-
-    function fm { explorer . ; }
-
+    export FILEMANAGER=explorer
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-
-    function fm { open . ; }
-
+    export FILEMANAGER=open
 elif [[ "$OSTYPE" == "linux"* ]]; then
-
-    function fm { caja . ; }
-
+    export FILEMANAGER=caja
 else
     echo "dotfiles: error: Could not load basic OS helpers for OS of type $OSTYPE"
 fi
 
+function fm {
+    local filename=$1
+    if [[ -z "$filename" ]]; then
+        $FILEMANAGER .
+    else
+        $FILEMANAGER $filename
+    fi
+}
 
 # True-color test (from https://gist.github.com/XVilka/8346728)
 function truecolor_test {
