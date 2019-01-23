@@ -97,7 +97,9 @@ function shh {
 
 function see {
     local filename=$1
-    if [[ -d "$1" ]]; then
+    if [[ -z "$1" ]]; then
+        ls
+    elif [[ -d "$1" ]]; then
         ls $1
     else
         bat $1
