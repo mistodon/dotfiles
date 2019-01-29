@@ -113,6 +113,7 @@ function with {
     (cd $dirname && $@)
 }
 
+# 'edit file' or 'enter folder'
 function ef {
     local filename=$1
     if [[ -d "$filename" ]]; then
