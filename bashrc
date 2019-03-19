@@ -97,13 +97,21 @@ function shh {
 
 function see {
     local filename=$1
-    if [[ -z "$filename" ]]; then
-        ls
-    elif [[ -d "$filename" ]]; then
-        ls $filename
+    if [[ "$2" == "-e" ]]; then
+        ef $filename
     else
-        bat $filename
+        if [[ -z "$filename" ]]; then
+            ls
+        elif [[ -d "$filename" ]]; then
+            ls $filename
+        else
+            bat $filename
+        fi
     fi
+}
+
+function lst {
+    lx -T $1
 }
 
 function with {

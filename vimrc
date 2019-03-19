@@ -72,7 +72,7 @@ if has("x11")
 endif
 
 " Gary Bernhardt's:
-set winwidth=84
+set winwidth=50
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
@@ -159,6 +159,12 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Alternative escape key
+nnoremap § <Esc>
+inoremap § <Esc>
+vnoremap § <Esc>
+xnoremap § <Esc>
 
 " TODO: Only works on macOS - must be a better way than this
 nnoremap <leader>r yiw:!rg $(pbpaste)<cr>
