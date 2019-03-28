@@ -217,6 +217,10 @@ cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
 nnoremap Q :q<cr>
 nnoremap Z :x<cr>
 
+" Quick way to Ctrl+O commands in insert mode
+inoremap \ <C-o>
+inoremap <C-\> \
+
 " Leader commands
 nmap <leader>ch :HLT<cr>
 
