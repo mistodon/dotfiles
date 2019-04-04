@@ -59,6 +59,7 @@ set hidden
 set exrc
 set secure
 set termguicolors
+set noswapfile
 
 " This seems only to be needed after installing vim from brew
 set t_8f=[38;2;%lu;%lu;%lum
