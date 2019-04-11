@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import time
+import sys
+
+request = sys.argv[1]
+
+SWAPTIME = 10 * 60
+swap = int(time.time() / SWAPTIME) % 2
+color = ["green", "blue"][swap]
+
+if color == request:
+    print(request)
