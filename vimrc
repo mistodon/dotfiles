@@ -222,6 +222,9 @@ nnoremap Z :x<cr>
 inoremap \ <C-o>
 inoremap <C-\> \
 
+" Wtf why is this even inconsistent to begin with?
+nnoremap ^ <C-^>
+
 " Leader commands
 nmap <leader>ch :HLT<cr>
 
