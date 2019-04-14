@@ -223,7 +223,7 @@ inoremap \ <C-o>
 inoremap <C-\> \
 
 " Wtf why is this even inconsistent to begin with?
-nnoremap ^ <C-^>
+nnoremap <C-6> <C-^>
 
 " Leader commands
 nmap <leader>ch :HLT<cr>
