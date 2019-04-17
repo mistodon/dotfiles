@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+import json
+from os import path
+import sys
+import time
+
+dotfile_path = path.expanduser("~/.nag")
+contents = None
+if path.exists(dotfile_path):
+    with open(dotfile_path, "r") as f:
+        contents = f.read()
+else:
+    contents = "{}"
+
+contents = json.loads(contents)
+cmd = sys.argv[1] if len(sys.argv) > 1 else None
+
+NAGS = [
+        ("water", "💧", 30 * 60),
+]
+
+now = time.time()
+output = ""
+
+for nag in NAGS:
+    if cmd is None:
+        last_time = contents.get(nag[0]) or 0
+        delta = now - last_time
+        too_much = delta > nag[2]
+        if too_much:
+            output += nag[1]
+    elif cmd == nag[0]:
+        contents[nag[0]] = now
+        print(contents)
+
+if output:
+    print(output)
+
+with open(dotfile_path, "w") as f:
+    json.dump(contents, f)
