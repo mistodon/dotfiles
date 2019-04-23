@@ -158,14 +158,9 @@ alias :q='exit'
 alias qq='exit'
 
 function isolate_tmux {
-    ps -a | rg -q "\d+:\d+\.\d+ vim" -
-    if [ "$?" -eq "0" ]; then
-        echo -e "\033[1;33mvim is running - might wanna deal with that first\033[0m"
-    else
-        tmux kill-session -a
-        tmux kill-window -a
-        tmux kill-pane -a
-    fi
+    tmux kill-session -a
+    tmux kill-window -a
+    tmux kill-pane -a
 }
 
 function bell { tput bel ; }
