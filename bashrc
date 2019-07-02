@@ -121,6 +121,10 @@ function with {
     (cd $dirname && $@)
 }
 
+function getthatnewlinetaefuck {
+    perl -0pe 's/\n\Z//'
+}
+
 # 'edit file' or 'enter folder'
 function ef {
     local filename=$1
