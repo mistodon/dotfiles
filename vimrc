@@ -24,6 +24,7 @@ Plugin '907th/vim-auto-save'
 Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'bogado/file-line'
+Plugin 'ruanyl/vim-fixmyjs'
 
 " desperation
 if has("win32unix")
@@ -105,11 +106,10 @@ au BufReadPost *
 
 " Make exiting insert mode instant
 augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
 augroup END
 
+:command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':e' | execute ':redraw!'
 
 " Syntax associations
 au BufNewFile,BufRead *.geojson set syntax=javascript
@@ -120,6 +120,13 @@ au FileType javascript :setlocal sw=2 ts=2 sts=2
 au FileType scss :setlocal sw=2 ts=2 sts=2
 au FileType yaml :setlocal sw=2 ts=2 sts=2
 au FileType go :setlocal noexpandtab
+au FileType rust :nnoremap <leader>z :RustFmt<cr>
+au FileType python :nnoremap <leader>z :%!autopep8 -<cr>
+au FileType javascript :nnoremap <leader>z :Fixmyjs<cr>
+au FileType json :nnoremap <leader>z :%!jq "."<cr>
+au FileType java :nnoremap <leader>z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh %:p<cr>
+au FileType java :nnoremap <leader>Z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh -r %:p:h<cr>
+
 au BufNewFile,BufRead * colorscheme tori
 " Disabling auto-exit insert mode
 " au CursorHoldI * stopinsert
@@ -305,8 +312,6 @@ endfunction
 
 nnoremap <leader>x :call RunFile()<cr>
 vnoremap <leader>x :call RunFile()<cr>
-nnoremap <leader>z :exec "AsyncStop"<cr>
-vnoremap <leader>z :exec "AsyncStop"<cr>
 
 " Common run shortcuts
 function! GradleShortcuts()
