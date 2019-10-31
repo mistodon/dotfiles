@@ -19,6 +19,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'bkad/CamelCaseMotion'
 Plugin '907th/vim-auto-save'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
