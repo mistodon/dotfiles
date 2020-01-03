@@ -20,6 +20,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'bkad/CamelCaseMotion'
 Plugin '907th/vim-auto-save'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'djoshea/vim-autoread'
 
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
