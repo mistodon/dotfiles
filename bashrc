@@ -168,6 +168,7 @@ function isolate_tmux {
 }
 
 function bell { tput bel ; }
+function vbel { open https://falseidolfactory.com ; }
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function today { date +"%A %Y-%m-%d" ; }
 
