@@ -21,7 +21,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin '907th/vim-auto-save'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'djoshea/vim-autoread'
-
+Plugin 'tpope/vim-commentary'
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'skywind3000/asyncrun.vim'
@@ -324,48 +324,11 @@ function! GradleShortcuts()
     map ,3 :update \| :call system("tellpipe a gradle check")<cr>
 endfunction
 
-" Comment/uncomment code - swiped from https://stackoverflow.com/a/24046914/1457538
-let s:comment_map = {
-    \   "abc": '%',
-    \   "bash": '#',
-    \   "bash_profile": '#',
-    \   "bashrc": '#',
-    \   "bat": 'REM',
-    \   "dockerfile": '#',
-    \   "lua": '--',
-    \   "python": '#',
-    \   "ruby": '#',
-    \   "sh": '#',
-    \   "tex": '%',
-    \   "toml": '#',
-    \   "vim": '"',
-    \   "yaml": '#',
-    \ }
-
-function! ToggleComment()
-    let comment_leader = has_key(s:comment_map, &filetype) ? s:comment_map[&filetype] : '\/\/'
-    if getline('.') =~ "^\\s*" . comment_leader . " "
-        " Uncomment the line
-        execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
-    else
-        if getline('.') =~ "^\\s*" . comment_leader
-            " Uncomment the line
-            execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
-        else
-            " Comment the line
-            " execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
-            execute "silent s/^/" . comment_leader . " /"
-        end
-    end
-endfunction
-
-nnoremap <leader>// :call ToggleComment()<cr>
-nnoremap <leader>/i{ vi{:call ToggleComment()<cr>
-nnoremap <leader>/i[ vi{:call ToggleComment()<cr>
-nnoremap <leader>/i( vi{:call ToggleComment()<cr>
-vnoremap <leader>// :call ToggleComment()<cr>
-
-
+nmap <leader>// gcc
+nmap <leader>/i{ vi{gc
+nmap <leader>/i[ vi[gc
+nmap <leader>/i( vi(gc
+vmap <leader>// gc
 
 
 if !has("win32unix")
