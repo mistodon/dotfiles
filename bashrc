@@ -167,8 +167,12 @@ function isolate_tmux {
     tmux kill-pane -a
 }
 
-function bell { tput bel ; }
+function bel { tput bel ; }
 function vbel { open https://falseidolfactory.com ; }
+function melbel { melo play ~/temp/bell ; }
+function bell { osascript -e "display notification \"Done\" with title \"Bell\" sound name \"bottle\"" ; }
+function waitbell { ((sleep "$1" ; bell) &) }
+
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function today { date +"%A %Y-%m-%d" ; }
 

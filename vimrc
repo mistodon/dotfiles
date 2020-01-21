@@ -14,6 +14,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'vim-scripts/SyntaxRange'
 
 " editing
 Plugin 'godlygeek/tabular'
@@ -22,6 +23,7 @@ Plugin '907th/vim-auto-save'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'djoshea/vim-autoread'
 Plugin 'tpope/vim-commentary'
+
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
 Plugin 'skywind3000/asyncrun.vim'
@@ -130,6 +132,8 @@ au FileType javascript :nnoremap <leader>z :Fixmyjs<cr>
 au FileType json :nnoremap <leader>z :%!jq "."<cr>
 au FileType java :nnoremap <leader>z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh %:p<cr>
 au FileType java :nnoremap <leader>Z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh -r %:p:h<cr>
+
+au FileType asciidoc :call SyntaxRange#Include('----', '----', 'rust', 'NonText')
 
 au BufNewFile,BufRead * colorscheme tori
 " Disabling auto-exit insert mode
