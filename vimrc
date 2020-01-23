@@ -134,6 +134,7 @@ au FileType java :nnoremap <leader>z :Silent /Applications/IntelliJ\ IDEA.app/Co
 au FileType java :nnoremap <leader>Z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh -r %:p:h<cr>
 
 au FileType asciidoc :call SyntaxRange#Include('----', '----', 'rust', 'NonText')
+au FileType asciidoc :call SyntaxRange#Include('++++', '++++', 'rust', 'NonText')
 
 au BufNewFile,BufRead * colorscheme tori
 " Disabling auto-exit insert mode
