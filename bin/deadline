@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import datetime, os
+
+
+def main():
+    with open(os.path.expanduser("~/sync/mega/data/deadline"), "r") as f:
+        line = f.read()
+    timestamp, todo = line.strip().split(" ", 1)
+    timestamp = datetime.datetime.strptime(timestamp, "%Y-%m-%d")
+    now = datetime.datetime.now()
+    days = (timestamp - now).days
+    hours = (timestamp - now).seconds / 3600
+    left = f"{days}d" if days > 0 else (f"{int(hours)}h" if days == 0 else "LATE")
+    print(f"({todo}| {left})")
+
+
+if __name__ == "__main__":
+    main()
