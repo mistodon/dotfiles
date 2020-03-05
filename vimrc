@@ -125,6 +125,7 @@ au FileType lua :setlocal sw=2 ts=2 sts=2
 au FileType javascript :setlocal sw=2 ts=2 sts=2
 au FileType scss :setlocal sw=2 ts=2 sts=2
 au FileType yaml :setlocal sw=2 ts=2 sts=2
+au FileType javascriptreact :setlocal sw=2 ts=2 sts=2
 au FileType go :setlocal noexpandtab
 au FileType rust :nnoremap <leader>z :RustFmt<cr>
 au FileType python :nnoremap <leader>z :%!autopep8 -<cr>

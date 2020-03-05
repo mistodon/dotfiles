@@ -446,3 +446,5 @@ function _hot_tab {
 }
 # Add the following line to your .bashrc to enable it
 # complete -D -F _hot_tab -o bashdefault -o default
+
+stty -ixon
