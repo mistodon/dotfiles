@@ -15,6 +15,7 @@ Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-scripts/SyntaxRange'
+Plugin 'chaimleib/vim-renpy'
 
 " editing
 Plugin 'godlygeek/tabular'

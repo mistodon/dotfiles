@@ -170,8 +170,8 @@ function isolate_tmux {
 function bel { tput bel ; }
 function vbel { open https://falseidolfactory.com ; }
 function melbel { melo play ~/temp/bell ; }
-function bell { osascript -e "display notification \"Done\" with title \"Bell\" sound name \"bottle\"" ; }
-function waitbell { ((sleep "$1" ; bell) &) }
+function bell { osascript -e "display notification \"Bell\" with title \"$1\" sound name \"bottle\"" ; }
+function waitbell { ((sleep "$1" ; bell $2) &) }
 
 function datestamp { date +'%Y_%m_%d_%H%M' ; }
 function today { date +"%A %Y-%m-%d" ; }
@@ -225,6 +225,10 @@ function gpull {
     if [ $? -ne 0 ]; then
         echo -e "\033[1;38mSuggestion:\033[0m maybe try gspull?"
     fi
+}
+
+function gish {
+    git fetch origin pull/$1/head:pr-$1
 }
 
 function gspull {
@@ -447,4 +451,4 @@ function _hot_tab {
 # Add the following line to your .bashrc to enable it
 # complete -D -F _hot_tab -o bashdefault -o default
 
-stty -ixon
+stty -ixon > /dev/null 2> /dev/null
