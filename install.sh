@@ -9,8 +9,12 @@ echo "Only searching for now - no installing."
 echo
 echo '# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
+brew search asciidoctor
+brew search cmake
 brew search fd
+brew search ffmpeg
 brew search git
+brew search p7zip
 brew search python3
 brew search tmux
 brew search vim
@@ -20,8 +24,9 @@ brew cask search java8
 
 echo "# curl https://sh.rustup.rs -sSf | sh"
 
+cargo search bat
+cargo search cargo-watch
 cargo search close_enough
-cargo search fselect
 cargo search heatseeker
 cargo search loc
 cargo search ripgrep
