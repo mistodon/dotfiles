@@ -47,6 +47,8 @@ colorscheme pencil
 hi htmlBold        guifg=#000000               gui=Bold      ctermfg=16                  cterm=Bold
 hi htmlItalic      guifg=#0087d7               gui=Bold      ctermfg=32                  cterm=Bold
 hi htmlLink        guifg=#0087d7               gui=Underline                             cterm=Underline
+hi StatusLine      guifg=#f8f8f8 guibg=#5f5fff gui=NONE      ctermfg=231   ctermbg=63    cterm=None
+hi StatusLineNC    guifg=#f8f8f8 guibg=#afafff gui=NONE      ctermfg=231   ctermbg=147   cterm=None
 
 " Use different cursor line color in insert mode
 hi CursorLine      guibg=#eeeeee gui=NONE                    ctermbg=231   cterm=None
@@ -103,12 +105,13 @@ endif
 
 " Gary Bernhardt's:
 set winwidth=50
+""" Uncomment the below to have the wierd small horizontal splits, if you want
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winheight=5
+" set winminheight=5
+" set winheight=999
 
 " Status Line
 set laststatus=2                             " always show statusbar
