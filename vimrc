@@ -387,7 +387,7 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
-    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --vimgrep -o --replace \"\" ".@*, "", ":e", ":tabe")<cr>
+    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --vimgrep -o --replace \"\" ". @* ." \| rg '^([^:]*):(\\d+).*' --replace '+$2 $1'", "", ":e", ":tabe")<cr>
     nnoremap <leader>d :call HeatseekerCommand("git diff --name-only", "", ":e", ":tabe")<cr>
     nnoremap <leader>D :call HeatseekerCommand("git diff --name-only --diff-filter=U", "", ":e", ":tabe")<cr>
 endif
