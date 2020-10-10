@@ -111,15 +111,15 @@ set winminheight=5
 set winheight=999
 
 " Status Line
-set laststatus=2                             " always show statusbar  
-set statusline=  
-set statusline+=\[%2n\ ]\                      " buffer number  
-set statusline+=%f\                          " filename   
-set statusline+=%h%m%r%w                     " status flags  
-set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type  
-set statusline+=%=                           " right align remainder  
-set statusline+=%-14(%l,%c%V%)               " line, character  
-set statusline+=%<%P                         " file position  
+set laststatus=2                             " always show statusbar
+set statusline=
+set statusline+=\[%2n\ ]\                      " buffer number
+set statusline+=%f\                          " filename
+set statusline+=%h%m%r%w                     " status flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=%=                           " right align remainder
+set statusline+=%-14(%l,%c%V%)               " line, character
+set statusline+=%<%P                         " file position
 
 " [For gvim
 set guifont=Consolas:h9:cANSI:qDRAFT
@@ -384,7 +384,7 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
-    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --no-heading --column -o --replace \"\" ".@*, "", ":e", ":tabe")<cr>
+    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --vimgrep -o --replace \"\" ".@*, "", ":e", ":tabe")<cr>
     nnoremap <leader>d :call HeatseekerCommand("git diff --name-only", "", ":e", ":tabe")<cr>
     nnoremap <leader>D :call HeatseekerCommand("git diff --name-only --diff-filter=U", "", ":e", ":tabe")<cr>
 endif
