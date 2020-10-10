@@ -40,9 +40,26 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
-colorscheme tori
+"colorscheme tori
+colorscheme pencil
+
+"colorscheme overrides
+hi htmlBold        guifg=#000000               gui=Bold      ctermfg=16                  cterm=Bold
+hi htmlItalic      guifg=#0087d7               gui=Bold      ctermfg=32                  cterm=Bold
+hi htmlLink        guifg=#0087d7               gui=Underline                             cterm=Underline
+
+" Use different cursor line color in insert mode
+hi CursorLine      guibg=#eeeeee gui=NONE                    ctermbg=231   cterm=None
+au InsertLeave * hi CursorLine      guibg=#eeeeee gui=NONE                    ctermbg=231   cterm=None
+au InsertEnter * hi CursorLine      guibg=#dfefdf gui=NONE                    ctermbg=225   cterm=None
+
+hi Search          guibg=#dfefdf gui=Underline      ctermfg=59    ctermbg=157   cterm=Underline
+hi Comment         guifg=#db8413                             ctermfg=102
+
+
 let mapleader=","
 
+set mouse=a
 set autoindent
 set t_Co=256
 set autowrite
@@ -66,6 +83,12 @@ set exrc
 set secure
 set termguicolors
 set noswapfile
+" Indents word-wrapped lines as much as the 'parent' line
+set breakindent
+set showbreak=~~~~>
+" Ensures word-wrap does not split words
+set formatoptions=l
+set lbr
 
 " This seems only to be needed after installing vim from brew
 set t_8f=[38;2;%lu;%lu;%lum
@@ -138,7 +161,6 @@ au FileType java :nnoremap <leader>Z :Silent /Applications/IntelliJ\ IDEA.app/Co
 au FileType asciidoc :call SyntaxRange#Include('----', '----', 'rust', 'NonText')
 au FileType asciidoc :call SyntaxRange#Include('++++', '++++', 'rust', 'NonText')
 
-au BufNewFile,BufRead * colorscheme tori
 " Disabling auto-exit insert mode
 " au CursorHoldI * stopinsert
 
@@ -338,6 +360,7 @@ nmap <leader>/i[ vi[gc
 nmap <leader>/i( vi(gc
 vmap <leader>// gc
 
+nnoremap <leader>e yi{<cr> :call system("pbpaste \| emissary \| pbcopy")<cr>
 
 if !has("win32unix")
     function! HeatseekerCommand(choice_command, hs_args, first_command, rest_command)

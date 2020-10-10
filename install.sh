@@ -31,3 +31,5 @@ cargo search heatseeker
 cargo search loc
 cargo search ripgrep
 cargo search exa #--no-default-features
+
+#npm install --global git-open
