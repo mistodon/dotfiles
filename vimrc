@@ -298,7 +298,7 @@ nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>b :sh<cr>
 nnoremap <leader>c "zd
-nnoremap <leader>g :buffers<cr>:b<space>
+nnoremap <leader>B :buffers<cr>:b<space>
 nnoremap <leader>h :tabe %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>s :update<cr>
@@ -387,7 +387,8 @@ if !has("win32unix")
 
     nnoremap <leader>f :call HeatseekerCommand("fd -c never", "", ":e", ":tabe")<cr>
     nnoremap <leader>F :call HeatseekerCommand("fd -HI -c never", "", ":e", ":tabe")<cr>
-    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg --vimgrep -o --replace \"\" ". @* ." \| rg '^([^:]*):(\\d+).*' --replace '+$2 $1'", "", ":e", ":tabe")<cr>
+    nnoremap <leader>g yiw<cr> :call HeatseekerCommand("rg --vimgrep -o --replace \"\" ". @* ." \| rg '^([^:]*):(\\d+).*' --replace '+$2 $1'", "", ":e", ":tabe")<cr>
+    nnoremap <leader>G yiw<cr> :call HeatseekerCommand("rg -l ". @*, "", ":e", ":tabe")<cr>
     nnoremap <leader>d :call HeatseekerCommand("git diff --name-only", "", ":e", ":tabe")<cr>
     nnoremap <leader>D :call HeatseekerCommand("git diff --name-only --diff-filter=U", "", ":e", ":tabe")<cr>
 endif
