@@ -9,27 +9,25 @@ echo "Only searching for now - no installing."
 echo
 echo '# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
-brew search asciidoctor
-brew search cmake
-brew search fd
-brew search ffmpeg
-brew search git
-brew search p7zip
-brew search python3
-brew search tmux
-brew search vim
+echo "brew install asciidoctor bash bash-completion cmake fd ffmpeg git java11 jq nmap node@12 p7zip pipenv pyenv python3 tmux vim vlc"
+echo "brew --cask docker java11 keepingyouawake"
+echo "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
-brew cask search docker
-brew cask search java8
+echo "cargo search bat cargo-edit cargo-watch close_enough heatseeker loc ripgrep exa eva du-dust"
 
-echo "# curl https://sh.rustup.rs -sSf | sh"
+echo "npm install --global git-open aws-cdk"
 
-cargo search bat
-cargo search cargo-watch
-cargo search close_enough
-cargo search heatseeker
-cargo search loc
-cargo search ripgrep
-cargo search exa #--no-default-features
+echo "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
 
-#npm install --global git-open
+echo "pyenv install 3.6.13"
+echo "pyenv install 3.7.10"
+echo "pyenv install 3.9.1"
+
+echo "You should install these apps too:
+- Alacritty
+- Audacity
+- Clip Studio Paint
+- Firefox
+- OBS
+- Tresorit
+"

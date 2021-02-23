@@ -157,7 +157,7 @@ function lx {
     fi
 }
 
-# Shorthands for quitting terminal 
+# Shorthands for quitting terminal
 alias :q='exit'
 alias qq='exit'
 
@@ -274,7 +274,7 @@ function gidentity {
 }
 
 function gidhome {
-    gidentity "***Realname*** ***Lastname***" "***redacted.email@redacted.nope***"
+    gidentity "Vi" "***redacted.email@redacted.nope***"
 }
 
 function gsub {
