@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
-
+set -eu
+set -o pipefail
 
 readonly dotfiles_dir=$(cd $(dirname $BASH_SOURCE); pwd)
-readonly should_force=$1
+readonly should_force=${1:-no}
 
 if [ "$OSTYPE" == "msys" -o "$OSTYPE" == "cygwin" ]; then
     readonly OSDIR=windows
@@ -58,6 +58,10 @@ create_link "$dotfiles_dir/cargo/config" ~/.cargo/config
 
 if [ "$OSDIR" == "macos" ]; then
     create_link "$dotfiles_dir/alacritty_macos.yml" ~/.alacritty.yml
+
+    sudo cp "$dotfiles_dir/macos/org.custom.escape_remap.plist" /Library/LaunchDaemons/org.custom.escape_remap.plist
+    sudo chown root:wheel /Library/LaunchDaemons/org.custom.escape_remap.plist
+    sudo launchctl load -w /Library/LaunchDaemons/org.custom.escape_remap.plist
 else
     create_link "$dotfiles_dir/alacritty.yml" ~/.alacritty.yml
 fi
