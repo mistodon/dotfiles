@@ -436,7 +436,7 @@ function todo {
 }
 
 function mmail {
-    see /var/mail/***realname******lastname*** "$@"
+    see "/var/mail/$USER" "$@"
 }
 
 # Heatseeker-based tab completion - not enabled by default
