@@ -3,3 +3,6 @@
 .vscode/*
 HeyJude.*
 .***realname***_specific*
+Pipfile
+*~
+..bfg-report/

@@ -1,6 +1,7 @@
 #!/bin/bash
 export SOURCEDFILES="$SOURCEDFILES ${BASH_SOURCE[0]}"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="$PATH:~/.dotfiles/bin"
 
 export CLICOLOR=1
@@ -8,6 +9,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export WWW_HOME="https://duckduckgo.com"
 export EDITOR="vim"
 export BASH_ENV=~/.bashrc
+export HOPFILE_PATH="$HOME/sync/basis/data/.hopfile"
 
 function from-the-top {
     source ~/.bashrc
@@ -88,7 +90,12 @@ function mkcd {
 }
 
 function mksh {
-    touch $1 && chmod +x $1
+    echo "#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+" > $1 && chmod +x $1
 }
 
 function shh {
@@ -180,7 +187,14 @@ function rgi {
     local query=$1
     local replacement=$2
 
-    rg "$query" -l | xargs perl -i -pe "s@${query}@${replacement}@g"
+    rg "$query" -l | xargs perl -i -pe "s:${query}:${replacement}:g"
+}
+
+function rginat {
+    local query=$1
+    local replacement=$2
+
+    rg --hidden "$query" -l | xargs perl -i -pe "s:${query}:${replacement}:g"
 }
 
 function rgedit {
@@ -274,7 +288,7 @@ function gidentity {
 }
 
 function gidhome {
-    gidentity "Vi" "***redacted.email@redacted.nope***"
+    gidentity "Vi" "1149443+mistodon@users.noreply.github.com"
 }
 
 function gsub {
@@ -407,9 +421,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 if [[ "$(pwd)" == "$HOME" ]]; then
     # Print todo list
-    if [[ -f ~/todo.md ]]; then
+    if [[ -f ~/sync/basis/data/todo.md ]]; then
         echo -ne "\033[36m"
-        cat ~/todo.md
+        cat ~/sync/basis/data/todo.md
         echo -ne "\033[0m"
     fi
 
@@ -417,6 +431,13 @@ if [[ "$(pwd)" == "$HOME" ]]; then
     truecolor_test
 fi
 
+function todo {
+    vim ~/sync/basis/data/todo.md
+}
+
+function mmail {
+    see /var/mail/***realname******lastname*** "$@"
+}
 
 # Heatseeker-based tab completion - not enabled by default
 function _hot_tab {

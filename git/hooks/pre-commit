@@ -1,40 +1,6 @@
 #!/bin/bash
 
-readonly changed_files=$(git diff --cached --name-only --ignore-submodules)
-
-if [ -z "$changed_files" ]; then
-    echo -e "\033[1;38mNo changed files\033[0m"
-    exit 0
-fi
-
-exit_code=1
-
-function check_absence
-{
-    local pattern=$1
-    local hysteric=$2
-    local message=$3
-
-    rg -iq $pattern ${changed_files} >&2
-    local code=$?
-
-    if [ "$code" -eq "0" ]; then
-        echo -e "\033[0;31m${hysteric}\033[1;37m: ${message}:\033[0m" >&2
-        rg -il $pattern ${changed_files} >&2
-        echo
-    fi
-
-    ((exit_code &= $code))
-}
-
-
-check_absence "heyjude" "DISASTER" "Commit contains HEYJUDEs"
-check_absence "\t" "OH THE HUMANITY" "Commit contains tabs"
-check_absence "\s$" "HEAVENS TO BETSY" "Commit contains trailing whitespace"
-
-if [ "$exit_code" -ne "1" ]; then
-    exit 1
-fi
+set -eu
 
 project_hook_name="$(basename "$0")"
 project_hook_script=".git/hooks/$project_hook_name"

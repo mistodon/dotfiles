@@ -108,8 +108,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
     foreground: '0xc7c7c7'
+    background: '0x000000'
 
     # Bright and dim foreground colors
     #
@@ -322,6 +322,8 @@ live_config_reload: true
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
+  - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
+  - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
   - { key: Paste,                   action: Paste                        }

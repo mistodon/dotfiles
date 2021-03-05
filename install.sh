@@ -9,8 +9,8 @@ echo "Only searching for now - no installing."
 echo
 echo '# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
-echo "brew install asciidoctor bash bash-completion cmake fd ffmpeg git java11 jq nmap node@12 p7zip pipenv pyenv python3 tmux vim vlc"
-echo "brew --cask docker java11 keepingyouawake"
+echo "brew install asciidoctor awscli bash bash-completion cmake coreutils fd ffmpeg git java11 jq nmap node@12 p7zip pipenv pyenv python3 tmux vim vlc"
+echo "brew --cask docker java11 keepingyouawake ngrok"
 echo "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
 echo "cargo search bat cargo-edit cargo-watch close_enough heatseeker loc ripgrep exa eva du-dust"
