@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -eu
+set -o pipefail
+
+readonly basepath=$1
+readonly outpath=$2
+readonly now=$(date "+%Y-%m-%d:%H:%M")
+
+output=""
+let outcount=0 || true
+
+cd $basepath
+
+for dir in $(fd -H -t d ^.git$); do
+    if [ -n "$(cd $dir/.. && git status --porcelain)" ]; then
+        let outcount++ || true
+        output="${output}
+${dir}"
+    fi
+done
+
+output="${now} ~ [${outcount}]
+${output}"
+
+echo "$output" > $outpath

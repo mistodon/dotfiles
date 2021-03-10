@@ -398,7 +398,8 @@ function tellpipe {
 function tm {
     tmux attach 2> /dev/null
     if [[ "$?" != "0" ]]; then
-        tmux
+        tmux new -s work &
+        tmux new -s main
     else
         echo "Attaching..."
     fi
