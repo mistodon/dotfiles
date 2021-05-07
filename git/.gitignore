@@ -4,5 +4,7 @@
 HeyJude.*
 .***realname***_specific*
 Pipfile
+Pipfile.lock
 *~
 ..bfg-report/
+geckodriver.log

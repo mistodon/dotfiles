@@ -11,4 +11,36 @@ if [ -e "$project_hook_script" ]; then
     fi
 fi
 
+readonly remotes="$(git remote -v || true)"
+readonly branchname="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
+readonly gitname="$(git config user.name)"
+readonly gitemail="$(git config user.email)"
+
+if [[ $remotes == *"skyscanner"* ]]; then
+    if [[ $branchname == "master" ]] || [[ $branchname == *"PEL"* ]]; then
+        echo "Bad branch name"
+        exit 1
+    fi
+
+    if [[ $gitname != *"laire"* ]]; then
+        echo "Bad user name"
+        exit 1
+    fi
+
+    if [[ $gitemail != "claire.harris@skyscanner.net" ]]; then
+        echo "Bad email"
+        exit 1
+    fi
+else
+    if [[ $gitname != "Vi" ]]; then
+        echo "Bad user name"
+        exit 1
+    fi
+
+    if [[ $gitemail == *"skyscanner"* ]] || [[ $gitemail == *"claire"* ]]; then
+        echo "Bad email"
+        exit 1
+    fi
+fi
+
 exit 0

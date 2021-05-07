@@ -2,8 +2,8 @@
 # This is your name/email to place in the `authors` section of a new Cargo.toml
 # that is generated. If not present, then `git` will be probed, and if that is
 # not present then `$USER` and `$EMAIL` will be used.
-name = "***Realname*** ***Lastname***"
-email = "wishing.engine@gmail.com"
+name = "Vi"
+email = "violet@hey.com"
 
 [target.x86_64-unknown-linux-gnu]
 linker = "x86_64-unknown-linux-gnu-gcc"

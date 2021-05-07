@@ -419,12 +419,21 @@ export HISTFILE=~/.bash_eternal_history
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+function todo_filename {
+    local tmux_session_name=$(tmux display-message -p '#S' || true)
+    if [[ "$tmux_session_name" == "work" ]]; then
+        echo -n "$HOME/sync/basis/skyscanner/todo.md"
+    else
+        echo -n "$HOME/sync/basis/data/todo.md"
+    fi
+}
 
 if [[ "$(pwd)" == "$HOME" ]]; then
     # Print todo list
-    if [[ -f ~/sync/basis/data/todo.md ]]; then
+    todo_fname=$(todo_filename)
+    if [[ -f $todo_fname ]]; then
         echo -ne "\033[36m"
-        cat ~/sync/basis/data/todo.md
+        bat -P --decorations never $todo_fname || cat $todo_fname
         echo -ne "\033[0m"
     fi
 
@@ -433,7 +442,7 @@ if [[ "$(pwd)" == "$HOME" ]]; then
 fi
 
 function todo {
-    vim ~/sync/basis/data/todo.md
+    vim $(todo_filename)
 }
 
 function mmail {

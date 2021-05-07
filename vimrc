@@ -61,6 +61,8 @@ hi Comment         guifg=#db8413                             ctermfg=102
 
 let mapleader=","
 
+autocmd FileType melo setlocal commentstring=//\ %s
+
 set mouse=a
 set autoindent
 set t_Co=256
@@ -150,6 +152,7 @@ au BufNewFile,BufRead *.vs set syntax=glsl
 au BufNewFile,BufRead *.fs set syntax=glsl
 au FileType lua :setlocal sw=2 ts=2 sts=2
 au FileType javascript :setlocal sw=2 ts=2 sts=2
+au FileType java :setlocal sw=2 ts=2 sts=2
 au FileType scss :setlocal sw=2 ts=2 sts=2
 au FileType yaml :setlocal sw=2 ts=2 sts=2
 au FileType javascriptreact :setlocal sw=2 ts=2 sts=2
@@ -260,10 +263,6 @@ nnoremap <bs> O<esc>
 cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
 nnoremap Q :q<cr>
 nnoremap Z :x<cr>
-
-" Quick way to Ctrl+O commands in insert mode
-inoremap \ <C-o>
-inoremap <C-\> \
 
 " Wtf why is this even inconsistent to begin with?
 nnoremap <C-6> <C-^>

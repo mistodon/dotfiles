@@ -1,0 +1,41 @@
+secure_input_notification: false
+matches:
+  - trigger: "cafe"
+    replace: "café"
+    propagate_case: true
+
+  - trigger: "fiance"
+    replace: "fiancé"
+    propagate_case: true
+
+  - trigger: ",[date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ",[k"
+    replace: ":kaligula:: "
+
+  - trigger: ",[s"
+    replace: ":suomare:: "
+
+  - trigger: ",[v"
+    replace: ":vonnie:: "
+
+  - trigger: ",[r"
+    replace: ":raza:: "
+
+  - trigger: ",[p"
+    replace: ":pamacea:: "
+
+  - trigger: ",[dailylife"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: >-
+            echo "Chapter 3; $(date -v+4H '+%-m/%-d/%Y')"
