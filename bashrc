@@ -483,3 +483,13 @@ function _hot_tab {
 # complete -D -F _hot_tab -o bashdefault -o default
 
 stty -ixon > /dev/null 2> /dev/null
+
+function fuck_you_macos {
+    local filename=$1
+    sudo chmod -R 755 $1
+}
+
+function nvmup {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+}

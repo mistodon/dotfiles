@@ -282,7 +282,7 @@ hi! link htmlTagN         Keyword
 
 " HTML content
 call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })
-call s:h("htmlH2",        {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlH2",        {"fg": s:head_c, "gui": "bold"       , "cterm": "bold"     })
 call s:h("htmlH3",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
 call s:h("htmlH4",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
 call s:h("htmlH5",        {"fg": s:head_c                                            })

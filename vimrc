@@ -24,6 +24,7 @@ Plugin '907th/vim-auto-save'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'djoshea/vim-autoread'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-abolish'
 
 " fancy things
 Plugin 'gerw/vim-HiLinkTrace'
@@ -49,15 +50,14 @@ hi htmlItalic      guifg=#0087d7               gui=Bold      ctermfg=32         
 hi htmlLink        guifg=#0087d7               gui=Underline                             cterm=Underline
 hi StatusLine      guifg=#f8f8f8 guibg=#5f5fff gui=NONE      ctermfg=231   ctermbg=63    cterm=None
 hi StatusLineNC    guifg=#f8f8f8 guibg=#afafff gui=NONE      ctermfg=231   ctermbg=147   cterm=None
+hi Search          guibg=#dfefdf gui=Underline      ctermfg=59    ctermbg=157   cterm=Underline
+hi Comment         guifg=#db8413                             ctermfg=102
+hi mkdBlockQuote    guifg=#db8413 ctermfg=102
 
 " Use different cursor line color in insert mode
 hi CursorLine      guibg=#eeeeee gui=NONE                    ctermbg=231   cterm=None
 au InsertLeave * hi CursorLine      guibg=#eeeeee gui=NONE                    ctermbg=231   cterm=None
 au InsertEnter * hi CursorLine      guibg=#dfefdf gui=NONE                    ctermbg=225   cterm=None
-
-hi Search          guibg=#dfefdf gui=Underline      ctermfg=59    ctermbg=157   cterm=Underline
-hi Comment         guifg=#db8413                             ctermfg=102
-
 
 let mapleader=","
 
@@ -155,8 +155,10 @@ au FileType javascript :setlocal sw=2 ts=2 sts=2
 au FileType java :setlocal sw=2 ts=2 sts=2
 au FileType scss :setlocal sw=2 ts=2 sts=2
 au FileType yaml :setlocal sw=2 ts=2 sts=2
+au FileType typescript :setlocal sw=2 ts=2 sts=2
 au FileType javascriptreact :setlocal sw=2 ts=2 sts=2
 au FileType go :setlocal noexpandtab
+au FileType lua :nnoremap <leader>z :%!luafmt -i 2 --stdin<cr>
 au FileType rust :nnoremap <leader>z :RustFmt<cr>
 au FileType python :nnoremap <leader>z :%!autopep8 -<cr>
 au FileType javascript :nnoremap <leader>z :Fixmyjs<cr>
@@ -293,6 +295,7 @@ nnoremap <leader>M9 :map <leader>9 :update \\| :!
 
 nnoremap <leader><leader> :noh<cr>
 nnoremap <leader>R :!rg<space>
+nnoremap <leader>ji :!rg<space>^import\<space>.*
 nnoremap <leader>T :%s/\t/  /g<cr>:noh<cr><C-o>
 nnoremap <leader>U :tabe %:h<cr>
 nnoremap <leader>b :sh<cr>

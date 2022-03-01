@@ -38,4 +38,4 @@ matches:
         type: shell
         params:
           cmd: >-
-            echo "Chapter 3; $(date -v+4H '+%-m/%-d/%Y')"
+            echo "Chapter 3; $(date -v-8H '+%-m/%-d/%Y')"
