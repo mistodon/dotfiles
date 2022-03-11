@@ -80,7 +80,7 @@ function path_color {
     fi
 }
 
-export PS1="$(disclaimer)\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\w\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
+export PS1="$(disclaimer)\[\033[36m\]\D{%T}\[\033[m\]|\[\$(path_color)\]\W\[\033[m\]\[\$(git_color)\]\$(git_branch)\[\033[m\]\$ "
 
 
 # From http://onethingwell.org/post/586977440/mkcd-improved
@@ -103,16 +103,16 @@ function shh {
 }
 
 function see {
-    local filename=$1
+    local filename="$1"
     if [[ "$2" == "-e" ]]; then
-        ef $filename
+        ef "$filename"
     else
         if [[ -z "$filename" ]]; then
             ls
         elif [[ -d "$filename" ]]; then
-            ls $filename
+            ls "$filename"
         else
-            bat $filename
+            bat -p "$filename"
         fi
     fi
 }
@@ -134,11 +134,11 @@ function getthatnewlinetaefuck {
 
 # 'edit file' or 'enter folder'
 function ef {
-    local filename=$1
+    local filename="$1"
     if [[ -d "$filename" ]]; then
-        cd $filename
+        cd "$filename"
     else
-        vim $filename
+        vim "$filename"
     fi
 }
 
