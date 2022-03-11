@@ -14,6 +14,9 @@
 [pull]
     rebase = true
 [alias]
+    freeze = update-index --assume-unchanged
+    unfreeze = update-index --no-assume-unchanged
+    frozen = !git ls-files -v | grep "^[[:lower:]]"
     a = add
     aa = add --all
     amend = commit --amend
