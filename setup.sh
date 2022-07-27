@@ -65,3 +65,5 @@ if [ "$OSDIR" == "macos" ]; then
 else
     create_link "$dotfiles_dir/alacritty.yml" ~/.alacritty.yml
 fi
+
+echo "Don't forget to manually set up .talon/user"

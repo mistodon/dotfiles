@@ -1,0 +1,7 @@
+/usr/local/lib
+├── aws-cdk@1.90.1
+├── git-open@2.1.0
+├── lua-fmt@2.6.0
+├── npm@8.5.2
+└── worm-scraper@4.12.1
+
