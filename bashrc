@@ -430,12 +430,12 @@ function todo_filename {
 
 if [[ "$(pwd)" == "$HOME" ]]; then
     # Print todo list
-    todo_fname=$(todo_filename)
-    if [[ -f $todo_fname ]]; then
-        echo -ne "\033[36m"
-        bat -P --decorations never $todo_fname || cat $todo_fname
-        echo -ne "\033[0m"
-    fi
+    # todo_fname=$(todo_filename)
+    # if [[ -f $todo_fname ]]; then
+    #     echo -ne "\033[36m"
+    #     bat -P --decorations never $todo_fname || cat $todo_fname
+    #     echo -ne "\033[0m"
+    # fi
 
     # Display a truecolor strip to make sure colors haven't regressed
     truecolor_test
