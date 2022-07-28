@@ -1,0 +1,69 @@
+bat v0.17.1:
+    bat
+cargo-edit v0.7.0:
+    cargo-add
+    cargo-rm
+    cargo-upgrade
+cargo-expand v1.0.9:
+    cargo-expand
+cargo-script v0.2.8:
+    cargo-script
+    run-cargo-script
+cargo-watch v8.1.2:
+    cargo-watch
+close_enough v0.5.0 (/Users/claireharris/sync/basis/projects/libs/close_enough):
+    cle
+daytape v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/daytape):
+    daytape
+doofy v0.1.0 (/Users/claireharris/sync/basis/projects/forks/duplicate-finder):
+    doofy
+doq v0.2.0 (/Users/claireharris/sync/basis/projects/utilities/doq):
+    doq
+dronehome v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/dronehome):
+    dronehome
+du-dust v0.5.4:
+    dust
+emissary v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/emissary):
+    emissary
+eva v0.2.7:
+    eva
+exa v0.9.0:
+    exa
+fr v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/fr):
+    fr
+fs-cli v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/fs-cli):
+    fs
+heatseeker v1.7.1:
+    hs
+hexyl v0.8.0:
+    hexyl
+hi v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/hi-cli):
+    hi
+https v1.11.2:
+    http
+    httplz
+jamjar-cli v0.1.0 (/Users/claireharris/sync/basis/projects/libs/jamjar/jamjar-cli):
+    jamjar
+jless v0.7.1:
+    jless
+loc v0.5.0:
+    loc
+melo v0.2.0 (/Users/claireharris/sync/basis/projects/crates/melo):
+    melo
+ripgrep v12.1.1:
+    rg
+toml2json v1.3.0:
+    toml2json
+vr v0.1.0 (/Users/claireharris/sync/basis/projects/utilities/vr):
+    vr
+wasm-bindgen-cli v0.2.73:
+    wasm-bindgen
+    wasm-bindgen-test-runner
+    wasm2es6js
+watchexec-cli v1.20.4:
+    watchexec
+whatcolor v0.1.0 (/Users/claireharris/sync/vault/to_be_sorted/Box/Everywhere/SideProjects/whatcolor):
+    whatcolor
+xargo v0.3.26:
+    xargo
+    xargo-check
