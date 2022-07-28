@@ -493,3 +493,21 @@ function nvmup {
     export NVM_DIR="$HOME/.nvm"
     [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 }
+
+function nvm12 {
+    nvmup
+    nvm use --lts=erbium
+}
+
+function nvm16 {
+    nvmup
+    nvm use --lts=gallium
+}
+
+function mine {
+    chmod 0644 $@
+}
+
+function seriously_mine {
+    chmod 0600 $@
+}
