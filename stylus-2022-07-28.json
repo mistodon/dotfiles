@@ -1,0 +1,164 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": false,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "exposeStyleName": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "config.autosave": true,
+      "schemeSwitcher.enabled": "system",
+      "schemeSwitcher.nightStart": "18:00",
+      "schemeSwitcher.nightEnd": "06:00",
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findSort": "u",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.publish.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": false,
+      "editor.selectByTokens": true,
+      "editor.appliesToLineWidget": true,
+      "editor.autosaveDraft": 10,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "headerWidth.edit": 280,
+      "headerWidth.install": 280,
+      "headerWidth.manage": 280,
+      "popupWidth": 246,
+      "updateInterval": 24
+    },
+    "order": {
+      "main": [],
+      "prio": []
+    }
+  },
+  {
+    "enabled": true,
+    "installDate": 1598966345246,
+    "name": "twitter.com",
+    "sections": [
+      {
+        "code": "div[aria-label=\"Timeline: Trending now\"] a[href*=\"/i/events/\"] {\n    display: none!important;\n}\n\ndiv[aria-label=\"Timeline: Trending now\"] {\n    display: none;\n}\n\nmain > div {\n    margin: 0 auto!important;\n}\n\nheader[role=\"banner\"] {\n    position: absolute;\n    \n}\nheader[role=\"banner\"] nav {\n    flex-direction: row!important;\n    position: fixed;\n    right: 0%;\n    left: 0%;\n    max-width: 700px;\n    margin: 0 auto;\n    background: white;  \n    top: 0;\n}\nheader[role=\"banner\"] nav > *  {\n    display: inline-block;\n    flex: 0;\n    width: 200px!important;\n    margin: 0 auto!important;\n}\n\nheader[role=\"banner\"] h1,\nheader[role=\"banner\"] nav > a{\n    width: 40px!important;\n}\n\nmain[role=\"main\"] {\n    margin: 0 auto!important;\n}\n\nmain[role=\"main\"] {\n    margin-top: 4.25em!important;\n}\n\nmain[role=\"main\"] > div > div > div > div {\n    margin: 0 auto;\n}\n\nmain[role=\"main\"] > div > div > div div {\n    max-width: 700px!important;\n}\n\nmain[role=\"main\"] > a > div > div > div > div:not([data-testid=\"primaryColumn\"]) > div > div:first-child {\n    display: none!important;\n}\n\ndiv[data-testid=\"SideNav_AccountSwitcher_Button\"] {\n    margin-top: -3.5em;\n    width: 180px;\n}\n\ndiv[data-testid=\"sidebarColumn\"] {\n    display: none!important;\n}\n\na[data-testid=\"SideNav_NewTweet_Button\"] {\n    display: none!important;\n}\n\nnav[aria-label=\"Primary\"] {\n    padding: 0 1em!important;\n    box-shadow: 0 1px #CCC;\n    box-sizing: border-box;\n}\n\nnav[aria-label=\"Primary\"] a[role=\"link\"] > div:first-child,\nnav[aria-label=\"Primary\"] div[data-testid=\"AppTabBar_More_Menu\"] > div:first-child{\n    padding: 0.75em 1.5em!important;\n\n}\n\nh1[role=\"heading\"],\nnav[aria-label=\"Footer\"] {\n    display: none!important;\n}\n\nheader > div > div > div > div > div > nav {\n    width: 100%;\n}\n\nheader > div > div > div > div > div > nav {\n    width: 100%;\n}\n\nheader > div > div > div > div > div > nav > a    > div > div:nth-child(2),\nheader > div > div > div > div > div > nav > div  > div > div:nth-child(2) {\n    transform: translateX(50%);\n    display: none;\n}",
+        "domains": [
+          "twitter.com"
+        ]
+      }
+    ],
+    "updateDate": 1599049835855,
+    "_id": "53184e56-8bb3-4d59-8142-2371d7f41909",
+    "_rev": 1614372249694,
+    "id": 1
+  },
+  {
+    "enabled": true,
+    "installDate": 1598966372551,
+    "name": "twitter.com news",
+    "sections": [
+      {
+        "code": "[aria-label=\"Timeline: Explore\"],\n[href=\"/explore/tabs/for-you\"],\n[href=\"/explore/tabs/covid-19\"],\n[href=\"/explore/tabs/trending\"],\n[href=\"/explore/tabs/news\"],\n[href=\"/explore/tabs/sports\"],\n[href=\"/explore/tabs/fun\"],\n[href=\"/explore/tabs/entertainment\"] {\n    display: none!important;\n}",
+        "domains": [
+          "twitter.com"
+        ]
+      }
+    ],
+    "updateDate": 1598966372551,
+    "_id": "83fee91f-01cd-41ac-b2da-cf6722f48e15",
+    "_rev": 1614372249694,
+    "id": 2
+  },
+  {
+    "enabled": true,
+    "installDate": 1598966491788,
+    "name": "twitter.com DMDrawer",
+    "sections": [
+      {
+        "code": "div[data-testid=\"DMDrawer\"] {\n    display: none !important;\n}",
+        "domains": [
+          "twitter.com"
+        ]
+      }
+    ],
+    "updateDate": 1598966517567,
+    "_id": "29a34b56-d8bf-43bc-b810-b5b1d5d212d3",
+    "_rev": 1614372249694,
+    "id": 3
+  },
+  {
+    "enabled": true,
+    "installDate": 1614372405883,
+    "name": "LiveSplit",
+    "sections": [
+      {
+        "code": ".sidebar-button { opacity: 0.1; }\n\n.buttons { display: none; }",
+        "urls": [
+          "https://one.livesplit.org/"
+        ]
+      }
+    ],
+    "updateDate": 1614372473898,
+    "_id": "9df3b75f-c122-44e7-8680-659ef1ecde2a",
+    "_rev": 1614372473899,
+    "id": 4
+  }
+]
