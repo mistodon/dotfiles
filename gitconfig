@@ -2,8 +2,6 @@
     tool = vimdiff
 [user]
     useconfigonly = true
-	email = claire.harris@skyscanner.net
-	name = Claire Harris
 [core]
     excludesfile = ~/.dotfiles/git/.gitignore
     hookspath = ~/.dotfiles/git/hooks
