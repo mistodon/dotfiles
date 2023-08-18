@@ -516,4 +516,4 @@ function seriously_mine {
     chmod 0600 $@
 }
 
-complete -W "$(ls ~/bin/mist_scripts)" mist
+complete -W "$(ls ~/.dotfiles/bin/mist_scripts)" mist
