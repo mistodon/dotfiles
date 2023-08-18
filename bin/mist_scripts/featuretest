@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+mist for_each_crate cargo test
+mist for_each_crate cargo test --no-default-features
+mist for_each_crate cargo test --all-features

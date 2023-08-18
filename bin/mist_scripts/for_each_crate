@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly cmd=$@
+for path in $(fd -F Cargo.toml); do
+    dir=$(dirname $path)
+    (cd $dir && $cmd)
+done
+

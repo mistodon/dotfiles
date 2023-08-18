@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+trap 'killall cargo-watch' SIGINT
+
+readonly subcrate=${1:-game}
+readonly assets=${2:-assets}
+
+cargo watch -w src -w $assets -x check & \
+cargo watch -C $subcrate -w ../src -w src -w ../$assets -x build
+

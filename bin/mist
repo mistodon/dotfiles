@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ $# == 0 ]; then
+    ls "$HOME/.dotfiles/bin/mist_scripts"
+    exit 0
+else
+    readonly cmd=$1
+    shift 1
+    "$HOME/.dotfiles/bin/mist_scripts/$cmd" $@
+fi

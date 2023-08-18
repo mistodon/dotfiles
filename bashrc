@@ -515,3 +515,5 @@ function mine {
 function seriously_mine {
     chmod 0600 $@
 }
+
+complete -W "$(ls ~/bin/mist_scripts)" mist

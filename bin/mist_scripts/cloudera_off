@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ -f ~/.ssh/cloudera_config ]; then
+    echo "~/.ssh/cloudera_config already exists"
+    exit 1
+else
+    mv ~/.ssh/config ~/.ssh/cloudera_config
+fi
+

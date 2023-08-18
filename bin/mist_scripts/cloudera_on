@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ -f ~/.ssh/config ]; then
+    echo "~/.ssh/config already exists"
+    exit 1
+else
+    mv ~/.ssh/cloudera_config ~/.ssh/config
+    autossh -M 0 -f -T -N -D 9653 -C opentsdb-prod-jumpbox-eu-central-1
+    autossh -M 0 -f -T -N -D 9651 -C opentsdb-prod-jumpbox-eu-west-1
+fi
