@@ -2,11 +2,14 @@
     tool = vimdiff
 [user]
     useconfigonly = true
+	email = claire.harris@skyscanner.net
+	name = Claire Harris
 [core]
     excludesfile = ~/.dotfiles/git/.gitignore
     hookspath = ~/.dotfiles/git/hooks
     editor = vim
     ignorecase = false
+	attributesfile = ~/.gitattributes
 [branch]
     autosetupmerge = always
 [push]
@@ -29,7 +32,11 @@
     last = log -1 --oneline
     r = git reset
     s = status
+	diff-img = difftool -x 'compare -alpha copy \"$LOCAL\" \"$REMOTE\" png:- | montage -mode concatenate \"$LOCAL\" png:- \"$REMOTE\" png:- | display -title \"$BASE: Local | Diff | Remote\" png:-'
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [credential]
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[diff "image"]
+	command = ~/temp/git-diff-image/git_diff_image

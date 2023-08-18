@@ -92,8 +92,7 @@ function mkcd {
 function mksh {
     echo "#!/usr/bin/env bash
 
-set -eu
-set -o pipefail
+set -euo pipefail
 
 " > $1 && chmod +x $1
 }
@@ -502,6 +501,11 @@ function nvm12 {
 function nvm16 {
     nvmup
     nvm use --lts=gallium
+}
+
+function nvm18 {
+    nvmup
+    nvm use --lts=hydrogen
 }
 
 function mine {

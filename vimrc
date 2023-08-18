@@ -17,6 +17,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-scripts/SyntaxRange'
 Plugin 'chaimleib/vim-renpy'
 Plugin 'hashivim/vim-terraform'
+Plugin 'DingDean/wgsl.vim'
 
 " editing
 Plugin 'godlygeek/tabular'
@@ -63,6 +64,7 @@ au InsertEnter * hi CursorLine      guibg=#dfefdf gui=NONE                    ct
 let mapleader=","
 
 autocmd FileType melo setlocal commentstring=//\ %s
+autocmd FileType wgsl setlocal commentstring=//\ %s
 
 set mouse=a
 set autoindent
@@ -167,8 +169,8 @@ au FileType json :nnoremap <leader>z :%!jq "."<cr>
 au FileType java :nnoremap <leader>z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh %:p<cr>
 au FileType java :nnoremap <leader>Z :Silent /Applications/IntelliJ\ IDEA.app/Contents/bin/format.sh -r %:p:h<cr>
 
-au FileType asciidoc :call SyntaxRange#Include('----', '----', 'rust', 'NonText')
-au FileType asciidoc :call SyntaxRange#Include('++++', '++++', 'rust', 'NonText')
+au FileType asciidoc :call SyntaxRange#Include('----', '----', 'python', 'NonText')
+au FileType asciidoc :call SyntaxRange#Include('++++', '++++', 'python', 'NonText')
 
 " Disabling auto-exit insert mode
 " au CursorHoldI * stopinsert
@@ -452,3 +454,6 @@ onoremap <silent> _ :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> + :call NextIndent(1, 1, 1, 1)<CR>
 
 call camelcasemotion#CreateMotionMappings('-')
+
+ab rnew pub fn new() -> Self {<cr>}
+ab rder #[derive(Debug, Default, Clone, Copy, PartialEq, Eq)]
